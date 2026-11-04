@@ -1,0 +1,517 @@
+/* ==========================================================================
+   BUCK FIFTY INNOVATION LABS - RETRO 1996 HORRIBLE WEB DESIGN STYLESHEET
+   Optimized for Netscape Navigator 3.0 Gold & MS Internet Explorer 3.0
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: #050510;
+  background-image: url('assets/stars_bg.png');
+  background-repeat: repeat;
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+/* 90s Typography */
+h1, h2, h3, h4 {
+  font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 24px;
+  text-shadow: 2px 2px #ff0000;
+}
+
+h2 {
+  font-size: 19px;
+  text-shadow: 1px 1px #000080;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+a {
+  color: #ffff00;
+  font-weight: bold;
+}
+a:visited {
+  color: #ff00ff;
+}
+a:hover {
+  color: #00ffff;
+  background-color: #000080;
+}
+
+/* Blinking text */
+.blink {
+  animation: blinkAnim 1s step-start infinite;
+}
+@keyframes blinkAnim {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink-fast {
+  animation: blinkFastAnim 0.4s step-start infinite;
+}
+@keyframes blinkFastAnim {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Rainbow Text */
+.rainbow {
+  background-image: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Marquee Header */
+.marquee-container {
+  background-color: #000080;
+  border: 3px ridge #ffff00;
+  padding: 6px;
+  color: #ffff00;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeAnim 22s linear infinite;
+}
+@keyframes marqueeAnim {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+/* Outer Master Table Container */
+.master-table {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #c0c0c0;
+  color: #000000;
+  border: 4px outset #ffffff;
+  border-collapse: collapse;
+}
+
+/* Top Banner Header */
+.header-cell {
+  background: linear-gradient(180deg, #000080 0%, #000033 100%);
+  color: #ffffff;
+  border: 3px inset #808080;
+  padding: 12px;
+  text-align: center;
+}
+
+.header-banner-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cube-gif-header {
+  width: 80px;
+  height: 60px;
+  border: 2px solid #ffff00;
+  object-fit: cover;
+}
+
+/* Left Sidebar Navigation */
+.nav-sidebar {
+  width: 220px;
+  vertical-align: top;
+  background-color: #004080;
+  color: #ffffff;
+  padding: 10px;
+  border-right: 3px outset #ffffff;
+}
+
+.nav-box {
+  background-color: #000000;
+  border: 2px inset #ffffff;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.nav-title {
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px dashed #00ff00;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.nav-link {
+  display: block;
+  background: #c0c0c0;
+  color: #000000 !important;
+  text-decoration: none;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  text-align: left;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: #000080;
+  color: #ffff00 !important;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Audio Player Box */
+.audio-player-box {
+  background: #102030;
+  border: 2px inset #c0c0c0;
+  padding: 6px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.audio-btn {
+  background: #008000;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 6px 8px;
+  border: 2px outset #ffffff;
+  cursor: pointer;
+  width: 100%;
+}
+.audio-btn:hover {
+  background: #00aa00;
+}
+
+/* Main Content Cell */
+.content-cell {
+  vertical-align: top;
+  padding: 14px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Windows 95 Style Content Panel */
+.win95-box {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  margin-bottom: 16px;
+  padding: 2px;
+}
+
+.win95-titlebar {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  color: #ffffff;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.win95-body {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px inset #ffffff;
+}
+
+/* Redacted classified text */
+.redacted {
+  background-color: #000000;
+  color: #000000;
+  user-select: none;
+  cursor: help;
+  padding: 0 4px;
+  transition: background-color 0.2s;
+}
+.redacted:hover {
+  background-color: #ffff00;
+  color: #ff0000;
+}
+
+/* Photo Gallery & Callouts */
+.photo-frame {
+  background: #e0e0e0;
+  border: 2px solid #000000;
+  padding: 6px;
+  margin: 8px auto;
+  text-align: center;
+  box-shadow: 4px 4px 0 #888888;
+}
+
+.photo-frame img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #444444;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+.photo-caption {
+  font-size: 12px;
+  font-style: italic;
+  color: #333333;
+}
+
+/* 90s Form Styling */
+.retro-form {
+  background-color: #e0e0e0;
+  border: 3px groove #ffffff;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  border: 2px inset #ffffff;
+  background: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.btn-retro {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 5px 14px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.btn-retro:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 6px 13px 4px 15px;
+}
+
+/* Rubber Stamp */
+.stamp {
+  display: inline-block;
+  border: 3px double #cc0000;
+  color: #cc0000;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 16px;
+  padding: 6px 12px;
+  transform: rotate(-3deg);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+/* Retro CRT Terminal Component */
+.terminal-window {
+  background-color: #001100;
+  border: 3px ridge #00ff00;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  color: #00ff66;
+  font-size: 13px;
+  box-shadow: inset 0 0 15px rgba(0, 255, 100, 0.4);
+}
+
+.terminal-output {
+  height: 220px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #008833;
+  padding-bottom: 6px;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #00ff66;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  flex: 1;
+  outline: none;
+}
+
+/* Guestbook Entry Box */
+.guest-entry {
+  background: #f4f4f4;
+  border: 1px solid #999999;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #000080;
+}
+
+.guest-header {
+  font-size: 12px;
+  color: #555555;
+  border-bottom: 1px dotted #cccccc;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+}
+
+/* Footer Badges & Webrings */
+.footer-cell {
+  background-color: #000040;
+  color: #ffff00;
+  border: 3px inset #808080;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.badge-row img {
+  border: 1px outset #888888;
+}
+
+.webring-box {
+  background: #000000;
+  border: 2px ridge #00ff00;
+  padding: 6px;
+  margin: 10px auto;
+  max-width: 550px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #00ff00;
+}
+
+/* Tab Panels */
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* POV-Ray Special Edition Cyber Styles */
+.pov-gold-box {
+  border: 3px ridge #ffd700;
+  background: linear-gradient(135deg, #110022 0%, #330044 100%);
+  color: #ffffff;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.neon-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #ff00ff;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  text-shadow: 1px 1px #000;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: #000000;
+  color: #00ff66;
+  border: 2px inset #ffffff;
+  margin: 10px 0;
+}
+
+.spec-table th, .spec-table td {
+  border: 1px solid #00aa44;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.spec-table th {
+  background: #003311;
+  color: #ffff00;
+}
+
+.render-terminal {
+  background: #000000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 10px;
+  border: 2px inset #808080;
+  height: 180px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.turntable-preview-container {
+  text-align: center;
+  background: #000000;
+  border: 4px ridge #ff00ff;
+  padding: 10px;
+  margin: 12px 0;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+}
