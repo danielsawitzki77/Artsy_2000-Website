@@ -155,26 +155,16 @@
                 (function() {
                   // YouTube rejects iframe embeds opened directly from local disk (file://) with Error 153
                   // because browsers do not send an HTTP Referer header from file:// origins.
+                  // When uploaded (http/https), the embedded YouTube iframe plays directly.
                   if (window.location.protocol === 'file:') {
                     var container = document.getElementById('b50-video-container');
                     if (container) {
                       container.innerHTML =
-                        '<video id="b50-local-video" controls preload="metadata" poster="https://i.ytimg.com/vi/hl4ftXtNqVU/hqdefault.jpg" ' +
-                        'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; object-fit: contain;">' +
-                        '<source src="../Artsy_2000/promo_video/Artsy_2000.mp4" type="video/mp4">' +
-                        '</video>';
-                      var vid = document.getElementById('b50-local-video');
-                      var src = vid ? vid.querySelector('source') : null;
-                      if (src) {
-                        src.addEventListener('error', function() {
-                          container.innerHTML =
-                            '<a href="https://youtu.be/hl4ftXtNqVU?si=wJ_LCLrPfsJntJSN" target="_blank" rel="noopener noreferrer" ' +
-                            'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(\'https://i.ytimg.com/vi/hl4ftXtNqVU/hqdefault.jpg\') center/cover no-repeat; text-decoration: none;">' +
-                            '<div style="background: rgba(0,0,34,0.85); border: 3px outset #00ffff; padding: 12px 20px; color: #ffff00; font-family: \'Courier New\', monospace; font-weight: bold; font-size: 15px; box-shadow: 4px 4px 0 #000000;">' +
-                            '&#9658; CLICK TO LAUNCH BROADCAST ON YOUTUBE' +
-                            '</div></a>';
-                        });
-                      }
+                        '<a href="https://youtu.be/hl4ftXtNqVU?si=wJ_LCLrPfsJntJSN" target="_blank" rel="noopener noreferrer" ' +
+                        'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(\'https://i.ytimg.com/vi/hl4ftXtNqVU/hqdefault.jpg\') center/cover no-repeat; text-decoration: none;">' +
+                        '<div style="background: rgba(0,0,34,0.85); border: 3px outset #00ffff; padding: 12px 20px; color: #ffff00; font-family: \'Courier New\', monospace; font-weight: bold; font-size: 15px; box-shadow: 4px 4px 0 #000000;">' +
+                        '&#9658; CLICK TO LAUNCH BROADCAST ON YOUTUBE' +
+                        '</div></a>';
                     }
                   }
                 })();
@@ -807,28 +797,17 @@
                   </div>
                   <script>
                     (function() {
-                      // YouTube rejects iframe embeds opened directly from local disk (file://) with Error 153
-                      // because browsers do not send an HTTP Referer header from file:// origins.
+                      // When opened via file://, YouTube iframe embeds fail with Error 153; show thumbnail + YouTube button fallback.
+                      // When uploaded (http/https), the embedded YouTube iframe plays directly.
                       if (window.location.protocol === 'file:') {
                         var container = document.getElementById('povray-video-container');
                         if (container) {
                           container.innerHTML =
-                            '<video id="povray-local-video" controls preload="metadata" poster="https://i.ytimg.com/vi/lHGAPG5uiAc/hqdefault.jpg" ' +
-                            'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; object-fit: contain;">' +
-                            '<source src="../Artsy_2000/promo_video/povray_raytracing.mp4" type="video/mp4">' +
-                            '</video>';
-                          var vid = document.getElementById('povray-local-video');
-                          var src = vid ? vid.querySelector('source') : null;
-                          if (src) {
-                            src.addEventListener('error', function() {
-                              container.innerHTML =
-                                '<a href="https://www.youtube.com/watch?v=lHGAPG5uiAc" target="_blank" rel="noopener noreferrer" ' +
-                                'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(\'https://i.ytimg.com/vi/lHGAPG5uiAc/hqdefault.jpg\') center/cover no-repeat; text-decoration: none;">' +
-                                '<div style="background: rgba(13,0,26,0.88); border: 3px outset #ff00ff; padding: 12px 20px; color: #ffff00; font-family: \'Courier New\', monospace; font-weight: bold; font-size: 15px; box-shadow: 4px 4px 0 #000000;">' +
-                                '&#9658; CLICK TO LAUNCH RAYTRACING &amp; POV-RAY BROADCAST ON YOUTUBE' +
-                                '</div></a>';
-                            });
-                          }
+                            '<a href="https://www.youtube.com/watch?v=lHGAPG5uiAc" target="_blank" rel="noopener noreferrer" ' +
+                            'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(\'https://i.ytimg.com/vi/lHGAPG5uiAc/hqdefault.jpg\') center/cover no-repeat; text-decoration: none;">' +
+                            '<div style="background: rgba(13,0,26,0.88); border: 3px outset #ff00ff; padding: 12px 20px; color: #ffff00; font-family: \'Courier New\', monospace; font-weight: bold; font-size: 15px; box-shadow: 4px 4px 0 #000000;">' +
+                            '&#9658; CLICK TO LAUNCH ARCHIVE VIDEO ON YOUTUBE' +
+                            '</div></a>';
                         }
                       }
                     })();
