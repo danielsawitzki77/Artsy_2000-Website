@@ -105,10 +105,16 @@
         <!-- Retro Web Badges -->
         <div style="text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center;">
           <img src="assets/badge_netscape.png" alt="Netscape Now 3.0">
-          <a href="#povray" onclick="switchTab('povray'); playClickSound();" title="POV-Ray Studio"><img src="assets/badge_povray.png" alt="Rendered with POV-Ray"></a>
+          <a href="https://www.povray.org/" target="_blank" rel="noopener noreferrer" onclick="playClickSound();" title="Official Persistence of Vision Raytracer Website (www.povray.org)"><img src="assets/badge_povray.png" alt="Rendered with POV-Ray"></a>
           <img src="assets/badge_sgi.png" alt="Powered by SGI IRIX">
           <img src="assets/badge_800x600.png" alt="Best at 800x600">
           <img src="assets/badge_notepad.png" alt="Made with Notepad">
+        </div>
+
+        <!-- Electronic Mail Contact Box -->
+        <div style="background: #000044; border: 2px outset #00ffff; padding: 6px; text-align: center; margin-top: 12px; font-family: 'Courier New', monospace; font-size: 10px; color: #ffffff;">
+          <div style="color: #ffff00; font-weight: bold; margin-bottom: 2px;">&#9993; ELECTRONIC MAIL:</div>
+          <a href="mailto:info@buckfiftylabs.com" onclick="playClickSound();" style="color: #00ffff; font-weight: bold; text-decoration: underline; word-break: break-all;">info@buckfiftylabs.com</a>
         </div>
 
       </td>
@@ -769,9 +775,78 @@
                     <b>BUCK FIFTY INNOVATION LABS HEARD YOUR TELEPATHIC WHIMPERS!</b>
                   </p>
                   <p>
-                    We have ripped the rendering pipeline wide open in the secret <b>Artsy_2000 debug mode</b>. With one decisive strike of the <b>X key</b> (or <b>Gamepad X button</b>), our software compiles your entire chaotic scene into an autonomous, 360-degree turntable animation studio powered by the venerable <b>POV-Ray 3.7</b>!
+                    We have ripped the rendering pipeline wide open in the secret <b>Artsy_2000 debug mode</b>. With one decisive strike of the <b>X key</b> (or <b>Gamepad X button</b>), our software compiles your entire chaotic scene into an autonomous, 360-degree turntable animation studio powered by the venerable <a href="https://www.povray.org/" target="_blank" rel="noopener noreferrer" onclick="playClickSound();"><b>POV-Ray 3.7</b></a>!
                   </p>
                   <div class="stamp" style="border-color: #ff00ff; color: #ff00ff;">100% UNATTENDED &bull; HEADLESS</div>
+                </div>
+              </div>
+
+              <!-- 90s Raytracing & POV-Ray Video Broadcast Embed + Official POV-Ray Portal Link -->
+              <div class="win95-box" style="border: 3px outset #ff00ff; box-shadow: 5px 5px 0 #000000; margin-bottom: 18px;">
+                <div class="win95-titlebar" style="background: linear-gradient(90deg, #4b0082 0%, #800080 50%, #00ffff 100%);">
+                  <span>&#128250; C:\B50\MEDIA\POVRAY_RAYTRACING_ARCHIVES.AVI &mdash; MPLAYER.EXE (PHOTONIC EDUCATION FEED)</span>
+                  <span>[_] [&square;] [X]</span>
+                </div>
+                <div class="win95-body" style="background: #0d001a; color: #ffffff; border: 3px ridge #00ffff; padding: 12px; text-align: center;">
+                  <div style="background: #ffff00; color: #000000; font-family: 'Courier New', monospace; font-weight: bold; font-size: 13px; padding: 4px 8px; border: 2px solid #ff00ff; margin-bottom: 10px;">
+                    <span class="blink-fast">&#9658; MANDATORY PHOTONIC SYMPOSIUM! &#9668;</span> THE HISTORY &amp; MATHEMATICS OF RAYTRACING AND THE PERSISTENCE OF VISION RAYTRACER (POV-RAY)
+                  </div>
+
+                  <div style="position: relative; width: 100%; max-width: 680px; margin: 0 auto; border: 4px inset #c0c0c0; background: #000000; box-shadow: 4px 4px 0 #000000;">
+                    <div id="povray-video-container" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                      <iframe
+                        id="povray-yt-iframe"
+                        src="https://www.youtube.com/embed/lHGAPG5uiAc?rel=0"
+                        title="THE TRUE COST OF A PIXEL: A Buck-Fifty Archive on Raytracing &amp; POV-Ray"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                      </iframe>
+                    </div>
+                  </div>
+                  <script>
+                    (function() {
+                      // YouTube rejects iframe embeds opened directly from local disk (file://) with Error 153
+                      // because browsers do not send an HTTP Referer header from file:// origins.
+                      if (window.location.protocol === 'file:') {
+                        var container = document.getElementById('povray-video-container');
+                        if (container) {
+                          container.innerHTML =
+                            '<video id="povray-local-video" controls preload="metadata" poster="https://i.ytimg.com/vi/lHGAPG5uiAc/hqdefault.jpg" ' +
+                            'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; object-fit: contain;">' +
+                            '<source src="../Artsy_2000/promo_video/povray_raytracing.mp4" type="video/mp4">' +
+                            '</video>';
+                          var vid = document.getElementById('povray-local-video');
+                          var src = vid ? vid.querySelector('source') : null;
+                          if (src) {
+                            src.addEventListener('error', function() {
+                              container.innerHTML =
+                                '<a href="https://www.youtube.com/watch?v=lHGAPG5uiAc" target="_blank" rel="noopener noreferrer" ' +
+                                'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(\'https://i.ytimg.com/vi/lHGAPG5uiAc/hqdefault.jpg\') center/cover no-repeat; text-decoration: none;">' +
+                                '<div style="background: rgba(13,0,26,0.88); border: 3px outset #ff00ff; padding: 12px 20px; color: #ffff00; font-family: \'Courier New\', monospace; font-weight: bold; font-size: 15px; box-shadow: 4px 4px 0 #000000;">' +
+                                '&#9658; CLICK TO LAUNCH RAYTRACING &amp; POV-RAY BROADCAST ON YOUTUBE' +
+                                '</div></a>';
+                            });
+                          }
+                        }
+                      }
+                    })();
+                  </script>
+
+                  <div style="margin-top: 10px; font-family: 'Courier New', monospace; font-size: 11px; color: #00ffff;">
+                    ARCHIVE FEED: <b>THE TRUE COST OF A PIXEL: RAYTRACING &amp; POV-RAY</b> &bull;
+                    <a href="https://www.youtube.com/watch?v=lHGAPG5uiAc" target="_blank" rel="noopener noreferrer" onclick="playClickSound();" style="color: #ffff00; text-decoration: underline;">
+                      [ OPEN DIRECT VIDEO ON YOUTUBE ]
+                    </a>
+                  </div>
+
+                  <div style="margin-top: 10px; padding: 8px 12px; background: #1a0b2e; border: 2px outset #00ffff; display: inline-block; font-family: 'Courier New', monospace; font-size: 12px; color: #ffffff;">
+                    &#127760; OFFICIAL POV-RAY HEADQUARTERS &amp; BINARY REPOSITORY:
+                    <a href="https://www.povray.org/" target="_blank" rel="noopener noreferrer" onclick="playClickSound();" style="color: #00ff00; font-weight: bold; text-decoration: underline; margin-left: 6px;">
+                      HTTPS://WWW.POVRAY.ORG/ [VISIT OFFICIAL POV-RAY PAGE &#8599;]
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -1395,7 +1470,7 @@ B50-ROOT> </div>
 
         <div style="margin: 8px 0; color: #cccccc; font-size: 11px;">
           &copy; 1993 - 1996 BUCK FIFTY INNOVATION LABS, INC. ALL RIGHTS RESERVED.<br>
-          OFFICIAL LABS PORTAL: <a href="http://www.buckfiftylabs.com/" style="color: #ffff00; text-decoration: underline;">HTTP://WWW.BUCKFIFTYLABS.COM/</a> &bull; HOSTED ON SGI WEBFORCE IRIX<br>
+          OFFICIAL LABS PORTAL: <a href="http://www.buckfiftylabs.com/" style="color: #ffff00; text-decoration: underline;">HTTP://WWW.BUCKFIFTYLABS.COM/</a> &bull; ELECTRONIC MAIL: <a href="mailto:info@buckfiftylabs.com" style="color: #00ffff; text-decoration: underline;">INFO@BUCKFIFTYLABS.COM</a> &bull; HOSTED ON SGI WEBFORCE IRIX<br>
           ALL TEST SUBJECTS, MEAT SACKS, AND VESTIBULAR RECEPTORS ARE THE EXCLUSIVE PROPERTY OF BUCK FIFTY SYSTEMS.<br>
           DISCLAIMER: UNLAWFUL TERMINATION OF THE IMMERSION HELMET CONSTITUTES A BREACH OF SECTION 4B OF THE PARTICIPANT COMPACT.
         </div>
@@ -1403,7 +1478,7 @@ B50-ROOT> </div>
         <!-- Badges Bottom Row -->
         <div class="badge-row">
           <img src="assets/badge_netscape.png" alt="Netscape 3.0">
-          <a href="#povray" onclick="switchTab('povray'); playClickSound();" title="POV-Ray Studio"><img src="assets/badge_povray.png" alt="Rendered with POV-Ray"></a>
+          <a href="https://www.povray.org/" target="_blank" rel="noopener noreferrer" onclick="playClickSound();" title="Official Persistence of Vision Raytracer Website (www.povray.org)"><img src="assets/badge_povray.png" alt="Rendered with POV-Ray"></a>
           <img src="assets/badge_sgi.png" alt="SGI IRIX">
           <img src="assets/badge_800x600.png" alt="800x600">
           <img src="assets/badge_notepad.png" alt="Made With Notepad">
