@@ -56,19 +56,13 @@ def transform_chunk(raw_bytes: bytes, global_byte_offset: int, vault_key_words: 
     return bytes(out)
 
 
-def main():
-    src_path = os.environ.get("B50_VAULT_SRC_MP4", r"C:\Users\Daniel Sawitzki\Desktop\BF_History.mp4")
-    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    vault_key_words = load_vault_key_words(repo_root)
-    vault_dir = os.path.join(repo_root, "assets", "vault")
-    os.makedirs(vault_dir, exist_ok=True)
-
+def pack_video_to_shards(src_path: str, prefix: str, vault_dir: str, vault_key_words: list[int]) -> int:
     with open(src_path, "rb") as f:
         src_data = f.read()
 
     total_len = len(src_data)
     src_sha256 = hashlib.sha256(src_data).hexdigest()
-    print(f"Source MP4: {total_len} bytes, SHA256={src_sha256}")
+    print(f"Source MP4 ({prefix}): {total_len} bytes, SHA256={src_sha256}")
 
     # Align shard boundaries to 4-byte multiples
     raw_shard_size = ((total_len // NUM_SHARDS) + 3) & ~3
@@ -79,7 +73,7 @@ def main():
         end = total_len if idx == NUM_SHARDS - 1 else min(total_len, offset + raw_shard_size)
         chunk = src_data[offset:end]
         enc = transform_chunk(chunk, offset, vault_key_words)
-        shard_path = os.path.join(vault_dir, f"b50_reel_{idx:02d}.bin")
+        shard_path = os.path.join(vault_dir, f"{prefix}_{idx:02d}.bin")
         with open(shard_path, "wb") as sf:
             sf.write(enc)
         print(f"  Wrote {shard_path} ({len(enc)} bytes, offset={offset})")
@@ -92,6 +86,21 @@ def main():
     dec_sha256 = hashlib.sha256(reassembled).hexdigest()
     assert dec_sha256 == src_sha256, "Decryption roundtrip mismatch!"
     print(f"Verified round-trip SHA256 match ({len(reassembled)} bytes).")
+    return total_len
+
+
+def main():
+    src_path = os.environ.get("B50_VAULT_SRC_MP4", r"C:\Users\Daniel Sawitzki\Desktop\BF_History.mp4")
+    tx_src_path = os.environ.get("B50_TX_SRC_MP4", r"C:\Users\Daniel Sawitzki\Desktop\Transaction.mp4")
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    vault_key_words = load_vault_key_words(repo_root)
+    vault_dir = os.path.join(repo_root, "assets", "vault")
+    os.makedirs(vault_dir, exist_ok=True)
+
+    if os.path.exists(src_path):
+        pack_video_to_shards(src_path, "b50_reel", vault_dir, vault_key_words)
+    if os.path.exists(tx_src_path):
+        pack_video_to_shards(tx_src_path, "b50_tx", vault_dir, vault_key_words)
 
 
 if __name__ == "__main__":
