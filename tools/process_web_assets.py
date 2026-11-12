@@ -11,25 +11,10 @@ def process_assets():
 
     print(f"Target assets directory: {assets_dir}")
 
-    # 1. Assemble rotating BF cube GIF
-    cube_frames = []
-    for i in range(16):
-        fname = os.path.join(base_dir, f"bf_cube_{i:02d}.bmp")
-        if os.path.exists(fname):
-            img = Image.open(fname).convert("RGB")
-            cube_frames.append(img)
-    
-    if cube_frames:
-        gif_path = os.path.join(assets_dir, "bf_cube_rotating.gif")
-        cube_frames[0].save(
-            gif_path,
-            save_all=True,
-            append_images=cube_frames[1:],
-            duration=90,
-            loop=0,
-            optimize=True
-        )
-        print(f"Created animated GIF: {gif_path} ({len(cube_frames)} frames)")
+    # 1. Assemble rotating BF cube GIF (using 3D Z-buffered green CRT renderer)
+    from generate_bf_cube_gif import generate_bf_cube_gif
+    gif_path = os.path.join(assets_dir, "bf_cube_rotating.gif")
+    generate_bf_cube_gif(gif_path)
 
     # 2. Convert rendered BMPs to PNG
     bmp_names = [
