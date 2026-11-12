@@ -16,6 +16,10 @@ def process_assets():
     gif_path = os.path.join(assets_dir, "bf_cube_rotating.gif")
     generate_bf_cube_gif(gif_path)
 
+    # 1b. Generate retro sidebar badges, counter, under construction, and warning strobe
+    from generate_retro_badges import create_retro_elements
+    create_retro_elements()
+
     # 2. Convert rendered BMPs to PNG
     bmp_names = [
         "guts_decompression.bmp",

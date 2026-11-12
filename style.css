@@ -417,6 +417,26 @@ a:hover {
   font-size: 12px;
 }
 
+/* Sidebar Full-Width Retro Badges */
+.sidebar-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.sidebar-badges a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.sidebar-badges img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .badge-row {
   display: flex;
   flex-wrap: wrap;
@@ -427,7 +447,10 @@ a:hover {
 }
 
 .badge-row img {
+  height: 44px;
+  width: auto;
   border: 1px outset #888888;
+  display: block;
 }
 
 .webring-box {
