@@ -190,6 +190,22 @@ a:hover {
   border-bottom: 2px solid #ffffff;
 }
 
+.nav-link-clipart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.nav-clipart-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+}
+
 /* Audio Player Box */
 .audio-player-box {
   background: #102030;

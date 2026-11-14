@@ -20,6 +20,10 @@ def process_assets():
     from generate_retro_badges import create_retro_elements
     create_retro_elements()
 
+    # 1c. Generate 90s sidebar section clipart icons
+    from generate_nav_clipart import create_nav_clipart_icons
+    create_nav_clipart_icons(assets_dir)
+
     # 2. Convert rendered BMPs to PNG
     bmp_names = [
         "guts_decompression.bmp",

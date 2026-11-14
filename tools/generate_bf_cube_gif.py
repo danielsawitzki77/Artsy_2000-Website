@@ -1,7 +1,7 @@
 import os
 import math
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter
 
 
 def make_b_polygons():
@@ -195,9 +195,11 @@ def draw_3d_line_zbuf(color_buf, z_buf, p0_proj, p1_proj, color, radius=1, z_bia
 
 def render_frame(yaw, width=640, height=480):
     tilt = math.radians(24.0)
+    # Maximize the cube vertically ([-1, 1]^3 spans norm_y [-1.2645, +1.8073] across 24 yaws)
+    # while centering its projected bounds cleanly inside the frame with ~10px bloom margin.
+    scale = height * 0.312
     cx = width * 0.5
-    cy = height * 0.372
-    scale = height * 0.222
+    cy = height * 0.5 - 0.2714 * scale
     cam_dist = 5.0
 
     # Initialize color and Z buffers
@@ -207,9 +209,9 @@ def render_frame(yaw, width=640, height=480):
     color_buf[:, :, 2] = 3
     z_buf = np.full((height, width), -1e9, dtype=np.float64)
 
-    # Subtle radial CRT phosphor glow in background
+    # Subtle radial CRT phosphor glow centered behind the full-frame cube
     yy, xx = np.mgrid[0:height, 0:width]
-    r2 = ((xx - cx) / (width * 0.42)) ** 2 + ((yy - cy) / (height * 0.40)) ** 2
+    r2 = ((xx - cx) / (width * 0.42)) ** 2 + ((yy - height * 0.5) / (height * 0.48)) ** 2
     bg_glow = np.exp(-r2 * 1.6)
     color_buf[:, :, 1] = np.clip(color_buf[:, :, 1] + bg_glow * 18.0, 0, 255).astype(np.uint8)
     color_buf[:, :, 2] = np.clip(color_buf[:, :, 2] + bg_glow * 5.0, 0, 255).astype(np.uint8)
@@ -446,40 +448,6 @@ def render_frame(yaw, width=640, height=480):
     bloom_np = np.array(bloom_img, dtype=np.float32)
     combined = np.clip(base_np + bloom_np * 0.62, 0, 255).astype(np.uint8)
     img = Image.fromarray(combined)
-    draw = ImageDraw.Draw(img)
-
-    # Draw CRT UI text overlays (matching ref_bf_original.png & BfCubeRenderer)
-    try:
-        font_top = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 16)
-        font_title = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 36)
-        font_sub = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 19)
-        font_city = ImageFont.truetype("C:/Windows/Fonts/consolab.ttf", 14)
-    except Exception:
-        font_top = ImageFont.load_default()
-        font_title = ImageFont.load_default()
-        font_sub = ImageFont.load_default()
-        font_city = ImageFont.load_default()
-
-    draw.text((18, 12), "SYS_LOAD: B50_LABS_LOGO.EXE", fill=(110, 255, 140), font=font_top)
-
-    t1 = "BUCK-FIFTY"
-    bb1 = draw.textbbox((0, 0), t1, font=font_title)
-    w1 = bb1[2] - bb1[0]
-    y1 = int(height * 0.795)
-    draw.text(((width - w1) // 2 + 2, y1 + 2), t1, fill=(10, 95, 35), font=font_title)
-    draw.text(((width - w1) // 2, y1), t1, fill=(145, 255, 175), font=font_title)
-
-    t2 = "INNOVATION LABS"
-    bb2 = draw.textbbox((0, 0), t2, font=font_sub)
-    w2 = bb2[2] - bb2[0]
-    y2 = y1 + 37
-    draw.text(((width - w2) // 2, y2), t2, fill=(90, 240, 125), font=font_sub)
-
-    t3 = "SALT LAKE CITY, UT"
-    bb3 = draw.textbbox((0, 0), t3, font=font_city)
-    w3 = bb3[2] - bb3[0]
-    y3 = y2 + 21
-    draw.text(((width - w3) // 2, y3), t3, fill=(60, 195, 90), font=font_city)
 
     # Downsample 2x to 320x240 with Lanczos for razor-sharp anti-aliasing
     out_img = img.resize((width // 2, height // 2), Image.Resampling.LANCZOS)
