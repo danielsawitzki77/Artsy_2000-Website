@@ -477,6 +477,56 @@ def draw_funfacts_icon():
     return img
 
 
+def draw_skullthor_icon():
+    """90s cartoon Skullthor: grinning metal-bone skull on spiked pauldrons with laser spark."""
+    img = new_canvas()
+    d = ImageDraw.Draw(img)
+
+    def poly(pts, fill, outline=OL, width=6):
+        d.polygon(pts, fill=fill)
+        if outline:
+            d.line(pts + [pts[0]], fill=outline, width=width, joint="curve")
+
+    # Green Z-buffer laser spark at top-left
+    draw_starburst(d, 26, 30, outer_r=20, inner_r=7, points=4, fill=(0, 255, 102, 255), outline=OL, width=4)
+
+    # Dark spiked armor pauldrons
+    poly([(13, 148), (23, 101), (60, 96), (66, 148)], fill=(66, 74, 98, 255), width=7)
+    poly([(147, 148), (137, 101), (100, 96), (94, 148)], fill=(66, 74, 98, 255), width=7)
+    d.line([(27, 109), (55, 103)], fill=(140, 165, 210, 255), width=6)
+    d.line([(133, 109), (105, 103)], fill=(140, 165, 210, 255), width=6)
+
+    # Metallic spikes sprouting outward from pauldrons
+    poly([(23, 107), (6, 86), (36, 98)], fill=(190, 205, 225, 255), width=6)
+    poly([(137, 107), (154, 86), (124, 98)], fill=(190, 205, 225, 255), width=6)
+
+    # Skull jaw + cranium
+    d.rounded_rectangle([52, 87, 108, 133], radius=11, fill=(232, 236, 244, 255), outline=OL, width=7)
+    d.ellipse([34, 14, 126, 104], fill=(245, 247, 252, 255), outline=OL, width=7)
+    d.chord([40, 21, 120, 98], start=15, end=140, fill=(205, 212, 228, 255))
+    d.ellipse([48, 23, 76, 46], fill=(255, 255, 255, 255))
+
+    # Seamless jaw-cheek blend
+    d.rectangle([56, 81, 104, 125], fill=(238, 242, 248, 255))
+    d.line([(52, 98), (52, 121), (64, 132), (96, 132), (108, 121), (108, 98)], fill=OL, width=7, joint="curve")
+
+    # Deep eye sockets with fiery glowing eyes
+    poly([(44, 62), (73, 71), (69, 87), (46, 83)], fill=(15, 10, 24, 255), width=5)
+    poly([(116, 62), (87, 71), (91, 87), (114, 83)], fill=(15, 10, 24, 255), width=5)
+    d.ellipse([52, 70, 67, 83], fill=(255, 70, 0, 255))
+    d.ellipse([56, 73, 64, 80], fill=(255, 240, 60, 255))
+    d.ellipse([93, 70, 108, 83], fill=(255, 70, 0, 255))
+    d.ellipse([96, 73, 104, 80], fill=(255, 240, 60, 255))
+
+    # Nose cavity & grinning teeth
+    d.polygon([(80, 85), (74, 97), (86, 97)], fill=(20, 14, 28, 255))
+    d.rectangle([60, 106, 100, 122], fill=(255, 255, 255, 255), outline=OL, width=5)
+    for x in (73, 87):
+        d.line([(x, 107), (x, 121)], fill=OL, width=4)
+
+    return img
+
+
 ICON_BUILDERS = [
     ("nav_home.png", "HOME & DISPATCH", draw_home_icon),
     ("nav_vance.png", "MEET DR. VANCE", draw_vance_icon),
@@ -486,6 +536,7 @@ ICON_BUILDERS = [
     ("nav_protocols.png", "TESTING PROTOCOLS", draw_protocols_icon),
     ("nav_funfacts.png", "FACTS & FUN", draw_funfacts_icon),
     ("nav_povray.png", "POV-RAY Studio", draw_povray_icon),
+    ("nav_skullthor.png", "SKULLTHOR!", draw_skullthor_icon),
     ("nav_perks.png", "PERKS & VOUCHERS", draw_perks_icon),
     ("nav_volunteer.png", "BECOME A SUBJECT", draw_volunteer_icon),
     ("nav_terminal.png", "B50 TERMINAL", draw_terminal_icon),
