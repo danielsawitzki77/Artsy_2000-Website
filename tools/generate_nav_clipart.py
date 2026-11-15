@@ -434,13 +434,57 @@ def draw_guestbook_icon():
     return img
 
 
+def draw_funfacts_icon():
+    """Classic 90s glowing lightbulb + radiating trivia starburst rays for Facts & Fun."""
+    img = new_canvas()
+    d = ImageDraw.Draw(img)
+
+    # Vivid radiating energy rays around top/sides
+    ray_specs = [
+        ((80, 26), (80, 6), (255, 195, 0, 255)),
+        ((46, 36), (30, 18), (255, 55, 175, 255)),
+        ((114, 36), (130, 18), (0, 225, 255, 255)),
+        ((28, 66), (8, 56), (255, 210, 0, 255)),
+        ((132, 66), (152, 56), (255, 210, 0, 255)),
+    ]
+    for p0, p1, col in ray_specs:
+        d.line([p0, p1], fill=OL, width=14)
+        d.line([p0, p1], fill=col, width=7)
+
+    # Glass bulb silhouette (circle upper + tapered neck)
+    d.polygon([(52, 92), (108, 92), (98, 118), (62, 118)], fill=(255, 210, 0, 255), outline=OL, width=6)
+    d.ellipse([40, 32, 120, 108], fill=(255, 228, 25, 255), outline=OL, width=6)
+    # Remove horizontal seam inside bulb neck
+    d.polygon([(47, 74), (113, 74), (103, 112), (57, 112)], fill=(255, 228, 25, 255))
+    d.arc([40, 32, 120, 108], start=150, end=390, fill=OL, width=6)
+    d.line([(46, 86), (62, 116)], fill=OL, width=6)
+    d.line([(114, 86), (98, 116)], fill=OL, width=6)
+
+    # Glowing filament coils inside bulb
+    d.line([(66, 98), (70, 66), (80, 78), (90, 66), (94, 98)], fill=(235, 95, 0, 255), width=5)
+
+    # White glass highlight crescent on upper left of bulb
+    d.arc([49, 41, 88, 82], start=185, end=275, fill=(255, 255, 240, 255), width=8)
+
+    # Ribbed metallic silver screw base + bottom black contact tip (bright enough on dark navy hover)
+    d.rectangle([62, 116, 98, 126], fill=(225, 232, 245, 255), outline=OL, width=5)
+    d.rectangle([64, 124, 96, 134], fill=(185, 196, 212, 255), outline=OL, width=5)
+    d.rectangle([66, 132, 94, 142], fill=(225, 232, 245, 255), outline=OL, width=5)
+    d.polygon([(70, 142), (90, 142), (84, 152), (76, 152)], fill=(70, 76, 88, 255), outline=OL, width=4)
+
+    # Tiny 4-point cyan trivia sparkle on top-right
+    draw_starburst(d, 132, 34, outer_r=18, inner_r=6, points=4, fill=(0, 235, 255, 255), outline=OL, width=4)
+    return img
+
+
 ICON_BUILDERS = [
     ("nav_home.png", "HOME & DISPATCH", draw_home_icon),
     ("nav_vance.png", "MEET DR. VANCE", draw_vance_icon),
     ("nav_founder.png", "THE FOUNDER", draw_founder_icon),
     ("nav_dossiers.png", "TERMINAL DOSSIERS", draw_dossiers_icon),
     ("nav_tour.png", "FACILITY TOUR", draw_tour_icon),
-    ("nav_protocols.png", "PROTOCOLS (GAMES)", draw_protocols_icon),
+    ("nav_protocols.png", "TESTING PROTOCOLS", draw_protocols_icon),
+    ("nav_funfacts.png", "FACTS & FUN", draw_funfacts_icon),
     ("nav_povray.png", "POV-RAY Studio", draw_povray_icon),
     ("nav_perks.png", "PERKS & VOUCHERS", draw_perks_icon),
     ("nav_volunteer.png", "BECOME A SUBJECT", draw_volunteer_icon),
