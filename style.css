@@ -628,3 +628,276 @@ a:hover {
   text-shadow: 1px 1px 0 #ffe6a3;
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   SITE ALPHA-4 ORBITAL RECONNAISSANCE & SATELLITE CAMOUFLAGE MODULE
+   ========================================================================== */
+.recon-wrapper {
+  background: #020b12;
+  border: 3px ridge #00ff66;
+  padding: 12px;
+  margin-top: 16px;
+  color: #d8ffe8;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.recon-banner {
+  background: linear-gradient(90deg, #002b18 0%, #004d26 50%, #002b18 100%);
+  color: #ffff00;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 12.5px;
+  padding: 6px 8px;
+  border: 2px solid #00ff66;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+.recon-memo {
+  background: #071923;
+  border: 1px dashed #00ffff;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #ddf6ff;
+}
+
+.recon-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.recon-tab-btn {
+  flex: 1 1 170px;
+  background: #1a262e;
+  color: #a8ffd0;
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-top: 2px solid #66cc99;
+  border-left: 2px solid #66cc99;
+  border-right: 2px solid #07140d;
+  border-bottom: 2px solid #07140d;
+  cursor: pointer;
+  text-align: center;
+}
+
+.recon-tab-btn:hover {
+  background: #004422;
+  color: #ffff00;
+}
+
+.recon-tab-btn.active {
+  background: #00aa44;
+  color: #000000;
+  border-top: 2px solid #ccffdd;
+  border-left: 2px solid #ccffdd;
+  border-right: 2px solid #003311;
+  border-bottom: 2px solid #003311;
+}
+
+.recon-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  background: #00140c;
+  border: 1px solid #008844;
+  padding: 5px 8px;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.recon-tool-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.recon-mini-btn {
+  background: #c0c0c0;
+  color: #000000;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: bold;
+  padding: 2px 7px;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  cursor: pointer;
+}
+
+.recon-mini-btn:hover {
+  background: #ffff99;
+  color: #000080;
+}
+
+.recon-mini-btn.active-opt {
+  background: #000080;
+  color: #00ff66;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.recon-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #000000;
+  border: 3px inset #00cc66;
+  overflow: hidden;
+  box-shadow: inset 0 0 18px rgba(0, 255, 102, 0.25);
+}
+
+.recon-panel {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.recon-panel.active {
+  display: block;
+}
+
+.recon-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.25s ease;
+}
+
+.recon-viewport.optic-night .recon-photo {
+  filter: grayscale(100%) sepia(100%) hue-rotate(82deg) saturate(310%) contrast(1.18) brightness(0.92);
+}
+
+.recon-viewport.optic-thermal .recon-photo {
+  filter: contrast(1.45) saturate(280%) hue-rotate(195deg) invert(12%) brightness(0.96);
+}
+
+.recon-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 102, 0.04) 0px,
+    rgba(0, 255, 102, 0.04) 1px,
+    rgba(0, 0, 0, 0.14) 2px,
+    rgba(0, 0, 0, 0.14) 3px
+  );
+  z-index: 2;
+}
+
+.recon-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.recon-viewport.labels-hidden .recon-svg {
+  opacity: 0;
+}
+
+@keyframes reconPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.recon-pulse {
+  animation: reconPulse 1.4s ease-in-out infinite;
+}
+
+.recon-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #061218;
+}
+
+.recon-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #000000;
+  border: 1px solid #00aa55;
+  padding: 7px 10px;
+  margin-top: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+}
+
+.recon-gmaps-link,
+.recon-gmaps-link:visited {
+  display: inline-block;
+  background: #004488;
+  color: #ffff00 !important;
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-top: 2px solid #88ccff;
+  border-left: 2px solid #88ccff;
+  border-right: 2px solid #001a33;
+  border-bottom: 2px solid #001a33;
+  text-decoration: none;
+}
+
+.recon-gmaps-link:hover {
+  background: #0066cc;
+  color: #ffffff !important;
+}
+
+.recon-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+}
+
+.recon-spec-card {
+  background: #00130a;
+  border: 1px solid #007744;
+  padding: 7px 9px;
+  color: #c6ffe0;
+  line-height: 1.4;
+}
+
+.recon-spec-card b {
+  color: #ffff00;
+}
+
+.sidebar-coords-box {
+  background: #04140a;
+  border: 2px ridge #00ff66;
+  padding: 7px 6px;
+  text-align: center;
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #b8ffd6;
+}
+

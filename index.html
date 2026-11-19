@@ -134,6 +134,20 @@
           <a href="mailto:info@buckfiftylabs.com" onclick="playClickSound();" style="color: #00ffff; font-weight: bold; text-decoration: underline; word-break: break-all;">info@buckfiftylabs.com</a>
         </div>
 
+        <!-- Semi-Secret HQ Coordinates Leak Box -->
+        <div class="sidebar-coords-box">
+          <div style="color: #00ff66; font-weight: bold; margin-bottom: 3px;">
+            &#128752; SITE ALPHA-4 HQ:
+          </div>
+          <div style="margin-bottom: 5px; line-height: 1.45;">
+            <span class="redacted" title="Hover to declassify Site Alpha-4 GPS coordinates" style="display: inline-block; border: 1px dashed #33aa66;">40&deg;40'34.3"N 112&deg;06'43.7"W</span><br>
+            <span style="color: #88ccaa; font-size: 9px;">Oquirrh Foothills, UT (Hover Bar)</span>
+          </div>
+          <a href="#tour" onclick="openSiteRecon('close'); return false;" style="display: block; background: #003318; color: #ffff00 !important; border: 1px outset #00ff66; padding: 3px 4px; text-decoration: none; font-size: 9.5px; font-weight: bold;">
+            &#9658; LEAKED SATELLITE RECON
+          </a>
+        </div>
+
       </td>
 
       <!-- Main Content Area -->
@@ -980,6 +994,350 @@
                     <div class="photo-caption" style="color: #ffddaa;">
                       <b>Figure 7: Surface Cover Operation &ldquo;Checkpoint Alfa&rdquo; (360&deg; CAD Spin).</b> What appears to passing motorists as an innocent desert fuel stop and 24-hour <b>PIZZA DINER</b> is actually Sub-Level 4 Ventilation Shaft #4B and the tactical staging ground for our red hatchback extraction fleet. <a href="assets/povray_diner.jpg" target="_blank" style="color: #ffff00;">[720p Still]</a>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SEMI-CLASSIFIED ORBITAL RECONNAISSANCE & SATELLITE LOCATION MODULE -->
+              <div id="site-alpha4-recon" class="recon-wrapper">
+                <div class="recon-banner">
+                  <span class="blink-fast">&#9888; SEMI-CLASSIFIED LOCATION LEAK &#9888;</span>
+                  SITE ALPHA-4 ORBITAL RECONNAISSANCE &bull; OQUIRRH FOOTHILLS, UTAH &bull; 40&deg;40'34.3"N 112&deg;06'43.7"W
+                </div>
+
+                <div class="recon-memo">
+                  <b style="color: #ffff00;">&#128196; PUBLIC RELATIONS NOTICE &mdash; &ldquo;WAIT, WHERE IS THE GIANT CONCRETE &lsquo;BF&rsquo; MONOLITH?!&rdquo;</b><br>
+                  Following the <b>1997 Salt Lake Valley Zoning Arbitration</b>, 14 FAA low-altitude glare complaints, and 47 unsolicited visits from Utah mountain bikers trying to skateboard down our 480,000-ton concrete rooftop <b>&ldquo;BF&rdquo; Hypercube Monument</b> (Figure 6), Corporate Facilities draped the entire brutalist crown under military-surplus white thermal tarps and re-registered Site Alpha-4 with county tax assessors as an <i>&ldquo;Unremarkable Gravel &amp; Mineral Sorting Shed.&rdquo;</i> Modern commercial spy satellites therefore see two innocent white rectangles. Please ignore the decoy gravel signage, do <b>NOT</b> ask local sheriffs about Padded Suite G, and proceed directly to the Northeast Electrode Intake Gate.
+                </div>
+
+                <!-- 3-Mode View Switcher Tabs -->
+                <div class="recon-tab-bar">
+                  <button type="button" id="reconTabClose" class="recon-tab-btn active" onclick="switchReconView('close')">
+                    [1] CLOSE-RANGE RECON DIAGRAM
+                  </button>
+                  <button type="button" id="reconTabWide" class="recon-tab-btn" onclick="switchReconView('wide')">
+                    [2] OQUIRRH SECTOR WIDE MAP
+                  </button>
+                  <button type="button" id="reconTabLive" class="recon-tab-btn" onclick="switchReconView('live')">
+                    [3] LIVE GOOGLE MAPS SATELLITE
+                  </button>
+                </div>
+
+                <!-- Tactical Controls Toolbar -->
+                <div class="recon-toolbar">
+                  <div class="recon-tool-group" id="reconOpticsControls">
+                    <span style="color: #00ff66; font-weight: bold;">OPTIC:</span>
+                    <button type="button" id="opticDayBtn" class="recon-mini-btn active-opt" onclick="setReconOptic('day')">DAYLIGHT</button>
+                    <button type="button" id="opticNightBtn" class="recon-mini-btn" onclick="setReconOptic('night')">PHOSPHOR</button>
+                    <button type="button" id="opticThermalBtn" class="recon-mini-btn" onclick="setReconOptic('thermal')">THERMAL</button>
+                    <button type="button" id="reconLabelsBtn" class="recon-mini-btn active-opt" onclick="toggleReconLabels()">LABELS: ON</button>
+                  </div>
+                  <div class="recon-tool-group">
+                    <a id="reconRawLink" href="assets/satellite_compound_close.jpg" target="_blank" onclick="playClickSound();" style="color: #00ffff; font-size: 11px; text-decoration: underline;">
+                      [RAW SATELLITE PLATE]
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Main 16:10 Recon Viewport -->
+                <div id="reconViewport" class="recon-viewport">
+
+                  <!-- VIEW 1: CLOSE-RANGE COMPOUND RECON DIAGRAM -->
+                  <div id="recon-panel-close" class="recon-panel active">
+                    <img src="assets/satellite_compound_close.jpg" alt="Declassified close-range satellite reconnaissance of Buck-Fifty Site Alpha-4" class="recon-photo">
+                    <div class="recon-scanlines"></div>
+                    <svg class="recon-svg" viewBox="0 0 960 600" role="img" aria-label="Annotated tactical diagram of Buck-Fifty Innovation Labs compound">
+                      <!-- Subtle tactical grid lines -->
+                      <g stroke="#00ff66" stroke-opacity="0.16" stroke-width="1">
+                        <line x1="240" y1="28" x2="240" y2="600"/>
+                        <line x1="480" y1="28" x2="480" y2="600"/>
+                        <line x1="720" y1="28" x2="720" y2="600"/>
+                        <line x1="0" y1="200" x2="960" y2="200"/>
+                        <line x1="0" y1="400" x2="960" y2="400"/>
+                      </g>
+
+                      <!-- Top HUD Status Bar -->
+                      <rect x="0" y="0" width="960" height="28" fill="#00140a" fill-opacity="0.88"/>
+                      <line x1="0" y1="28" x2="960" y2="28" stroke="#00ff66" stroke-width="1.5"/>
+                      <text x="14" y="18" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ff66">PLATE B50-SAT-96A // 40&deg;40'34.3"N 112&deg;06'43.7"W // ZOOM: COMPOUND</text>
+                      <text x="946" y="18" text-anchor="end" font-family="'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#ffff00">STATUS: TARP-CLOAKED</text>
+
+                      <!-- Dashed perimeter around twin halls -->
+                      <rect x="234" y="228" width="484" height="206" fill="none" stroke="#00ff66" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.75"/>
+
+                      <!-- Pulsing target reticle on West Monolith Hall -->
+                      <g class="recon-pulse" stroke="#ffff00" fill="none" stroke-width="2">
+                        <circle cx="378" cy="322" r="24" stroke-dasharray="5,4"/>
+                        <line x1="346" y1="322" x2="364" y2="322"/>
+                        <line x1="392" y1="322" x2="410" y2="322"/>
+                        <line x1="378" y1="290" x2="378" y2="308"/>
+                        <line x1="378" y1="336" x2="378" y2="354"/>
+                      </g>
+
+                      <!-- Leader Lines (rendered behind boxes) -->
+                      <g fill="none" stroke-width="2.2">
+                        <!-- [A] Monolith Hall -->
+                        <polyline points="210,102 210,136 378,292" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="210,102 210,136 378,292" stroke="#ffff00"/>
+                        <!-- [D] GPU Incinerator -->
+                        <polyline points="502,96 560,178 606,178" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="502,96 560,178 606,178" stroke="#ff5555"/>
+                        <!-- [E] Electrode Intake -->
+                        <polyline points="772,128 772,76" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="772,128 772,76" stroke="#00ffff"/>
+                        <!-- [C] CPU Raytracing Farm -->
+                        <polyline points="708,264 664,316" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="708,264 664,316" stroke="#00ff66"/>
+                        <!-- [G] Vent Shaft #4B -->
+                        <polyline points="718,434 701,508" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="718,434 701,508" stroke="#ff9900"/>
+                        <!-- [F] Aluminum Pipe Bridge -->
+                        <polyline points="484,514 514,415" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="484,514 514,415" stroke="#ff66ff"/>
+                        <!-- [B] Asphalt Stealth Lot -->
+                        <polyline points="190,504 284,344" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="190,504 284,344" stroke="#ffff00"/>
+                      </g>
+
+                      <!-- Target Pin Dots -->
+                      <g stroke="#000000" stroke-width="1.5">
+                        <circle cx="378" cy="292" r="5.5" fill="#ffff00"/>
+                        <circle cx="606" cy="178" r="5.5" fill="#ff5555"/>
+                        <circle cx="772" cy="76" r="5.5" fill="#00ffff"/>
+                        <circle cx="664" cy="316" r="5.5" fill="#00ff66"/>
+                        <circle cx="701" cy="508" r="5.5" fill="#ff9900"/>
+                        <circle cx="514" cy="415" r="5.5" fill="#ff66ff"/>
+                        <circle cx="284" cy="344" r="5.5" fill="#ffff00"/>
+                      </g>
+
+                      <!-- [A] Main Monolith Hall -->
+                      <g>
+                        <rect x="10" y="38" width="296" height="64" fill="#04121c" fill-opacity="0.90" stroke="#ffff00" stroke-width="1.8"/>
+                        <text x="18" y="56" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ffff00">[A] "BF" MONOLITH HALL (TARPED)</text>
+                        <text x="18" y="74" font-family="'Courier New', monospace" font-size="11" fill="#e6fff0">480k-ton concrete head under white tarp;</text>
+                        <text x="18" y="90" font-family="'Courier New', monospace" font-size="11" fill="#99ddff">Lobby Brain Mural &amp; Suite G underground</text>
+                      </g>
+
+                      <!-- [D] GPU Incinerator Shed -->
+                      <g>
+                        <rect x="316" y="38" width="268" height="58" fill="#1c0508" fill-opacity="0.90" stroke="#ff5555" stroke-width="1.8"/>
+                        <text x="324" y="55" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ff6666">[D] GPU INCINERATOR SHED</text>
+                        <text x="324" y="72" font-family="'Courier New', monospace" font-size="11" fill="#ffd6d6">Graphics cards confiscated at gate;</text>
+                        <text x="324" y="87" font-family="'Courier New', monospace" font-size="11" fill="#ffd6d6">Pure CPU rendering strictly enforced</text>
+                      </g>
+
+                      <!-- [E] Electrode Intake & Visitor Parking -->
+                      <g>
+                        <rect x="694" y="128" width="254" height="60" fill="#041522" fill-opacity="0.90" stroke="#00ffff" stroke-width="1.8"/>
+                        <text x="702" y="146" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ffff">[E] ELECTRODE INTAKE LOT</text>
+                        <text x="702" y="163" font-family="'Courier New', monospace" font-size="11" fill="#d8faff">Visitor check-in &amp; $1.50 voucher;</text>
+                        <text x="702" y="179" font-family="'Courier New', monospace" font-size="11" fill="#d8faff">Sign cranial waiver at reception</text>
+                      </g>
+
+                      <!-- [C] Sub-Level 4 CPU Farm -->
+                      <g>
+                        <rect x="708" y="220" width="240" height="64" fill="#031a0d" fill-opacity="0.90" stroke="#00ff66" stroke-width="1.8"/>
+                        <text x="716" y="238" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ff66">[C] SUB-LEVEL 4 CPU FARM</text>
+                        <text x="716" y="256" font-family="'Courier New', monospace" font-size="11" fill="#d2ffe5">64x Beige Pentium &amp; SGI towers;</text>
+                        <text x="716" y="272" font-family="'Courier New', monospace" font-size="11" fill="#d2ffe5">Waste heat warms cafeteria soup</text>
+                      </g>
+
+                      <!-- [G] Vent Shaft #4B Tunnel -->
+                      <g>
+                        <rect x="718" y="382" width="228" height="64" fill="#1d1002" fill-opacity="0.90" stroke="#ff9900" stroke-width="1.8"/>
+                        <text x="726" y="400" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ffaa22">[G] VENT SHAFT #4B PIPE</text>
+                        <text x="726" y="418" font-family="'Courier New', monospace" font-size="11" fill="#ffe4bb">South conduit -&gt; Checkpoint Alfa</text>
+                        <text x="726" y="434" font-family="'Courier New', monospace" font-size="11" fill="#ffe4bb">24-Hr Pizza Diner cover annex</text>
+                      </g>
+
+                      <!-- [F] Pressurized Aluminum Pipe Bridge -->
+                      <g>
+                        <rect x="328" y="514" width="296" height="64" fill="#1b0520" fill-opacity="0.90" stroke="#ff66ff" stroke-width="1.8"/>
+                        <text x="336" y="532" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ff77ff">[F] ALUMINUM PIPE BRIDGE (EDGE)</text>
+                        <text x="336" y="550" font-family="'Courier New', monospace" font-size="11" fill="#ffd8ff">Local 150 Pressurized Manifold Conduit;</text>
+                        <text x="336" y="566" font-family="'Courier New', monospace" font-size="11" fill="#ffd8ff">Subject transfer tube &amp; pizza chute</text>
+                      </g>
+
+                      <!-- [B] Asphalt Stealth Lot -->
+                      <g>
+                        <rect x="14" y="504" width="294" height="68" fill="#191402" fill-opacity="0.90" stroke="#ffff00" stroke-width="1.8"/>
+                        <text x="22" y="522" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ffff00">[B] ASPHALT LOT (INCIDENT #PL-13)</text>
+                        <text x="22" y="540" font-family="'Courier New', monospace" font-size="11" fill="#fff6cc">23-sec stealth sprint to Bella Rosa</text>
+                        <text x="22" y="556" font-family="'Courier New', monospace" font-size="11" fill="#fff6cc">Pizza Hatchback! Avoid patrol cones</text>
+                      </g>
+
+                      <!-- Compass Rose & Scale Bar -->
+                      <g>
+                        <rect x="768" y="542" width="178" height="44" fill="#00140a" fill-opacity="0.88" stroke="#00ff66" stroke-width="1.2"/>
+                        <text x="780" y="560" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#ffff00">N &#8593;</text>
+                        <line x1="816" y1="556" x2="932" y2="556" stroke="#00ff66" stroke-width="2"/>
+                        <line x1="816" y1="551" x2="816" y2="561" stroke="#00ff66" stroke-width="2"/>
+                        <line x1="874" y1="552" x2="874" y2="560" stroke="#00ff66" stroke-width="1.5"/>
+                        <line x1="932" y1="551" x2="932" y2="561" stroke="#00ff66" stroke-width="2"/>
+                        <text x="816" y="576" font-family="'Courier New', monospace" font-size="10.5" fill="#a8ffd0">0</text>
+                        <text x="862" y="576" font-family="'Courier New', monospace" font-size="10.5" fill="#a8ffd0">50m</text>
+                        <text x="910" y="576" font-family="'Courier New', monospace" font-size="10.5" fill="#a8ffd0">100m</text>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <!-- VIEW 2: WIDE-AREA OQUIRRH SECTOR RECON DIAGRAM -->
+                  <div id="recon-panel-wide" class="recon-panel">
+                    <img src="assets/satellite_compound_wide.jpg" alt="Declassified wide-area satellite reconnaissance of Oquirrh foothills sector" class="recon-photo">
+                    <div class="recon-scanlines"></div>
+                    <svg class="recon-svg" viewBox="0 0 960 600" role="img" aria-label="Annotated regional tactical diagram of Oquirrh Foothills sector">
+                      <!-- Subtle tactical grid lines -->
+                      <g stroke="#00ffff" stroke-opacity="0.14" stroke-width="1">
+                        <line x1="240" y1="28" x2="240" y2="600"/>
+                        <line x1="480" y1="28" x2="480" y2="600"/>
+                        <line x1="720" y1="28" x2="720" y2="600"/>
+                        <line x1="0" y1="200" x2="960" y2="200"/>
+                        <line x1="0" y1="400" x2="960" y2="400"/>
+                      </g>
+
+                      <!-- Top HUD Status Bar -->
+                      <rect x="0" y="0" width="960" height="28" fill="#001418" fill-opacity="0.88"/>
+                      <line x1="0" y1="28" x2="960" y2="28" stroke="#00ffff" stroke-width="1.5"/>
+                      <text x="14" y="18" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ffff">PLATE B50-SAT-96B // OQUIRRH SECTOR (WEST OF SALT LAKE CITY, UT)</text>
+                      <text x="946" y="18" text-anchor="end" font-family="'Courier New', monospace" font-size="12.5" font-weight="bold" fill="#ffff00">ELEV: 5,320 FT</text>
+
+                      <!-- Radar range ring & lock box around Main Compound -->
+                      <circle cx="480" cy="258" r="108" fill="none" stroke="#ff9900" stroke-width="1.4" stroke-dasharray="7,5" stroke-opacity="0.8"/>
+                      <rect class="recon-pulse" x="422" y="218" width="116" height="82" fill="none" stroke="#ffff00" stroke-width="2.2"/>
+
+                      <!-- Leader Lines -->
+                      <g fill="none" stroke-width="2.2">
+                        <!-- [1] Main Compound -->
+                        <polyline points="260,108 434,248" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="260,108 434,248" stroke="#ffff00"/>
+                        <!-- [2] Checkpoint Alfa Annex -->
+                        <polyline points="328,358 476,362" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="328,358 476,362" stroke="#ff9900"/>
+                        <!-- [4] Oquirrh RF Shield -->
+                        <polyline points="210,496 248,434" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="210,496 248,434" stroke="#00ffff"/>
+                        <!-- [3] 480kV Substation -->
+                        <polyline points="740,182 740,114" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="740,182 740,114" stroke="#ff5555"/>
+                        <!-- [5] Extraction Switchbacks -->
+                        <polyline points="618,518 585,526" stroke="#000000" stroke-width="4.2" stroke-opacity="0.7"/>
+                        <polyline points="618,518 585,526" stroke="#ff66ff"/>
+                      </g>
+
+                      <!-- Target Pin Dots -->
+                      <g stroke="#000000" stroke-width="1.5">
+                        <circle cx="434" cy="248" r="5.5" fill="#ffff00"/>
+                        <circle cx="476" cy="362" r="5.5" fill="#ff9900"/>
+                        <circle cx="248" cy="434" r="5.5" fill="#00ffff"/>
+                        <circle cx="740" cy="114" r="5.5" fill="#ff5555"/>
+                        <circle cx="585" cy="526" r="5.5" fill="#ff66ff"/>
+                      </g>
+
+                      <!-- [1] Primary Compound -->
+                      <g>
+                        <rect x="14" y="42" width="326" height="66" fill="#04121c" fill-opacity="0.90" stroke="#ffff00" stroke-width="1.8"/>
+                        <text x="22" y="60" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ffff00">[1] SITE ALPHA-4 MAIN COMPOUND</text>
+                        <text x="22" y="78" font-family="'Courier New', monospace" font-size="11" fill="#e6fff0">Twin thermal-tarped halls (Elev. 5,320 ft)</text>
+                        <text x="22" y="94" font-family="'Courier New', monospace" font-size="11" fill="#99ddff">Tax cover: "Unremarkable Gravel Shed"</text>
+                      </g>
+
+                      <!-- [2] Cover Op Checkpoint Alfa -->
+                      <g>
+                        <rect x="14" y="324" width="320" height="66" fill="#1d1002" fill-opacity="0.90" stroke="#ff9900" stroke-width="1.8"/>
+                        <text x="22" y="342" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ffaa22">[2] COVER OP "CHECKPOINT ALFA"</text>
+                        <text x="22" y="360" font-family="'Courier New', monospace" font-size="11" fill="#ffe4bb">South Annex linked via Vent Shaft #4B;</text>
+                        <text x="22" y="376" font-family="'Courier New', monospace" font-size="11" fill="#ffe4bb">Pizza Diner cover &amp; hatchback staging</text>
+                      </g>
+
+                      <!-- [4] Oquirrh Foothills Buffer -->
+                      <g>
+                        <rect x="14" y="496" width="320" height="66" fill="#041522" fill-opacity="0.90" stroke="#00ffff" stroke-width="1.8"/>
+                        <text x="22" y="514" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ffff">[4] OQUIRRH MOUNTAIN RF SHIELD</text>
+                        <text x="22" y="532" font-family="'Courier New', monospace" font-size="11" fill="#d8faff">Natural 5,320 ft granite signal barrier;</text>
+                        <text x="22" y="548" font-family="'Courier New', monospace" font-size="11" fill="#d8faff">Deters FCC vans &amp; lost Utah hikers</text>
+                      </g>
+
+                      <!-- [3] 480kV Substation -->
+                      <g>
+                        <rect x="614" y="182" width="332" height="66" fill="#1c0508" fill-opacity="0.90" stroke="#ff5555" stroke-width="1.8"/>
+                        <text x="622" y="200" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ff6666">[3] 480kV CPU-FARM SUBSTATION</text>
+                        <text x="622" y="218" font-family="'Courier New', monospace" font-size="11" fill="#ffd6d6">Dedicated power feed to 64x CPU towers;</text>
+                        <text x="622" y="234" font-family="'Courier New', monospace" font-size="11" fill="#ffd6d6">Dims Salt Lake Valley during POV-Ray spin</text>
+                      </g>
+
+                      <!-- [5] Extraction Switchbacks -->
+                      <g>
+                        <rect x="618" y="482" width="328" height="66" fill="#1b0520" fill-opacity="0.90" stroke="#ff66ff" stroke-width="1.8"/>
+                        <text x="626" y="500" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ff77ff">[5] PIZZA HATCHBACK SWITCHBACKS</text>
+                        <text x="626" y="518" font-family="'Courier New', monospace" font-size="11" fill="#ffd8ff">Downhill extraction grade to highway;</text>
+                        <text x="626" y="534" font-family="'Courier New', monospace" font-size="11" fill="#ffd8ff">Yield to red couriers exceeding 75 MPH</text>
+                      </g>
+
+                      <!-- Compass Rose & Scale Bar -->
+                      <g>
+                        <rect x="756" y="388" width="188" height="44" fill="#001418" fill-opacity="0.88" stroke="#00ffff" stroke-width="1.2"/>
+                        <text x="768" y="406" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#ffff00">N &#8593;</text>
+                        <line x1="806" y1="402" x2="930" y2="402" stroke="#00ffff" stroke-width="2"/>
+                        <line x1="806" y1="397" x2="806" y2="407" stroke="#00ffff" stroke-width="2"/>
+                        <line x1="868" y1="398" x2="868" y2="406" stroke="#00ffff" stroke-width="1.5"/>
+                        <line x1="930" y1="397" x2="930" y2="407" stroke="#00ffff" stroke-width="2"/>
+                        <text x="806" y="422" font-family="'Courier New', monospace" font-size="10.5" fill="#ccf6ff">0</text>
+                        <text x="852" y="422" font-family="'Courier New', monospace" font-size="10.5" fill="#ccf6ff">250m</text>
+                        <text x="908" y="422" font-family="'Courier New', monospace" font-size="10.5" fill="#ccf6ff">500m</text>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <!-- VIEW 3: LIVE EMBEDDED GOOGLE MAPS SATELLITE UPLINK -->
+                  <div id="recon-panel-live" class="recon-panel">
+                    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #041218; color: #00ff66; font-family: 'Courier New', monospace; font-size: 12px; text-align: center; padding: 16px; z-index: 0;">
+                      <div class="blink-fast" style="color: #ffff00; font-weight: bold; margin-bottom: 6px;">&#128752; ESTABLISHING COMMERCIAL SATELLITE UPLINK...</div>
+                      <div style="color: #a8ffd0; max-width: 440px;">Loading interactive Google Maps satellite feed for <b>40&deg;40'34.3"N 112&deg;06'43.7"W</b>.<br>If offline or blocked by firewall, use Tabs [1]/[2] or open directly via the button below.</div>
+                    </div>
+                    <iframe
+                      id="reconGoogleMapFrame"
+                      class="recon-map-iframe"
+                      style="position: relative; z-index: 1; background: transparent;"
+                      data-src="https://maps.google.com/maps?q=40.676194,-112.112139&amp;t=k&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                      title="Buck-Fifty Innovation Labs Site Alpha-4 Live Satellite Map (40°40'34.3&quot;N 112°06'43.7&quot;W)"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      allowfullscreen>
+                    </iframe>
+                    <div style="position: absolute; top: 6px; left: 50%; transform: translateX(-50%); background: rgba(0, 20, 10, 0.90); border: 1px solid #00ff66; color: #00ff66; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; padding: 3px 10px; pointer-events: none; white-space: nowrap; z-index: 2;">
+                      &#9679; LIVE ORBITAL UPLINK // 40&deg;40'34.3"N 112&deg;06'43.7"W
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Coordinates Copy & Direct Google Maps Action Bar -->
+                <div class="recon-actions-bar">
+                  <div style="color: #00ff66;">
+                    <b>COORDINATES:</b>
+                    <span style="color: #ffff00;">40&deg;40'34.3"N 112&deg;06'43.7"W</span>
+                    <span style="color: #88ccaa;">(40.676194, -112.112139)</span>
+                    <button type="button" id="copyCoordsBtn" class="recon-mini-btn" style="margin-left: 6px;" onclick="copySiteCoords()">[COPY GPS]</button>
+                  </div>
+                  <a href="https://maps.app.goo.gl/i6zbMbbzxcAV9QaEA" target="_blank" rel="noopener noreferrer" class="recon-gmaps-link" onclick="playModemSound();">
+                    &#127758; OPEN EXACT SITE IN GOOGLE MAPS &nearr;
+                  </a>
+                </div>
+
+                <!-- Site Telemetry & Driving Instructions Grid -->
+                <div class="recon-spec-grid">
+                  <div class="recon-spec-card">
+                    <b>&#128225; SITE ALPHA-4 DOSSIER:</b><br>
+                    &bull; <b>Region:</b> Oquirrh Foothills, West of Salt Lake City, UT<br>
+                    &bull; <b>Elevation:</b> 5,320 ft (1,622 m) above sea level<br>
+                    &bull; <b>Zoning Disguise:</b> &ldquo;Unremarkable Gravel Sorting Shed&rdquo;<br>
+                    &bull; <b>Substation Feed:</b> Dedicated 480kV grid tap (NE ridge)
+                  </div>
+                  <div class="recon-spec-card">
+                    <b>&#128663; VOLUNTEER ARRIVAL PROTOCOL:</b><br>
+                    &bull; Follow the unmarked gravel switchbacks up from the valley.<br>
+                    &bull; Yield to speeding red <b>Pizza Bella Rosa</b> hatchbacks.<br>
+                    &bull; Park at Northeast Gate <b>[E]</b> &amp; surrender all 3D GPUs at <b>[D]</b>.<br>
+                    &bull; Mention <i>&ldquo;Subject 13&rdquo;</i> for a $1.50 voucher + warm sedative.
                   </div>
                 </div>
               </div>
@@ -2382,7 +2740,7 @@ B50-ROOT> </div>
               </div>
 
               <div style="color: #aaffaa; font-size: 12px; margin-top: 8px; font-family: 'Courier New', monospace; line-height: 1.5;">
-                <b>KNOWN SHORTCUT COMMANDS:</b> <a href="javascript:void(0)" onclick="quickCommand('help')">help</a> | <a href="javascript:void(0)" onclick="quickCommand('protocols')">protocols</a> | <a href="javascript:void(0)" onclick="quickCommand('isolate')">isolate</a> | <a href="javascript:void(0)" onclick="quickCommand('rise')">rise</a> | <a href="javascript:void(0)" onclick="quickCommand('edge')">edge</a> | <a href="javascript:void(0)" onclick="quickCommand('blueprint')">blueprint</a> | <a href="javascript:void(0)" onclick="quickCommand('stealth')">stealth</a> | <a href="javascript:void(0)" onclick="quickCommand('daemon')">daemon</a> | <a href="javascript:void(0)" onclick="quickCommand('vance')">vance</a> | <a href="javascript:void(0)" onclick="quickCommand('founder')">founder</a> | <a href="javascript:void(0)" onclick="quickCommand('dossiers')">dossiers</a> | <a href="javascript:void(0)" onclick="quickCommand('subject13')">subject13</a> | <a href="javascript:void(0)" onclick="quickCommand('url')">url</a> | <a href="javascript:void(0)" onclick="quickCommand('guts')">guts</a> | <a href="javascript:void(0)" onclick="quickCommand('cheat')">cheat</a> | <a href="javascript:void(0)" onclick="quickCommand('clear')">clear</a>
+                <b>KNOWN SHORTCUT COMMANDS:</b> <a href="javascript:void(0)" onclick="quickCommand('help')">help</a> | <a href="javascript:void(0)" onclick="quickCommand('protocols')">protocols</a> | <a href="javascript:void(0)" onclick="quickCommand('isolate')">isolate</a> | <a href="javascript:void(0)" onclick="quickCommand('rise')">rise</a> | <a href="javascript:void(0)" onclick="quickCommand('edge')">edge</a> | <a href="javascript:void(0)" onclick="quickCommand('blueprint')">blueprint</a> | <a href="javascript:void(0)" onclick="quickCommand('stealth')">stealth</a> | <a href="javascript:void(0)" onclick="quickCommand('coords')">coords</a> | <a href="javascript:void(0)" onclick="quickCommand('map')">map</a> | <a href="javascript:void(0)" onclick="quickCommand('daemon')">daemon</a> | <a href="javascript:void(0)" onclick="quickCommand('vance')">vance</a> | <a href="javascript:void(0)" onclick="quickCommand('founder')">founder</a> | <a href="javascript:void(0)" onclick="quickCommand('dossiers')">dossiers</a> | <a href="javascript:void(0)" onclick="quickCommand('subject13')">subject13</a> | <a href="javascript:void(0)" onclick="quickCommand('url')">url</a> | <a href="javascript:void(0)" onclick="quickCommand('guts')">guts</a> | <a href="javascript:void(0)" onclick="quickCommand('cheat')">cheat</a> | <a href="javascript:void(0)" onclick="quickCommand('clear')">clear</a>
               </div>
 
               <!--
@@ -2486,7 +2844,7 @@ B50-ROOT> </div>
 
         <div style="margin: 8px 0; color: #cccccc; font-size: 11px;">
           &copy; 1993 - 1996 BUCK FIFTY INNOVATION LABS, INC. ALL RIGHTS RESERVED.<br>
-          OFFICIAL LABS PORTAL: <a href="http://www.buckfiftylabs.com/" style="color: #ffff00; text-decoration: underline;">HTTP://WWW.BUCKFIFTYLABS.COM/</a> &bull; ARTSY_2000 ON STEAM: <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" style="color: #66c0f4; text-decoration: underline;">HTTPS://STORE.STEAMPOWERED.COM</a> &bull; PHASE-III MERCH DISPENSARY: <a href="https://buckfiftyverse.myspreadshop.com" target="_blank" rel="noopener noreferrer" style="color: #00ff66; text-decoration: underline;">HTTPS://BUCKFIFTYVERSE.MYSPREADSHOP.COM</a> &bull; ELECTRONIC MAIL: <a href="mailto:info@buckfiftylabs.com" style="color: #00ffff; text-decoration: underline;">INFO@BUCKFIFTYLABS.COM</a> &bull; HOSTED ON SGI WEBFORCE IRIX<br>
+          OFFICIAL LABS PORTAL: <a href="http://www.buckfiftylabs.com/" style="color: #ffff00; text-decoration: underline;">HTTP://WWW.BUCKFIFTYLABS.COM/</a> &bull; ARTSY_2000 ON STEAM: <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" style="color: #66c0f4; text-decoration: underline;">HTTPS://STORE.STEAMPOWERED.COM</a> &bull; PHASE-III MERCH DISPENSARY: <a href="https://buckfiftyverse.myspreadshop.com" target="_blank" rel="noopener noreferrer" style="color: #00ff66; text-decoration: underline;">HTTPS://BUCKFIFTYVERSE.MYSPREADSHOP.COM</a> &bull; ELECTRONIC MAIL: <a href="mailto:info@buckfiftylabs.com" style="color: #00ffff; text-decoration: underline;">INFO@BUCKFIFTYLABS.COM</a> &bull; HOSTED ON SGI WEBFORCE IRIX &bull; SITE ALPHA-4: <span class="redacted" title="Click to open Site Alpha-4 orbital reconnaissance" onclick="openSiteRecon('close')" style="cursor: pointer;">40&deg;40'34.3"N 112&deg;06'43.7"W</span><br>
           ALL TEST SUBJECTS, MEAT SACKS, AND VESTIBULAR RECEPTORS ARE THE EXCLUSIVE PROPERTY OF BUCK FIFTY SYSTEMS.<br>
           DISCLAIMER: UNLAWFUL TERMINATION OF THE IMMERSION HELMET CONSTITUTES A BREACH OF SECTION 4B OF THE PARTICIPANT COMPACT.
         </div>
@@ -2538,8 +2896,114 @@ B50-ROOT> </div>
       const resultDiv = document.getElementById('volunteerResult');
       const resultText = document.getElementById('volunteerResultText');
 
-      resultText.innerHTML = `Participant <u>${name}</u> officially recorded as <b>${subId}</b>.<br>Cranial allocation slot confirmed. Choice of <i>${pizza}</i> personal pan pizza added to dispatch payload.<br>Surgical automaton is en route to your current geographic coordinates.`;
+      resultText.innerHTML = `Participant <u>${name}</u> officially recorded as <b>${subId}</b>.<br>Cranial allocation slot confirmed. Choice of <i>${pizza}</i> personal pan pizza added to dispatch payload.<br>Surgical automaton is en route to your current geographic coordinates &mdash; or self-report directly to Site Alpha-4 (<span class="redacted" title="Hover to reveal coordinates">40&deg;40'34.3"N 112&deg;06'43.7"W</span>; ignore the &ldquo;Gravel Sorting Shed&rdquo; sign).<br><a href="#tour" onclick="openSiteRecon('close'); return false;" style="color: #000080; text-decoration: underline;">[ Inspect Leaked Satellite Recon &amp; Directions ]</a>`;
       resultDiv.style.display = 'block';
+    }
+
+    // Site Alpha-4 Orbital Reconnaissance Controller
+    function openSiteRecon(viewMode) {
+      switchTab('tour');
+      if (viewMode) {
+        switchReconView(viewMode, true);
+      }
+      playModemSound();
+      setTimeout(() => {
+        const el = document.getElementById('site-alpha4-recon');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 60);
+    }
+
+    function switchReconView(viewMode, silent) {
+      if (!silent) {
+        playClickSound();
+        if (typeof playSynthNote === 'function') {
+          playSynthNote(viewMode === 'live' ? 740 : (viewMode === 'wide' ? 620 : 540), 0.06, 'square', 0.3);
+        }
+      }
+
+      const views = ['close', 'wide', 'live'];
+      const tabIds = { close: 'reconTabClose', wide: 'reconTabWide', live: 'reconTabLive' };
+
+      views.forEach(v => {
+        const panel = document.getElementById('recon-panel-' + v);
+        const btn = document.getElementById(tabIds[v]);
+        if (panel) panel.classList.toggle('active', v === viewMode);
+        if (btn) btn.classList.toggle('active', v === viewMode);
+      });
+
+      const opticsCtrl = document.getElementById('reconOpticsControls');
+      if (opticsCtrl) {
+        opticsCtrl.style.opacity = viewMode === 'live' ? '0.45' : '1';
+        opticsCtrl.style.pointerEvents = viewMode === 'live' ? 'none' : 'auto';
+      }
+
+      const rawLink = document.getElementById('reconRawLink');
+      if (rawLink) {
+        if (viewMode === 'wide') {
+          rawLink.href = 'assets/satellite_compound_wide.jpg';
+          rawLink.textContent = '[RAW SECTOR PLATE]';
+        } else if (viewMode === 'live') {
+          rawLink.href = 'https://maps.app.goo.gl/i6zbMbbzxcAV9QaEA';
+          rawLink.textContent = '[EXTERNAL GOOGLE MAPS]';
+        } else {
+          rawLink.href = 'assets/satellite_compound_close.jpg';
+          rawLink.textContent = '[RAW COMPOUND PLATE]';
+        }
+      }
+
+      if (viewMode === 'live') {
+        const iframe = document.getElementById('reconGoogleMapFrame');
+        if (iframe && !iframe.getAttribute('src')) {
+          iframe.setAttribute('src', iframe.getAttribute('data-src'));
+        }
+      }
+    }
+
+    function setReconOptic(mode) {
+      playClickSound();
+      const vp = document.getElementById('reconViewport');
+      if (!vp) return;
+      vp.classList.remove('optic-night', 'optic-thermal');
+      if (mode === 'night') vp.classList.add('optic-night');
+      if (mode === 'thermal') vp.classList.add('optic-thermal');
+
+      const map = { day: 'opticDayBtn', night: 'opticNightBtn', thermal: 'opticThermalBtn' };
+      Object.keys(map).forEach(k => {
+        const b = document.getElementById(map[k]);
+        if (b) b.classList.toggle('active-opt', k === mode);
+      });
+    }
+
+    function toggleReconLabels() {
+      playClickSound();
+      const vp = document.getElementById('reconViewport');
+      const btn = document.getElementById('reconLabelsBtn');
+      if (!vp || !btn) return;
+      const hidden = vp.classList.toggle('labels-hidden');
+      btn.textContent = hidden ? 'LABELS: OFF' : 'LABELS: ON';
+      btn.classList.toggle('active-opt', !hidden);
+    }
+
+    function copySiteCoords() {
+      playClickSound();
+      const coords = '40°40\'34.3"N 112°06\'43.7"W';
+      const btn = document.getElementById('copyCoordsBtn');
+      const done = () => {
+        if (btn) {
+          const prev = btn.textContent;
+          btn.textContent = '[COPIED!]';
+          setTimeout(() => { btn.textContent = prev; }, 1600);
+        }
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(coords).then(done).catch(() => {
+          window.prompt('Copy Site Alpha-4 Coordinates:', coords);
+        });
+      } else {
+        window.prompt('Copy Site Alpha-4 Coordinates:', coords);
+      }
     }
 
     // Interactive Terminal
@@ -2552,6 +3016,8 @@ B50-ROOT> </div>
   EDGE       - Interrogate Edge Mode (3D Pipe Network)
   BLUEPRINT  - Query Blueprint Mode & Pen-Catching mechanics
   STEALTH    - Access Incident Report #PL-13 (Parking Lot Escape)
+  COORDS     - Leak semi-classified Site Alpha-4 GPS coordinates
+  MAP        - Open Site Alpha-4 Orbital Satellite Reconnaissance
   URL        - Display official Buck Fifty website network address
   DAEMON     - Interrogate Daemon 0x0666 status
   FOUNDER    - Access Founder dossier
@@ -2722,7 +3188,37 @@ B50-ROOT> </div>
   OUTPUT PATH: .../Povray/Scene_NN/
   FRAME COUNT: 90 FRAMES @ 30 FPS (3.0 SECONDS)
   HEADLESS REGISTRY OVERRIDE: ACTIVE (FreshInstall=0, UseEditors=0)
-  TAB ACTIVATED: Switching to POV-Ray Studio tab...`
+  TAB ACTIVATED: Switching to POV-Ray Studio tab...`,
+
+      coords: `[SEMI-CLASSIFIED SITE ALPHA-4 COORDINATES LEAK]
+  FACILITY    : Buck-Fifty Innovation Labs (Main Concrete-Head Compound)
+  REGION      : Oquirrh Foothills, West of Salt Lake City, Utah
+  GPS (DMS)   : 40°40'34.3"N 112°06'43.7"W
+  GPS (DEC)   : 40.676194, -112.112139 (Elev. 5,320 ft)
+  TAX COVER   : "Unremarkable Gravel & Mineral Sorting Shed" (White Thermal Tarps)
+  GOOGLE MAPS : https://maps.app.goo.gl/i6zbMbbzxcAV9QaEA
+  TIP         : Type 'MAP' to open Orbital Reconnaissance Plates!`,
+
+      location: `[SEMI-CLASSIFIED SITE ALPHA-4 COORDINATES LEAK]
+  FACILITY    : Buck-Fifty Innovation Labs (Main Concrete-Head Compound)
+  GPS (DMS)   : 40°40'34.3"N 112°06'43.7"W (40.676194, -112.112139)
+  TAX COVER   : "Unremarkable Gravel & Mineral Sorting Shed" (White Thermal Tarps)
+  GOOGLE MAPS : https://maps.app.goo.gl/i6zbMbbzxcAV9QaEA`,
+
+      site: `[SEMI-CLASSIFIED SITE ALPHA-4 COORDINATES LEAK]
+  FACILITY    : Buck-Fifty Innovation Labs (Main Concrete-Head Compound)
+  GPS (DMS)   : 40°40'34.3"N 112°06'43.7"W (40.676194, -112.112139)
+  TAX COVER   : "Unremarkable Gravel & Mineral Sorting Shed" (White Thermal Tarps)
+  GOOGLE MAPS : https://maps.app.goo.gl/i6zbMbbzxcAV9QaEA`,
+
+      map: `[ORBITAL RECONNAISSANCE UPLINK ESTABLISHED]
+  TARGET LOCK : 40°40'34.3"N 112°06'43.7"W (Oquirrh Foothills, UT)
+  PLATES      : B50-SAT-96A (Compound) & B50-SAT-96B (Sector) + Live Satellite
+  -> Launching Site Alpha-4 Orbital Reconnaissance viewer...`,
+
+      recon: `[ORBITAL RECONNAISSANCE UPLINK ESTABLISHED]
+  TARGET LOCK : 40°40'34.3"N 112°06'43.7"W (Oquirrh Foothills, UT)
+  -> Launching Site Alpha-4 Orbital Reconnaissance viewer...`
     };
 
     function appendTerm(text) {
@@ -2776,6 +3272,9 @@ B50-ROOT> </div>
       }
       if (cmd === 'dossiers') {
         switchTab('dossiers');
+      }
+      if (cmd === 'map' || cmd === 'recon') {
+        openSiteRecon('close');
       }
 
       if (termResponses[cmd]) {
@@ -2910,10 +3409,16 @@ plane { y, 0.0 pigment { checker color rgb <0.14,0.02,0.24> color rgb <0.04,0.01
       appendSim("\n[WARNING] RENDER MANUALLY ABORTED BY USER!\nSurgical automaton has noted your impatience and dispatched an electrode technician.");
     }
 
-    // Handle hash on load
-    window.addEventListener('load', () => {
+    // Handle hash on load (DOMContentLoaded fires immediately without waiting for external YouTube iframes)
+    window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash.replace('#', '');
-      if (hash) {
+      if (hash === 'recon' || hash === 'site-alpha4-recon' || hash === 'recon-close') {
+        openSiteRecon('close');
+      } else if (hash === 'recon-wide') {
+        openSiteRecon('wide');
+      } else if (hash === 'recon-live') {
+        openSiteRecon('live');
+      } else if (hash) {
         switchTab(hash);
       }
     });
