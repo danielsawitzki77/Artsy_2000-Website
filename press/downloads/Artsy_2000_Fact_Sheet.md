@@ -40,8 +40,7 @@ A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure 
 - **From Utah to Pixar (3D Graphics Heritage):** https://youtu.be/dSGkUbqt4p0
 - **Steam Store:** https://store.steampowered.com/app/5641470/
 - **1996 Corporate Site & Companion PDFs:** https://buckfiftylabs.com/
-- **Printed Graphic Novel (Amazon):** https://a.co/d/02dWBpcT
-- **Printed Skullthor #13 Graphic Novel (Amazon):** https://a.co/d/06pamVpa
+- **Official Print Book Series (Amazon):** https://www.amazon.com/dp/B0HSFRJ2HQ?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk
 - **Merchandise Shop:** https://buckfiftyverse.myspreadshop.com/
 - **Press & Review Keys:** info@buckfiftylabs.com
 
