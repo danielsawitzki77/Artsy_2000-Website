@@ -359,6 +359,7 @@ COMPANION MEDIA & LINKS
 * Press Kit:               https://buckfiftylabs.com/press/
 * Official Trailer:        https://youtu.be/hl4ftXtNqVU
 * Graphic Novel (Amazon):  https://a.co/d/02dWBpcT
+* Skullthor #13 (Amazon):  https://a.co/d/06pamVpa
 * Official Merch Shop:     https://buckfiftyverse.myspreadshop.com/
 * Soundtrack (Holon):      https://holon-subatomic-audio.bandcamp.com/
 * Press & Review Keys:     info@buckfiftylabs.com
@@ -410,6 +411,7 @@ A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure 
 - **Steam Store:** https://store.steampowered.com/app/5641470/
 - **1996 Corporate Site & Companion PDFs:** https://buckfiftylabs.com/
 - **Printed Graphic Novel (Amazon):** https://a.co/d/02dWBpcT
+- **Printed Skullthor #13 Graphic Novel (Amazon):** https://a.co/d/06pamVpa
 - **Merchandise Shop:** https://buckfiftyverse.myspreadshop.com/
 - **Press & Review Keys:** info@buckfiftylabs.com
 
