@@ -1,0 +1,130 @@
+================================================================================
+ARTSY_2000 — OFFICIAL PRESS FACT SHEET
+================================================================================
+
+GAME TITLE:        Artsy_2000
+DEVELOPER:         Buck-Fifty Innovation Labs / Daniel Sawitzki
+PUBLISHER:         Buck-Fifty Innovation Labs (Buck-Fifty Studios)
+LOCATION:          Salt Lake City, Utah, USA
+RELEASE DATE:      January 2027
+PRICE:             $1.50 USD
+PLATFORM:          Windows 10 / 11 (64-bit) — Steam
+STEAM STORE:       https://store.steampowered.com/app/5641470/
+GENRE:             Multi-Genre Retro Arcade / 1990s Sci-Fi Satire /
+                   Software-Raytraced Anthology
+PLAYERS:           Single-Player + Local 2-Player PvP ("Them Apples")
+INPUT SUPPORT:     Full Keyboard, Mouse & Gamepad Support
+ACHIEVEMENTS:      153 Steam Achievements + Steam Cloud Saves
+ENGINE / RENDER:   Custom C++17 & Win32/GDI Multi-Threaded CPU Software Renderer
+                   & Raytracer (Zero GPU / Zero DirectX, OpenGL, or Vulkan)
+SOUNDTRACK:        6 Original Synthwave Tracks by Holon
+                   (https://holon-subatomic-audio.bandcamp.com/)
+WEBSITE:           https://buckfiftylabs.com/
+PRESS KIT:         https://buckfiftylabs.com/press/
+PRESS CONTACT:     info@buckfiftylabs.com
+OFFICIAL TRAILER:  https://youtu.be/hl4ftXtNqVU
+
+--------------------------------------------------------------------------------
+ONE-LINE PITCH
+--------------------------------------------------------------------------------
+A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure
+C++17 CPU software rendering (zero GPU required), spanning 11 playable genres,
+5 CRT staff interrogations, 74 live-action/archival FMV clips, and an actual
+built-in POV-Ray 3.7 3D turntable studio.
+
+--------------------------------------------------------------------------------
+SHORT DESCRIPTION
+--------------------------------------------------------------------------------
+Artsy_2000 casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4
+— a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per
+diem and one personal pan pizza voucher. Built from scratch in pure C++17 and
+Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11
+interconnected retro genres: CPU-raytraced 3D pursuits, Mode-7 highways, emerald
+phosphor mazes, 90s point-and-click brain surgery, 3D pipe hypercubes, satellite
+triangulation over real Utah USGS imagery, top-down stealth, and high-pressure
+CRT interrogations — culminating in a secret 3D raytracer sculptor that exports
+real POV-Ray 3.7 360-degree turntable animations.
+
+--------------------------------------------------------------------------------
+KEY FEATURES
+--------------------------------------------------------------------------------
+* 11 Interconnected Campaign Genres + 5 CRT Interrogations:
+  1. Chase Mode ("Spike the Ball") — CPU-raytraced 3D pursuit & boss fight
+  2. Them Apples (Revenge + Local 2P PvP) — Dual-snake CRT duel vs Daemon 0x0666
+  3. Iso-Lation Ward — 14x14 stepped raytraced isometric sentinel containment
+  4. Brain Surgery ("Just Let Go") — 90s 8-verb point-and-click theater escape
+  5. The Rise ("Fancy a Lift?") — Real-time CPU raytracer & rigid-body physics
+  6. The Labyrinth ("Straight Forward") — Emerald wireframe maze & live ECG HUD
+  7. Edge Computing — High-speed 3D aluminum pipe hypercube key hunt
+  8. Grid-Locked & Pepperoni-Shocked (GPS) — Real Utah USGS aerial triangulation
+  9. Blueprint Mode — Split-screen CAD schematic maze & 3D lobby tour
+  10. Parking Lot Stealth ("Parxing Jordan") — 23s stealth + Dark Ages shift
+  11. Pizza Delivery Race ("Healthful Delivery") — 16-bit 5-lane desert racer
+  + 5 timed CRT dialogue interrogations with facility staff.
+
+* 100% Pure CPU Software Rendering (Zero GPU Required):
+  Every 3D raytraced reflection, Mode-7 ground plane, CRT curvature shader, and
+  scanline filter runs natively on multi-threaded CPU silicon via Win32/GDI —
+  no DirectX, OpenGL, or Vulkan required.
+
+* Secret "Ascend" Mode & Real POV-Ray 3.7 Turntable Export:
+  Survivors unlock a free-flight 3D raytracer sculptor featuring Eric Haines'
+  Standard Procedural Database (SPD) generator and one-click export to genuine
+  POV-Ray 3.7 SDL scripts + automated 90-frame 360-degree MP4/GIF rendering.
+
+* 74 Archival FMV Clips & 50 In-World TV Breaks:
+  Full-motion video broadcasts starring Clinical Director Dr. Brad Vance,
+  satirical 1990s commercials (Slab-O-Bull, Fissi-Efficient, Omni-Smile, Model
+  B-50), and hidden VHS glitch folders.
+
+* Deep Replayability & 153 Steam Achievements:
+  Includes Relive Trauma mode select, Local 2-Player PvP, Perma-Death, 15-minute
+  Speed Run, and 4 full-campaign visual distortion difficulties (Dog Video Wave,
+  Green CRT, Rotating Cube, Hexagonal Tiles).
+
+* Priced Literally at a Buck-Fifty ($1.50):
+  Matching the in-game per diem promised to test volunteers.
+
+* Original Soundtrack by Holon:
+  6 original synthwave compositions ("Everything Has Its Cost", "From These
+  Ruins", "Point Of Origin", "Coherence Drift", "Initial State", and "Afterlight")
+  streaming seamlessly via XAudio2 with automatic FMV audio ducking.
+
+--------------------------------------------------------------------------------
+SYSTEM REQUIREMENTS (WINDOWS)
+--------------------------------------------------------------------------------
+* OS:         Windows 10 or Windows 11 (64-bit)
+* Processor:  64-bit multi-core CPU with AVX2 support
+              (Intel 4th Gen Core / AMD Ryzen or newer)
+* Graphics:   No dedicated 3D GPU required (pure multi-threaded CPU software
+              renderer; standard desktop display output only)
+* Input:      Keyboard & Mouse, or XInput / standard gamepad
+* Notice:     Contains bright flashing patterns, scanlines, CRT flicker, and
+              rapid screen distortions (photosensitivity advisory).
+
+--------------------------------------------------------------------------------
+STREAMING & MONETIZATION POLICY
+--------------------------------------------------------------------------------
+Buck-Fifty Innovation Labs / Daniel Sawitzki explicitly grants press, reviewers,
+YouTubers, Twitch streamers, and content creators permission to record, stream,
+publish, and monetize (via ad revenue, sponsorships, tips, and memberships)
+gameplay footage, reviews, critiques, and videos featuring Artsy_2000 and the
+assets provided in this press kit.
+
+Note on Music: The original soundtrack by Holon is licensed for in-game
+distribution; creators are welcome to include game audio in gameplay coverage
+and streams with credit to Holon (https://holon-subatomic-audio.bandcamp.com/).
+
+--------------------------------------------------------------------------------
+COMPANION MEDIA & LINKS
+--------------------------------------------------------------------------------
+* Steam Store Page:        https://store.steampowered.com/app/5641470/
+* Official 1996 Portal:    https://buckfiftylabs.com/
+* Press Kit:               https://buckfiftylabs.com/press/
+* Official Trailer:        https://youtu.be/hl4ftXtNqVU
+* Graphic Novel (Amazon):  https://a.co/d/02dWBpcT
+* Official Merch Shop:     https://buckfiftyverse.myspreadshop.com/
+* Soundtrack (Holon):      https://holon-subatomic-audio.bandcamp.com/
+* Press & Review Keys:     info@buckfiftylabs.com
+
+Copyright (c) 2026-2027 Daniel Sawitzki / Buck-Fifty Innovation Labs.
