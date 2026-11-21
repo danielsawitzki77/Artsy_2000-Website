@@ -8,7 +8,6 @@ Run from anywhere:
 """
 
 import json
-import os
 import shutil
 import zipfile
 from pathlib import Path
@@ -24,118 +23,141 @@ MEDIA_BRANDING_DIR = PRESS_ROOT / "media" / "branding"
 DOWNLOADS_DIR = PRESS_ROOT / "downloads"
 
 
+# Interleaved ordering mixing 3D gameplay/editor, CRT/arcade, and archival FMV/cutscene stills.
+# Strictly uses the primary 1920x1200 screenshots and ignores *_1920x1080 duplicates.
 SCREENSHOT_SPECS = [
     (
         SCREENSHOT_SOURCE_ROOT / "Chase3D_2.png",
         "artsy_2000_01_chase_daemon_host.png",
         "Chase Mode — Daemon Host Boss (MK_NEXUS)",
         "3d",
-        "Crimson Fibonacci Spike Sphere boss ('Attack Pattern Beta') rendered natively on CPU threads over a neon wireframe horizon inside the Buck-Fifty CRT frame.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Chase3D_4.png",
-        "artsy_2000_02_chase_checkerboard_horizon.png",
-        "Chase Mode — Reflective Checkerboard Pursuit",
-        "3d",
-        "High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric projectiles and skyline peaks.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Rise_2.png",
-        "artsy_2000_03_the_rise_cpu_raytracer.png",
-        "The Rise — Real-Time CPU Raytracer & Reflections",
-        "3d",
-        "Multi-threaded CPU raytracing with reflective crystal monoliths, mirrored checkerboard ocean, floating horizon sphere, and live ECG vitals.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Isolate_2.png",
-        "artsy_2000_04_isolate_containment_grid.png",
-        "Iso-Lation Ward — 14x14 Stepped Isometric Grid",
-        "3d",
-        "Tactical 3D raytraced containment board with five elevation tiers, glowing patrol trails, and R/G/B sentinel drones hunting Subject 13.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Edge_1.png",
-        "artsy_2000_05_edge_pipe_hypercube.png",
-        "Edge Computing — 3D Aluminum Pipe Hypercube",
-        "3d",
-        "High-speed banking traversal along metallic conduit pipes wrapping a massive 3D hypercube, complete with manifold key radar HUD.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Gps_1.png",
-        "artsy_2000_06_gps_utah_triangulation.png",
-        "GPS Mode — Utah Orbital Satellite Triangulation",
-        "crt",
-        "'Grid-Locked & Pepperoni-Shocked': zooming across public-domain USGS/USDA Utah aerial imagery to triangulate Site Alpha-4 before the pass expires.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Surgery_1.png",
-        "artsy_2000_07_surgery_just_let_go.png",
-        "Brain Surgery ('Just Let Go') — Operating Theater",
-        "crt",
-        "1990s point-and-click operating theater with surgical tool inventory, verb actions, and flashing crimson alert cues.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Labyrinth_1.png",
-        "artsy_2000_08_labyrinth_emerald_crt.png",
-        "The Labyrinth — Emerald Phosphor Maze & ECG HUD",
-        "crt",
-        "Dual-panel phosphor CRT maze and first-person wireframe corridor with live electrocardiogram readout and scanline sprite-catching.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "PizzaRace_1.png",
-        "artsy_2000_09_pizza_delivery_race.png",
-        "Pizza Delivery Race — 16-Bit Desert Highway Run",
-        "crt",
-        "OutRun-inspired 5-lane desert highway escape featuring roadside brick barriers, oncoming traffic, and a cosmic rotating pizza skybox.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Conversation.png",
-        "artsy_2000_10_conversation_prep_ward.png",
-        "Terminal Interrogation — Surgical Prep Ward (Stall 03)",
-        "crt",
-        "High-pressure CRT dialogue bluffing the Prep Orderly while pre-sedative interference scrambles reply options under a ticking suspicion meter.",
-    ),
-    (
-        SCREENSHOT_SOURCE_ROOT / "Loading.png",
-        "artsy_2000_11_loading_raytracing_irl.png",
-        "CRT Intermission — 'Raytracing IRL' Animated Bumper",
-        "crt",
-        "Green phosphor retro rubber-hose cartoon playing on the Buck-Fifty CRT monitor between cognitive evaluation protocols.",
+        "Crimson Fibonacci Spike Sphere boss ('Attack Pattern Beta') rendered natively on CPU threads over a neon wireframe horizon — and exportable directly to POV-Ray 3.7.",
     ),
     (
         SCREENSHOT_SOURCE_ROOT / "Lobby.png",
-        "artsy_2000_12_fmv_vance_lobby.png",
+        "artsy_2000_02_fmv_vance_lobby.png",
         "Archival FMV — Dr. Brad Vance & Lobby Brain Mural",
         "fmv",
         "1993 VHS reception-cam footage of Clinical Director Dr. Brad Vance strolling past Buck-Fifty Innovation Labs' pastel rainbow brain mural.",
     ),
     (
-        SCREENSHOT_SOURCE_ROOT / "Vouchers.png",
-        "artsy_2000_13_fmv_vance_vouchers.png",
-        "Archival FMV — 1990s Value Pack & Pizza Vouchers",
-        "fmv",
-        "Dr. Brad Vance pitching the 1990s Value Pack of complimentary personal pan pizza vouchers during a mandatory Sub-Level 4 TV Break.",
+        SCREENSHOT_SOURCE_ROOT / "Editor_1.png",
+        "artsy_2000_03_editor_sphereflake_ascend.png",
+        "Ascend Mode 3D Editor — Sphereflake & POV-Ray Export",
+        "3d",
+        "Free-flight pure-CPU 3D raytracer sculptor rendering Eric Haines' reflective Sphereflake fractal over neon wireframe peaks with one-key X export to POV-Ray 3.7.",
     ),
     (
-        SCREENSHOT_SOURCE_ROOT / "Surgeon.png",
-        "artsy_2000_14_fmv_dr_sterling_surgeon.png",
-        "Archival FMV — Dr. Sterling (Cranial Bay 04)",
+        SCREENSHOT_SOURCE_ROOT / "Gps_1.png",
+        "artsy_2000_04_gps_utah_triangulation.png",
+        "GPS Mode — Utah Orbital Satellite Triangulation",
+        "crt",
+        "'Grid-Locked & Pepperoni-Shocked': zooming across public-domain USGS/USDA Utah aerial imagery to triangulate Site Alpha-4 before the pass expires.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Ascend_1.png",
+        "artsy_2000_05_fmv_ascend_runway.png",
+        "Archival Cutscene — Ascend Mode Checkerboard Runway",
         "fmv",
-        "Live-action TV Break transmission introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04's operating bay.",
+        "Subject 13 striding down a glossy raytraced checkerboard runway flanked by floating 3D geometric primitives, green wireframe ridges, and a synthwave sun.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Rise_2.png",
+        "artsy_2000_06_the_rise_cpu_raytracer.png",
+        "The Rise — Real-Time CPU Raytracer & Reflections",
+        "3d",
+        "Multi-threaded CPU raytracing with reflective crystal monoliths, mirrored checkerboard ocean, floating horizon sphere, and live ECG vitals.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Conversation.png",
+        "artsy_2000_07_conversation_prep_ward.png",
+        "Terminal Interrogation — Surgical Prep Ward (Stall 03)",
+        "crt",
+        "High-pressure CRT dialogue bluffing the Prep Orderly while pre-sedative interference scrambles reply options under a ticking suspicion meter.",
     ),
     (
         SCREENSHOT_SOURCE_ROOT / "B-50.png",
-        "artsy_2000_15_fmv_b50_pickup_compound.png",
+        "artsy_2000_08_fmv_b50_pickup_compound.png",
         "Archival TV Break — Model B-50 Outside Site Alpha-4",
         "fmv",
         "16mm commercial footage of a Model B-50 pickup ripping donuts outside Buck-Fifty Innovation Labs' brutalist rooftop concrete hypercube.",
     ),
     (
+        SCREENSHOT_SOURCE_ROOT / "Isolate_2.png",
+        "artsy_2000_09_isolate_containment_grid.png",
+        "Iso-Lation Ward — 14x14 Stepped Isometric Grid",
+        "3d",
+        "Tactical 3D raytraced containment board with five elevation tiers, glowing patrol trails, and R/G/B sentinel drones hunting Subject 13.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Surgery_1.png",
+        "artsy_2000_10_surgery_just_let_go.png",
+        "Brain Surgery ('Just Let Go') — Operating Theater",
+        "crt",
+        "1990s point-and-click operating theater with surgical tool inventory, verb actions, and flashing crimson alert cues.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Surgeon.png",
+        "artsy_2000_11_fmv_dr_sterling_surgeon.png",
+        "Archival FMV — Dr. Sterling (Cranial Bay 04)",
+        "fmv",
+        "Live-action TV Break transmission introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04's operating bay.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Edge_1.png",
+        "artsy_2000_12_edge_pipe_hypercube.png",
+        "Edge Computing — 3D Aluminum Pipe Hypercube",
+        "3d",
+        "High-speed banking traversal along metallic conduit pipes wrapping a massive 3D hypercube, complete with manifold key radar HUD.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Loading.png",
+        "artsy_2000_13_loading_raytracing_irl.png",
+        "CRT Intermission — 'Raytracing IRL' Animated Bumper",
+        "crt",
+        "Green phosphor retro rubber-hose cartoon playing on the Buck-Fifty CRT monitor between cognitive evaluation protocols.",
+    ),
+    (
         SCREENSHOT_SOURCE_ROOT / "Skullthor.png",
-        "artsy_2000_16_fmv_skullthor_cartoon.png",
+        "artsy_2000_14_fmv_skullthor_cartoon.png",
         "Archival TV Break — Skullthor Animated Broadcast",
         "fmv",
         "1990s Saturday-morning animated TV Break hijack showing armored nemesis Skullthor breaching the Sub-Level 4 green-CRT server room.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Editor_2.png",
+        "artsy_2000_15_editor_sculpt_chain.png",
+        "Ascend Mode 3D Editor — Sculpted Reflective Sphere Chain",
+        "3d",
+        "User-sculpted curving chain of checkered emerald, cyan, and violet reflective spheres built in Ascend Mode and ready for instant POV-Ray 3.7 turntable export.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Labyrinth_1.png",
+        "artsy_2000_16_labyrinth_emerald_crt.png",
+        "The Labyrinth — Emerald Phosphor Maze & ECG HUD",
+        "crt",
+        "Dual-panel phosphor CRT maze and first-person wireframe corridor with live electrocardiogram readout and scanline sprite-catching.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Vouchers.png",
+        "artsy_2000_17_fmv_vance_vouchers.png",
+        "Archival FMV — 1990s Value Pack & Pizza Vouchers",
+        "fmv",
+        "Dr. Brad Vance pitching the 1990s Value Pack of complimentary personal pan pizza vouchers during a mandatory Sub-Level 4 TV Break.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Chase3D_4.png",
+        "artsy_2000_18_chase_checkerboard_horizon.png",
+        "Chase Mode — Reflective Checkerboard Pursuit",
+        "3d",
+        "High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric projectiles and skyline peaks.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "PizzaRace_1.png",
+        "artsy_2000_19_pizza_delivery_race.png",
+        "Pizza Delivery Race — 16-Bit Desert Highway Run",
+        "crt",
+        "OutRun-inspired 5-lane desert highway escape featuring roadside brick barriers, oncoming traffic, and a cosmic rotating pizza skybox.",
     ),
 ]
 
@@ -212,6 +234,20 @@ BRANDING_SPECS = [
         False,
     ),
     (
+        WEB_ROOT / "tools" / "generated" / "artsy_2000_povray_pipeline_win95_1920x1080.png",
+        "artsy_2000_povray_pipeline_win95_1920x1080.png",
+        "POV-Ray 3.7 Export & Turntable Pipeline (Retro Win95 Desktop Mockup, 1920x1080)",
+        "povray",
+        False,
+    ),
+    (
+        WEB_ROOT / "assets" / "povray_chase_spin.gif",
+        "artsy_2000_povray_chase_spin.gif",
+        "POV-Ray 3.7 Animated GIF Example — Chase Mode 360-Degree Turntable",
+        "povray",
+        False,
+    ),
+    (
         WEB_ROOT / "assets" / "povray_turntable.jpg",
         "artsy_2000_povray_turntable_studio.jpg",
         "POV-Ray 3.7 Turntable Render — Ascend Mode Studio",
@@ -248,7 +284,7 @@ PRICE:             $1.50 USD
 PLATFORM:          Windows 10 / 11 (64-bit) — Steam
 STEAM STORE:       https://store.steampowered.com/app/5641470/
 GENRE:             Multi-Genre Retro Arcade / 1990s Sci-Fi Satire /
-                   Software-Raytraced Anthology
+                   Software-Raytraced Anthology & Mystery
 PLAYERS:           Single-Player + Local 2-Player PvP ("Them Apples")
 INPUT SUPPORT:     Full Keyboard, Mouse & Gamepad Support
 ACHIEVEMENTS:      153 Steam Achievements + Steam Cloud Saves
@@ -264,10 +300,11 @@ OFFICIAL TRAILER:  https://youtu.be/hl4ftXtNqVU
 --------------------------------------------------------------------------------
 ONE-LINE PITCH
 --------------------------------------------------------------------------------
-A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure
-C++17 CPU software rendering (zero GPU required), spanning 11 playable genres,
-5 CRT staff interrogations, 74 live-action/archival FMV clips, and an actual
-built-in POV-Ray 3.7 3D turntable studio.
+A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep rabbit
+hole of cross-media Buck-Fifty Labs secrets — built entirely in pure C++17 CPU
+software rendering (zero GPU), spanning 11 playable genres, 74 FMV broadcasts,
+and one-click POV-Ray 3.7 export of both user-built and live 3D scenes into
+multi-themed MP4 and animated GIF turntables.
 
 --------------------------------------------------------------------------------
 SHORT DESCRIPTION
@@ -276,16 +313,20 @@ Artsy_2000 casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 
 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per
 diem and one personal pan pizza voucher. Built from scratch in pure C++17 and
 Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11
-interconnected retro genres: CPU-raytraced 3D pursuits, Mode-7 highways, emerald
-phosphor mazes, 90s point-and-click brain surgery, 3D pipe hypercubes, satellite
-triangulation over real Utah USGS imagery, top-down stealth, and high-pressure
-CRT interrogations — culminating in a secret 3D raytracer sculptor that exports
-real POV-Ray 3.7 360-degree turntable animations.
+narratively connected retro genres, 5 high-pressure CRT interrogations, and 74
+archival FMV clips. Beneath its atmospheric arcade gauntlet lies an unusually
+deep well of discoverable secrets reaching far into the Buck-Fifty Labs universe
+— from unlockable archival TV spots to clues concealed across the companion
+1996 website, Volunteer Manual, and graphic novels, including mysteries that can
+only be cracked by pairing the game and website together. Players can also
+export both their own 3D sculptures and live 3D gameplay scenes directly into
+POV-Ray 3.7 scripts and double-click a bundled script to render 360-degree MP4
+videos or animated GIFs across 10 color and lighting schemes.
 
 --------------------------------------------------------------------------------
 KEY FEATURES
 --------------------------------------------------------------------------------
-* 11 Interconnected Campaign Genres + 5 CRT Interrogations:
+* 11 Narratively Connected Genres + 5 CRT Interrogations:
   1. Chase Mode ("Spike the Ball") — CPU-raytraced 3D pursuit & boss fight
   2. Them Apples (Revenge + Local 2P PvP) — Dual-snake CRT duel vs Daemon 0x0666
   3. Iso-Lation Ward — 14x14 stepped raytraced isometric sentinel containment
@@ -299,20 +340,37 @@ KEY FEATURES
   11. Pizza Delivery Race ("Healthful Delivery") — 16-bit 5-lane desert racer
   + 5 timed CRT dialogue interrogations with facility staff.
 
+* A Deep Well of Secrets & Cross-Media Buck-Fifty Lore:
+  Some discoveries sit just off the main corridor; others require genuine
+  persistence. Players who dig past the primary escape uncover unlockable
+  archival TV spots, anomalous broadcast fragments, and mysteries woven across
+  the game's accompanying artifacts — the 1996 corporate website
+  (buckfiftylabs.com), the 46-page Volunteer Manual, and the graphic novels —
+  including hidden content that can only be accessed by using the game and the
+  website in tandem. How deep Buck-Fifty Labs really goes depends on how far
+  you are willing to look.
+
+* Export User-Created & Live 3D Gameplay Scenes to POV-Ray 3.7 (MP4 & GIF):
+  Pressing X exports both player-sculpted 3D creations in Ascend Mode (complete
+  with Eric Haines' Standard Procedural Database generator) and live 3D gameplay
+  scenes (Chase, The Rise, Edge Computing, Blueprint) straight into genuine
+  POV-Ray 3.7 scripts (scene.pov) paired with a zero-setup render.bat launcher.
+  Double-clicking render.bat opens an interactive picker for output format
+  (MP4, animated GIF, or both) and 10 embedded color/lighting schemes (Original
+  Studio, Creme Brulee, Lavender Haze, Matcha Pistachio, Cherry Blossom,
+  Blueberry Cyanotype, Blood Orange Valenciana, Espresso Sepia, Peppermint Neon,
+  and Midnight Licorice), then runs POV-Ray headless and outputs shareable 360-
+  degree raytraced animations.
+
 * 100% Pure CPU Software Rendering (Zero GPU Required):
   Every 3D raytraced reflection, Mode-7 ground plane, CRT curvature shader, and
   scanline filter runs natively on multi-threaded CPU silicon via Win32/GDI —
   no DirectX, OpenGL, or Vulkan required.
 
-* Secret "Ascend" Mode & Real POV-Ray 3.7 Turntable Export:
-  Survivors unlock a free-flight 3D raytracer sculptor featuring Eric Haines'
-  Standard Procedural Database (SPD) generator and one-click export to genuine
-  POV-Ray 3.7 SDL scripts + automated 90-frame 360-degree MP4/GIF rendering.
-
 * 74 Archival FMV Clips & 50 In-World TV Breaks:
   Full-motion video broadcasts starring Clinical Director Dr. Brad Vance,
   satirical 1990s commercials (Slab-O-Bull, Fissi-Efficient, Omni-Smile, Model
-  B-50), and hidden VHS glitch folders.
+  B-50), unlockable TV spots, and hidden VHS anomalies.
 
 * Deep Replayability & 153 Steam Achievements:
   Includes Relive Trauma mode select, Local 2-Player PvP, Perma-Death, 15-minute
@@ -379,7 +437,7 @@ FACT_SHEET_MD = """# Artsy_2000 — Official Press Fact Sheet
 | **Price** | $1.50 USD |
 | **Platform** | Windows 10 / 11 (64-bit) via Steam |
 | **Steam Store** | https://store.steampowered.com/app/5641470/ |
-| **Genre** | Multi-Genre Retro Arcade / 1990s Sci-Fi Satire / Software-Raytraced Anthology |
+| **Genre** | Multi-Genre Retro Arcade / 1990s Sci-Fi Satire / Software-Raytraced Anthology & Mystery |
 | **Players** | Single-Player + Local 2-Player PvP (*Them Apples*) |
 | **Input** | Full Keyboard, Mouse & Gamepad Support |
 | **Steam Features** | 153 Steam Achievements, Steam Cloud |
@@ -390,16 +448,17 @@ FACT_SHEET_MD = """# Artsy_2000 — Official Press Fact Sheet
 | **Press Contact / Keys** | info@buckfiftylabs.com |
 
 ## One-Line Pitch
-A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure C++17 CPU software rendering (zero GPU required), spanning 11 playable genres, 5 CRT staff interrogations, 74 FMV clips, and a built-in POV-Ray 3.7 3D turntable studio.
+A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep well of cross-media Buck-Fifty Labs secrets — built entirely in pure C++17 CPU software rendering (zero GPU), spanning 11 playable genres, 74 FMV broadcasts, and one-click POV-Ray 3.7 export of both user-created and live 3D gameplay scenes into multi-themed MP4/GIF turntables.
 
 ## Short Description
-*Artsy_2000* casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 interconnected retro genres: CPU-raytraced 3D pursuits, Mode-7 highways, emerald phosphor mazes, 90s point-and-click brain surgery, 3D pipe hypercubes, satellite triangulation over real Utah USGS imagery, top-down stealth, and high-pressure CRT interrogations — culminating in a secret 3D raytracer sculptor that exports real POV-Ray 3.7 360° turntable animations.
+*Artsy_2000* casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 narratively connected retro genres, 5 timed CRT interrogations, and 74 archival FMV clips. Beneath its atmospheric arcade anthology lies an unexpectedly deep well of secrets reaching into the hidden corners of the Buck-Fifty Labs universe — from unlockable archival TV spots to clues embedded across the companion 1996 website, Volunteer Manual, and graphic novels, including mysteries that only unlock when game and website are investigated together. Players can also export both their own 3D sculptures and live 3D gameplay scenes into genuine POV-Ray 3.7 scripts and double-click a bundled script to render 360° MP4 videos or animated GIFs across 10 color and lighting schemes.
 
 ## Key Features
-- **11 Interconnected Campaign Modes + 5 Staff Interrogations:** Chase Mode, Them Apples (CRT Snake + Local 2P PvP), Iso-Lation Ward (14×14 isometric raytraced arena), Brain Surgery (*Just Let Go* 90s point-and-click), The Rise (CPU raytracer + physics), The Labyrinth (wireframe maze + ECG vitals), Edge Computing (3D aluminum pipe hypercube), Grid-Locked & Pepperoni-Shocked (Utah USGS satellite triangulation), Blueprint Mode (CAD schematic + 3D lobby tour), Parking Lot Stealth (with Dark Ages oxygen hallucination), and Pizza Delivery Race (OutRun-style desert highway).
+- **11 Narratively Connected Campaign Modes + 5 Staff Interrogations:** Chase Mode, Them Apples (CRT Snake + Local 2P PvP), Iso-Lation Ward (14×14 isometric raytraced arena), Brain Surgery (*Just Let Go* 90s point-and-click), The Rise (CPU raytracer + physics), The Labyrinth (wireframe maze + ECG vitals), Edge Computing (3D aluminum pipe hypercube), Grid-Locked & Pepperoni-Shocked (Utah USGS satellite triangulation), Blueprint Mode (CAD schematic + 3D lobby tour), Parking Lot Stealth (with Dark Ages oxygen hallucination), and Pizza Delivery Race (OutRun-style desert highway).
+- **Deep Well of Secrets & Cross-Media Buck-Fifty Lore:** From readily spotted curiosities to buried facility lore, *Artsy_2000* rewards curious investigators with unlockable archival TV spots, secrets tucked into the companion 1996 website (`buckfiftylabs.com`), the 46-page Volunteer Manual, and the graphic novels — plus hidden revelations that can only be discovered by combining the game and website together.
+- **POV-Ray 3.7 Export & One-Click Multi-Lighting MP4/GIF Pipeline:** Export both player-built 3D sculptures (*Ascend Mode* + Eric Haines' SPD generator) and live 3D gameplay scenes (*Chase*, *The Rise*, *Edge Computing*, *Blueprint*) into authentic `scene.pov` raytracing scripts. Double-clicking the generated `render.bat` lets players pick MP4, animated GIF, or both — plus **10 lighting & color schemes** (*Original Studio*, *Crème Brûlée*, *Lavender Haze*, *Matcha Pistachio*, *Cherry Blossom*, *Blueberry Cyanotype*, *Blood Orange Valenciana*, *Espresso Sepia*, *Peppermint Neon*, and *Midnight Licorice*) — and runs POV-Ray headless to output smooth 360° animations.
 - **Zero GPU Dependencies:** Multi-threaded CPU software rasterization, Phong raytracing, and CRT post-processing written in pure C++17 & Win32/GDI.
-- **Built-In POV-Ray 3.7 Turntable Studio:** Secret *Ascend* mode lets players sculpt 3D scenes, invoke Eric Haines' Standard Procedural Database (SPD), and export real POV-Ray SDL + 90-frame 360° MP4/GIF turntables.
-- **74 Archival FMV Clips (50 TV Breaks):** Hosted by Clinical Director Dr. Brad Vance with satirical 1996 commercials and hidden VHS glitch folders.
+- **74 Archival FMV Clips (50 TV Breaks):** Hosted by Clinical Director Dr. Brad Vance with satirical 1996 commercials, unlockable TV spots, and hidden VHS anomalies.
 - **153 Steam Achievements & 7 Campaign Modes:** Normal (*Joe Six-Pack*), *Perma-Death*, *Speed Run*, and 4 visual distortion campaigns (*Dog Video Wave*, *Green CRT*, *Rotating Cube*, *Hexagonal Tiles*).
 - **Original Soundtrack by Holon:** *Everything Has Its Cost*, *From These Ruins*, *Point Of Origin*, *Coherence Drift*, *Initial State*, and *Afterlight*.
 - **Literally $1.50:** Priced to match Buck-Fifty's legendary per diem.
@@ -422,9 +481,10 @@ Press, reviewers, YouTubers, and streamers are explicitly permitted to capture, 
 README_PRESS_TXT = """ARTSY_2000 — PRESS KIT ASSET USAGE GUIDE
 ========================================
 
-All screenshots, logos, key art, renders, and text contained in this archive
-are cleared for editorial, review, news, streaming, YouTube thumbnail, and
-event/festival coverage of Artsy_2000 (Buck-Fifty Innovation Labs).
+All screenshots, logos, key art, POV-Ray renders, pipeline mockups, and text
+contained in this archive are cleared for editorial, review, news, streaming,
+YouTube thumbnail, and event/festival coverage of Artsy_2000 (Buck-Fifty
+Innovation Labs).
 
 - Steam Store:    https://store.steampowered.com/app/5641470/
 - Official Site:  https://buckfiftylabs.com/
@@ -441,7 +501,30 @@ def fmt_size(num_bytes: int) -> str:
     return f"{max(1, round(num_bytes / 1024))} KB"
 
 
+def validate_screenshot_sources():
+    """Verify every primary (non-_1920x1080) PNG in SCREENSHOT_SOURCE_ROOT is included."""
+    all_primary = sorted(
+        p.name
+        for p in SCREENSHOT_SOURCE_ROOT.iterdir()
+        if p.is_file()
+        and p.suffix.lower() == ".png"
+        and not p.stem.lower().endswith("_1920x1080")
+    )
+    spec_names = [src.name for src, *_ in SCREENSHOT_SPECS]
+    for name in spec_names:
+        if "_1920x1080" in name.lower():
+            raise ValueError(f"Disallowed _1920x1080 variant in SCREENSHOT_SPECS: {name}")
+    missing = sorted(set(all_primary) - set(spec_names))
+    extra = sorted(set(spec_names) - set(all_primary))
+    if missing or extra:
+        raise RuntimeError(
+            f"Screenshot sync mismatch! Missing from spec: {missing}, Extra: {extra}"
+        )
+
+
 def build():
+    validate_screenshot_sources()
+
     MEDIA_SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     MEDIA_BRANDING_DIR.mkdir(parents=True, exist_ok=True)
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
@@ -466,6 +549,7 @@ def build():
         manifest["screenshots"].append({
             "file": f"media/screenshots/{dst_name}",
             "filename": dst_name,
+            "source": src.name,
             "title": title,
             "category": category,
             "caption": caption,
@@ -546,6 +630,9 @@ def build():
 
     print(json.dumps(manifest["downloads"], indent=2))
     print(f"Screenshots: {len(manifest['screenshots'])}, Branding: {len(manifest['branding'])}")
+    for item in manifest["branding"]:
+        if item["kind"] == "povray":
+            print(f"  POVRAY: {item['filename']} -> {item['width']}x{item['height']} ({item['sizeLabel']})")
 
 
 if __name__ == "__main__":

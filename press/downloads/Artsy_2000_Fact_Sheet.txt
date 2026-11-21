@@ -11,7 +11,7 @@ PRICE:             $1.50 USD
 PLATFORM:          Windows 10 / 11 (64-bit) — Steam
 STEAM STORE:       https://store.steampowered.com/app/5641470/
 GENRE:             Multi-Genre Retro Arcade / 1990s Sci-Fi Satire /
-                   Software-Raytraced Anthology
+                   Software-Raytraced Anthology & Mystery
 PLAYERS:           Single-Player + Local 2-Player PvP ("Them Apples")
 INPUT SUPPORT:     Full Keyboard, Mouse & Gamepad Support
 ACHIEVEMENTS:      153 Steam Achievements + Steam Cloud Saves
@@ -27,10 +27,11 @@ OFFICIAL TRAILER:  https://youtu.be/hl4ftXtNqVU
 --------------------------------------------------------------------------------
 ONE-LINE PITCH
 --------------------------------------------------------------------------------
-A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure
-C++17 CPU software rendering (zero GPU required), spanning 11 playable genres,
-5 CRT staff interrogations, 74 live-action/archival FMV clips, and an actual
-built-in POV-Ray 3.7 3D turntable studio.
+A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep rabbit
+hole of cross-media Buck-Fifty Labs secrets — built entirely in pure C++17 CPU
+software rendering (zero GPU), spanning 11 playable genres, 74 FMV broadcasts,
+and one-click POV-Ray 3.7 export of both user-built and live 3D scenes into
+multi-themed MP4 and animated GIF turntables.
 
 --------------------------------------------------------------------------------
 SHORT DESCRIPTION
@@ -39,16 +40,20 @@ Artsy_2000 casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 
 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per
 diem and one personal pan pizza voucher. Built from scratch in pure C++17 and
 Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11
-interconnected retro genres: CPU-raytraced 3D pursuits, Mode-7 highways, emerald
-phosphor mazes, 90s point-and-click brain surgery, 3D pipe hypercubes, satellite
-triangulation over real Utah USGS imagery, top-down stealth, and high-pressure
-CRT interrogations — culminating in a secret 3D raytracer sculptor that exports
-real POV-Ray 3.7 360-degree turntable animations.
+narratively connected retro genres, 5 high-pressure CRT interrogations, and 74
+archival FMV clips. Beneath its atmospheric arcade gauntlet lies an unusually
+deep well of discoverable secrets reaching far into the Buck-Fifty Labs universe
+— from unlockable archival TV spots to clues concealed across the companion
+1996 website, Volunteer Manual, and graphic novels, including mysteries that can
+only be cracked by pairing the game and website together. Players can also
+export both their own 3D sculptures and live 3D gameplay scenes directly into
+POV-Ray 3.7 scripts and double-click a bundled script to render 360-degree MP4
+videos or animated GIFs across 10 color and lighting schemes.
 
 --------------------------------------------------------------------------------
 KEY FEATURES
 --------------------------------------------------------------------------------
-* 11 Interconnected Campaign Genres + 5 CRT Interrogations:
+* 11 Narratively Connected Genres + 5 CRT Interrogations:
   1. Chase Mode ("Spike the Ball") — CPU-raytraced 3D pursuit & boss fight
   2. Them Apples (Revenge + Local 2P PvP) — Dual-snake CRT duel vs Daemon 0x0666
   3. Iso-Lation Ward — 14x14 stepped raytraced isometric sentinel containment
@@ -62,20 +67,37 @@ KEY FEATURES
   11. Pizza Delivery Race ("Healthful Delivery") — 16-bit 5-lane desert racer
   + 5 timed CRT dialogue interrogations with facility staff.
 
+* A Deep Well of Secrets & Cross-Media Buck-Fifty Lore:
+  Some discoveries sit just off the main corridor; others require genuine
+  persistence. Players who dig past the primary escape uncover unlockable
+  archival TV spots, anomalous broadcast fragments, and mysteries woven across
+  the game's accompanying artifacts — the 1996 corporate website
+  (buckfiftylabs.com), the 46-page Volunteer Manual, and the graphic novels —
+  including hidden content that can only be accessed by using the game and the
+  website in tandem. How deep Buck-Fifty Labs really goes depends on how far
+  you are willing to look.
+
+* Export User-Created & Live 3D Gameplay Scenes to POV-Ray 3.7 (MP4 & GIF):
+  Pressing X exports both player-sculpted 3D creations in Ascend Mode (complete
+  with Eric Haines' Standard Procedural Database generator) and live 3D gameplay
+  scenes (Chase, The Rise, Edge Computing, Blueprint) straight into genuine
+  POV-Ray 3.7 scripts (scene.pov) paired with a zero-setup render.bat launcher.
+  Double-clicking render.bat opens an interactive picker for output format
+  (MP4, animated GIF, or both) and 10 embedded color/lighting schemes (Original
+  Studio, Creme Brulee, Lavender Haze, Matcha Pistachio, Cherry Blossom,
+  Blueberry Cyanotype, Blood Orange Valenciana, Espresso Sepia, Peppermint Neon,
+  and Midnight Licorice), then runs POV-Ray headless and outputs shareable 360-
+  degree raytraced animations.
+
 * 100% Pure CPU Software Rendering (Zero GPU Required):
   Every 3D raytraced reflection, Mode-7 ground plane, CRT curvature shader, and
   scanline filter runs natively on multi-threaded CPU silicon via Win32/GDI —
   no DirectX, OpenGL, or Vulkan required.
 
-* Secret "Ascend" Mode & Real POV-Ray 3.7 Turntable Export:
-  Survivors unlock a free-flight 3D raytracer sculptor featuring Eric Haines'
-  Standard Procedural Database (SPD) generator and one-click export to genuine
-  POV-Ray 3.7 SDL scripts + automated 90-frame 360-degree MP4/GIF rendering.
-
 * 74 Archival FMV Clips & 50 In-World TV Breaks:
   Full-motion video broadcasts starring Clinical Director Dr. Brad Vance,
   satirical 1990s commercials (Slab-O-Bull, Fissi-Efficient, Omni-Smile, Model
-  B-50), and hidden VHS glitch folders.
+  B-50), unlockable TV spots, and hidden VHS anomalies.
 
 * Deep Replayability & 153 Steam Achievements:
   Includes Relive Trauma mode select, Local 2-Player PvP, Perma-Death, 15-minute

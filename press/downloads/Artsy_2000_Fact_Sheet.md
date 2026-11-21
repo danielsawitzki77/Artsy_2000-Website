@@ -9,7 +9,7 @@
 | **Price** | $1.50 USD |
 | **Platform** | Windows 10 / 11 (64-bit) via Steam |
 | **Steam Store** | https://store.steampowered.com/app/5641470/ |
-| **Genre** | Multi-Genre Retro Arcade / 1990s Sci-Fi Satire / Software-Raytraced Anthology |
+| **Genre** | Multi-Genre Retro Arcade / 1990s Sci-Fi Satire / Software-Raytraced Anthology & Mystery |
 | **Players** | Single-Player + Local 2-Player PvP (*Them Apples*) |
 | **Input** | Full Keyboard, Mouse & Gamepad Support |
 | **Steam Features** | 153 Steam Achievements, Steam Cloud |
@@ -20,16 +20,17 @@
 | **Press Contact / Keys** | info@buckfiftylabs.com |
 
 ## One-Line Pitch
-A $1.50 multi-genre 1990s retro-futuristic arcade escape built entirely in pure C++17 CPU software rendering (zero GPU required), spanning 11 playable genres, 5 CRT staff interrogations, 74 FMV clips, and a built-in POV-Ray 3.7 3D turntable studio.
+A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep well of cross-media Buck-Fifty Labs secrets — built entirely in pure C++17 CPU software rendering (zero GPU), spanning 11 playable genres, 74 FMV broadcasts, and one-click POV-Ray 3.7 export of both user-created and live 3D gameplay scenes into multi-themed MP4/GIF turntables.
 
 ## Short Description
-*Artsy_2000* casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 interconnected retro genres: CPU-raytraced 3D pursuits, Mode-7 highways, emerald phosphor mazes, 90s point-and-click brain surgery, 3D pipe hypercubes, satellite triangulation over real Utah USGS imagery, top-down stealth, and high-pressure CRT interrogations — culminating in a secret 3D raytracer sculptor that exports real POV-Ray 3.7 360° turntable animations.
+*Artsy_2000* casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 — a satirical 1996 Salt Lake City cognitive research bunker promising a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 narratively connected retro genres, 5 timed CRT interrogations, and 74 archival FMV clips. Beneath its atmospheric arcade anthology lies an unexpectedly deep well of secrets reaching into the hidden corners of the Buck-Fifty Labs universe — from unlockable archival TV spots to clues embedded across the companion 1996 website, Volunteer Manual, and graphic novels, including mysteries that only unlock when game and website are investigated together. Players can also export both their own 3D sculptures and live 3D gameplay scenes into genuine POV-Ray 3.7 scripts and double-click a bundled script to render 360° MP4 videos or animated GIFs across 10 color and lighting schemes.
 
 ## Key Features
-- **11 Interconnected Campaign Modes + 5 Staff Interrogations:** Chase Mode, Them Apples (CRT Snake + Local 2P PvP), Iso-Lation Ward (14×14 isometric raytraced arena), Brain Surgery (*Just Let Go* 90s point-and-click), The Rise (CPU raytracer + physics), The Labyrinth (wireframe maze + ECG vitals), Edge Computing (3D aluminum pipe hypercube), Grid-Locked & Pepperoni-Shocked (Utah USGS satellite triangulation), Blueprint Mode (CAD schematic + 3D lobby tour), Parking Lot Stealth (with Dark Ages oxygen hallucination), and Pizza Delivery Race (OutRun-style desert highway).
+- **11 Narratively Connected Campaign Modes + 5 Staff Interrogations:** Chase Mode, Them Apples (CRT Snake + Local 2P PvP), Iso-Lation Ward (14×14 isometric raytraced arena), Brain Surgery (*Just Let Go* 90s point-and-click), The Rise (CPU raytracer + physics), The Labyrinth (wireframe maze + ECG vitals), Edge Computing (3D aluminum pipe hypercube), Grid-Locked & Pepperoni-Shocked (Utah USGS satellite triangulation), Blueprint Mode (CAD schematic + 3D lobby tour), Parking Lot Stealth (with Dark Ages oxygen hallucination), and Pizza Delivery Race (OutRun-style desert highway).
+- **Deep Well of Secrets & Cross-Media Buck-Fifty Lore:** From readily spotted curiosities to buried facility lore, *Artsy_2000* rewards curious investigators with unlockable archival TV spots, secrets tucked into the companion 1996 website (`buckfiftylabs.com`), the 46-page Volunteer Manual, and the graphic novels — plus hidden revelations that can only be discovered by combining the game and website together.
+- **POV-Ray 3.7 Export & One-Click Multi-Lighting MP4/GIF Pipeline:** Export both player-built 3D sculptures (*Ascend Mode* + Eric Haines' SPD generator) and live 3D gameplay scenes (*Chase*, *The Rise*, *Edge Computing*, *Blueprint*) into authentic `scene.pov` raytracing scripts. Double-clicking the generated `render.bat` lets players pick MP4, animated GIF, or both — plus **10 lighting & color schemes** (*Original Studio*, *Crème Brûlée*, *Lavender Haze*, *Matcha Pistachio*, *Cherry Blossom*, *Blueberry Cyanotype*, *Blood Orange Valenciana*, *Espresso Sepia*, *Peppermint Neon*, and *Midnight Licorice*) — and runs POV-Ray headless to output smooth 360° animations.
 - **Zero GPU Dependencies:** Multi-threaded CPU software rasterization, Phong raytracing, and CRT post-processing written in pure C++17 & Win32/GDI.
-- **Built-In POV-Ray 3.7 Turntable Studio:** Secret *Ascend* mode lets players sculpt 3D scenes, invoke Eric Haines' Standard Procedural Database (SPD), and export real POV-Ray SDL + 90-frame 360° MP4/GIF turntables.
-- **74 Archival FMV Clips (50 TV Breaks):** Hosted by Clinical Director Dr. Brad Vance with satirical 1996 commercials and hidden VHS glitch folders.
+- **74 Archival FMV Clips (50 TV Breaks):** Hosted by Clinical Director Dr. Brad Vance with satirical 1996 commercials, unlockable TV spots, and hidden VHS anomalies.
 - **153 Steam Achievements & 7 Campaign Modes:** Normal (*Joe Six-Pack*), *Perma-Death*, *Speed Run*, and 4 visual distortion campaigns (*Dog Video Wave*, *Green CRT*, *Rotating Cube*, *Hexagonal Tiles*).
 - **Original Soundtrack by Holon:** *Everything Has Its Cost*, *From These Ruins*, *Point Of Origin*, *Coherence Drift*, *Initial State*, and *Afterlight*.
 - **Literally $1.50:** Priced to match Buck-Fifty's legendary per diem.
