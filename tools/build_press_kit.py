@@ -20,6 +20,7 @@ SCREENSHOT_SOURCE_ROOT = Path(r"G:\My Drive\Artsy_2000\Screenshots")
 PRESS_ROOT = WEB_ROOT / "press"
 MEDIA_SCREENSHOTS_DIR = PRESS_ROOT / "media" / "screenshots"
 MEDIA_BRANDING_DIR = PRESS_ROOT / "media" / "branding"
+MEDIA_THUMBS_DIR = PRESS_ROOT / "media" / "thumbs"
 DOWNLOADS_DIR = PRESS_ROOT / "downloads"
 
 
@@ -528,27 +529,34 @@ def build():
 
     MEDIA_SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     MEDIA_BRANDING_DIR.mkdir(parents=True, exist_ok=True)
+    MEDIA_THUMBS_DIR.mkdir(parents=True, exist_ok=True)
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
     # Clear old generated files in target folders so re-runs stay clean
-    for d in (MEDIA_SCREENSHOTS_DIR, MEDIA_BRANDING_DIR, DOWNLOADS_DIR):
+    for d in (MEDIA_SCREENSHOTS_DIR, MEDIA_BRANDING_DIR, MEDIA_THUMBS_DIR, DOWNLOADS_DIR):
         for child in d.iterdir():
             if child.is_file():
                 child.unlink()
 
     manifest = {"screenshots": [], "branding": [], "downloads": {}}
 
-    # 1. Copy curated screenshots
+    # 1. Copy curated screenshots + generate lightweight web thumbnails (640x400 JPG)
+    #    ZIPs and direct downloads always serve the untouched lossless 1920x1200 PNGs.
     for src, dst_name, title, category, caption in SCREENSHOT_SPECS:
         if not src.exists():
             raise FileNotFoundError(f"Missing screenshot source: {src}")
         dst = MEDIA_SCREENSHOTS_DIR / dst_name
         shutil.copy2(src, dst)
+        thumb_name = Path(dst_name).stem + ".jpg"
+        thumb_dst = MEDIA_THUMBS_DIR / thumb_name
         with Image.open(dst) as im:
             w, h = im.size
+            thumb = im.convert("RGB").resize((640, 400), Image.Resampling.LANCZOS)
+            thumb.save(thumb_dst, format="JPEG", quality=84, optimize=True, progressive=True)
         size = dst.stat().st_size
         manifest["screenshots"].append({
             "file": f"media/screenshots/{dst_name}",
+            "thumb": f"media/thumbs/{thumb_name}",
             "filename": dst_name,
             "source": src.name,
             "title": title,
@@ -560,7 +568,7 @@ def build():
             "sizeLabel": fmt_size(size),
         })
 
-    # 2. Copy curated branding / logos / key art / renders
+    # 2. Copy curated branding / logos / key art / renders (+ preview thumb for heavy PNGs)
     for src, dst_name, title, kind, transparent in BRANDING_SPECS:
         if not src.exists():
             raise FileNotFoundError(f"Missing branding source: {src}")
@@ -568,6 +576,21 @@ def build():
         shutil.copy2(src, dst)
         with Image.open(dst) as im:
             w, h = im.size
+            # Generate crisp web preview JPEG for the 1920x1080 Win95 pipeline mockup & large non-alpha PNG banners
+            if dst_name in (
+                "artsy_2000_povray_pipeline_win95_1920x1080.png",
+                "artsy_2000_keyart_banner_1920x622.png",
+            ):
+                tw = 1200
+                th = max(1, round(h * (tw / w)))
+                prev = im.convert("RGB").resize((tw, th), Image.Resampling.LANCZOS)
+                prev.save(
+                    MEDIA_THUMBS_DIR / (Path(dst_name).stem + ".jpg"),
+                    format="JPEG",
+                    quality=88,
+                    optimize=True,
+                    progressive=True,
+                )
         size = dst.stat().st_size
         manifest["branding"].append({
             "file": f"media/branding/{dst_name}",

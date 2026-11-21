@@ -144,10 +144,9 @@
             <li><a href="#screenshots"><span>Screenshots (19)</span><span class="toc-num">05</span></a></li>
             <li><a href="#branding"><span>Logos, Art &amp; POV-Ray</span><span class="toc-num">06</span></a></li>
             <li><a href="#modes"><span>Playable Modes</span><span class="toc-num">07</span></a></li>
-            <li><a href="#tech"><span>Pure CPU Tech</span><span class="toc-num">08</span></a></li>
-            <li><a href="#soundtrack"><span>Soundtrack</span><span class="toc-num">09</span></a></li>
-            <li><a href="#monetization"><span>Streaming Policy</span><span class="toc-num">10</span></a></li>
-            <li><a href="#contact"><span>Credits &amp; Contact</span><span class="toc-num">11</span></a></li>
+            <li><a href="#tech"><span>Tech, OST &amp; Specs</span><span class="toc-num">08</span></a></li>
+            <li><a href="#monetization"><span>Streaming Policy</span><span class="toc-num">09</span></a></li>
+            <li><a href="#contact"><span>Credits &amp; Contact</span><span class="toc-num">10</span></a></li>
           </ul>
         </nav>
       </div>
@@ -328,66 +327,70 @@
         </div>
 
         <div class="copy-block">
-          <div class="copy-block-head">
-            <span class="copy-block-label">One-Line Pitch</span>
-            <button type="button" class="btn-copy" data-copy-target="copyPitch" data-copy-label="One-line pitch">Copy</button>
+          <div class="copy-tabs-bar">
+            <div class="copy-tabs-group" role="tablist" aria-label="Press copy length">
+              <button type="button" class="copy-tab-btn active" role="tab" aria-selected="true" data-copy-panel="copyShort" data-copy-label="Short description">Short Blurb</button>
+              <button type="button" class="copy-tab-btn" role="tab" aria-selected="false" data-copy-panel="copyFull" data-copy-label="Full description">Full Description</button>
+              <button type="button" class="copy-tab-btn" role="tab" aria-selected="false" data-copy-panel="copyPitch" data-copy-label="One-line pitch">One-Line Pitch</button>
+            </div>
+            <button type="button" id="activeCopyBtn" class="btn-copy" data-copy-target="copyShort" data-copy-label="Short description">Copy Active Text</button>
           </div>
-          <p id="copyPitch">A $1.50 multi-genre 1990s retro-futuristic arcade escape &mdash; and a deep well of cross-media Buck-Fifty Labs secrets &mdash; built entirely in pure C++17 CPU software rendering (zero GPU), spanning 11 narratively connected genres, 74 FMV broadcasts, and one-click POV-Ray 3.7 export of both user-sculpted and live 3D scenes into multi-themed MP4 and animated GIF turntables.</p>
-        </div>
 
-        <div class="copy-block">
-          <div class="copy-block-head">
-            <span class="copy-block-label">Short Description (Press Blurb)</span>
-            <button type="button" class="btn-copy" data-copy-target="copyShort" data-copy-label="Short description">Copy</button>
+          <div id="copyShort" class="copy-panel active" role="tabpanel">
+            <p>Artsy_2000 casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 &mdash; a satirical 1996 Salt Lake City cognitive research bunker promising volunteers a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 narratively connected retro genres, 5 high-pressure CRT interrogations, and 74 archival FMV clips. Beneath its atmospheric arcade gauntlet lies an unusually deep well of secrets reaching far into the Buck-Fifty Labs universe &mdash; from unlockable archival TV spots to clues hidden across the companion 1996 website, Volunteer Manual, and graphic novels, including mysteries that can only be uncovered by pairing the game and website together. Players can also export both user-created 3D sculptures and live 3D gameplay scenes directly into POV-Ray 3.7 raytracing scripts and double-click a bundled script to render 360-degree MP4 videos or animated GIFs across 10 color and lighting schemes.</p>
           </div>
-          <p id="copyShort">Artsy_2000 casts you as Subject 13 inside Buck-Fifty Innovation Labs' Sub-Level 4 &mdash; a satirical 1996 Salt Lake City cognitive research bunker promising volunteers a $1.50 per diem and one personal pan pizza voucher. Built from scratch in pure C++17 and Win32/GDI with zero GPU dependencies, the game shifts seamlessly across 11 narratively connected retro genres, 5 high-pressure CRT interrogations, and 74 archival FMV clips. Beneath its atmospheric arcade gauntlet lies an unusually deep well of secrets reaching far into the Buck-Fifty Labs universe &mdash; from unlockable archival TV spots to clues hidden across the companion 1996 website, Volunteer Manual, and graphic novels, including mysteries that can only be uncovered by pairing the game and website together. Players can also export both user-created 3D sculptures and live 3D gameplay scenes directly into POV-Ray 3.7 raytracing scripts and double-click a bundled script to render 360-degree MP4 videos or animated GIFs across 10 color and lighting schemes.</p>
-        </div>
 
-        <div class="copy-block">
-          <div class="copy-block-head">
-            <span class="copy-block-label">Full Description &amp; Premise</span>
-            <button type="button" class="btn-copy" data-copy-target="copyFull" data-copy-label="Full description">Copy</button>
-          </div>
-          <div id="copyFull">
+          <div id="copyFull" class="copy-panel" role="tabpanel">
             <p>Set in 1996 inside the subterranean chambers of fictional Salt Lake City institute <strong>Buck-Fifty Innovation Labs</strong>, <em>Artsy_2000</em> opens as a seemingly routine cognitive hardware evaluation hosted by unsettlingly cheerful Clinical Director <strong>Dr. Brad Vance</strong>. Once your test scores trigger an immediate &ldquo;cranial harvest&rdquo; directive, the orientation flips into an atmospheric, genre-hopping escape across Sub-Level 4's hardware terminals, surgical wards, conduit tunnels, and desert perimeter.</p>
             <p>Rather than mimicking retro aesthetics on a modern game engine, <em>Artsy_2000</em> is engineered from the ground up in <strong>pure C++17 and Win32/GDI software rendering</strong> &mdash; with zero DirectX, OpenGL, or Vulkan calls anywhere in the codebase. Every 3D Phong reflection, Mode-7 horizon, curved CRT glass distortion, emerald wireframe corridor, and stepped isometric raytraced arena runs natively on multi-threaded CPU silicon.</p>
             <p>Beyond its narratively woven collection of 11 playable minigames and 5 timed CRT staff interrogations, <em>Artsy_2000</em> is built as a <strong>deep well of secrets</strong> for players who refuse to take corporate signage at face value. Some discoveries lie just off the main escape path &mdash; unlockable archival TV spots, anomalous VHS transmissions, and tucked-away facility records &mdash; while deeper layers reach out across the wider Buck-Fifty universe: the companion 1996 corporate website (<code>buckfiftylabs.com</code>), the 46-page Volunteer Manual, and the graphic novels. Certain revelations can only be unlocked by investigating the game and website in combination, letting players pull the thread as far down Sub-Level 4 as their curiosity takes them.</p>
             <p>Tinkerers and 1990s CGI enthusiasts can also step beyond the CRT altogether: pressing a single key exports both <strong>user-generated 3D creations</strong> sculpted in <em>Ascend Mode</em> (complete with Eric Haines' Standard Procedural Database generator) and <strong>live 3D gameplay scenes</strong> (<em>Chase</em>, <em>The Rise</em>, <em>Edge Computing</em>, <em>Blueprint</em>) straight into genuine <strong>POV-Ray 3.7</strong> raytracing scripts paired with a zero-setup <code>render.bat</code> launcher. Double-clicking that script lets players choose MP4 video, animated GIF, or both &mdash; and pick from <strong>10 embedded color and lighting schemes</strong> &mdash; before POV-Ray traces a smooth 360&deg; turntable animation headlessly.</p>
           </div>
+
+          <div id="copyPitch" class="copy-panel" role="tabpanel">
+            <p>A $1.50 multi-genre 1990s retro-futuristic arcade escape &mdash; and a deep well of cross-media Buck-Fifty Labs secrets &mdash; built entirely in pure C++17 CPU software rendering (zero GPU), spanning 11 narratively connected genres, 74 FMV broadcasts, and one-click POV-Ray 3.7 export of both user-sculpted and live 3D scenes into multi-themed MP4 and animated GIF turntables.</p>
+          </div>
         </div>
 
         <ul class="feature-list">
-          <li><strong>11 Narratively Connected Genres + 5 CRT Interrogations:</strong> Shifts seamlessly across 3D software-raytraced chases, CRT dual-snake duels, isometric sentinel containment, 8-verb 1990s point-and-click brain surgery, real-time physics raytracing, wireframe ECG mazes, 3D pipe hypercubes, Utah USGS satellite triangulation, CAD blueprint navigation, 23-second stealth, 5-lane OutRun-style pizza racing, and 5 high-pressure terminal bluffs.</li>
-          <li><strong>A Deep Well of Secrets &amp; Cross-Media Buck-Fifty Lore:</strong> Uncover hidden layers ranging from unlockable archival TV spots and off-air broadcast anomalies to clues planted across the companion 1996 website, 46-page Volunteer Manual, and graphic novels &mdash; including mysteries that only open when the game and website are investigated together.</li>
-          <li><strong>One-Click POV-Ray 3.7 Export (User-Created &amp; Gameplay 3D Scenes):</strong> Export custom 3D sculptures from <em>Ascend Mode</em> or live 3D gameplay moments directly into authentic <code>scene.pov</code> scripts, then double-click <code>render.bat</code> to render 360&deg; MP4 videos or animated GIFs in 10 selectable color &amp; lighting schemes.</li>
-          <li><strong>100% Pure CPU Software Rendering:</strong> Custom multi-threaded C++17 software rasterizers, raytracers, and CRT post-processing running directly on CPU silicon &mdash; no dedicated graphics card required.</li>
-          <li><strong>74 Archival FMV Clips &amp; 50 In-World TV Breaks:</strong> Saturated 1996 infomercials, recruitment tapes, fictional sponsor commercials (Slab-O-Bull, Fissi-Efficient, Omni-Smile, Model B-50), and unlockable off-air broadcasts.</li>
-          <li><strong>Deep Replayability &amp; 153 Steam Achievements:</strong> Includes <em>Relive Trauma</em> mode select, Local 2-Player PvP (<em>Them Apples</em>), <em>Perma-Death</em>, <em>Speed Run</em> (15-minute hourglass), and 4 full-campaign screen distortion modes.</li>
+          <li><strong>11 Narratively Connected Genres + 5 CRT Interrogations:</strong> 3D raytraced chases, CRT dual-snake duels, isometric containment, 8-verb brain surgery, physics raytracing, wireframe ECG mazes, 3D pipe hypercubes, Utah USGS GPS, CAD blueprints, stealth, pizza racing, and 5 terminal bluffs.</li>
+          <li><strong>Deep Well of Secrets &amp; Cross-Media Lore:</strong> Unlockable archival TV spots, broadcast anomalies, and clues planted across the 1996 website, 46-page manual, and graphic novels &mdash; including mysteries that require combining game and website together.</li>
+          <li><strong>One-Click POV-Ray 3.7 Export (MP4 &amp; GIF):</strong> Export custom <em>Ascend</em> 3D sculptures or live 3D gameplay into <code>scene.pov</code>, then double-click <code>render.bat</code> to render 360&deg; MP4/GIF loops in 10 lighting schemes.</li>
+          <li><strong>100% Pure CPU Software Rendering:</strong> Custom multi-threaded C++17 software rasterizers, raytracers, and CRT post-processing running directly on CPU silicon &mdash; zero GPU required.</li>
+          <li><strong>74 Archival FMV Clips &amp; 50 TV Breaks:</strong> Saturated 1996 infomercials, recruitment tapes, fictional sponsor commercials (Slab-O-Bull, Fissi-Efficient, Omni-Smile, Model B-50), and hidden off-air broadcasts.</li>
+          <li><strong>Deep Replayability &amp; 153 Steam Achievements:</strong> Includes <em>Relive Trauma</em> mode select, Local 2-Player PvP, <em>Perma-Death</em>, <em>Speed Run</em>, and 4 full-campaign visual distortion difficulties.</li>
         </ul>
 
-        <div class="subheading-row">Editorial &amp; Story Angles</div>
-        <div class="hooks-grid">
-          <div class="hook-card">
-            <div class="hook-tag">Angle 01 // Tech Craft</div>
-            <h3>A 3D Raytraced Game With Zero GPU Code</h3>
-            <p>While modern PC releases demand multi-hundred-dollar GPUs and massive shader caches, <em>Artsy_2000</em> computes every raytraced bounce, Mode-7 horizon, and CRT scanline purely on CPU threads via Win32/GDI.</p>
+        <details class="press-drawer">
+          <summary>
+            <span class="drawer-summary-left">Editorial &amp; Story Angles (4 Pitch Hooks for Writers)</span>
+            <span class="drawer-hint">Click to expand</span>
+          </summary>
+          <div class="press-drawer-body">
+            <div class="hooks-grid" style="margin-top: 0;">
+              <div class="hook-card">
+                <div class="hook-tag">Angle 01 // Tech Craft</div>
+                <h3>A 3D Raytraced Game With Zero GPU Code</h3>
+                <p>While modern PC releases demand multi-hundred-dollar GPUs and massive shader caches, <em>Artsy_2000</em> computes every raytraced bounce, Mode-7 horizon, and CRT scanline purely on CPU threads via Win32/GDI.</p>
+              </div>
+              <div class="hook-card">
+                <div class="hook-tag">Angle 02 // Pricing Hook</div>
+                <h3>Literally Priced at a Buck-Fifty ($1.50)</h3>
+                <p>Buck-Fifty Innovation Labs promises volunteers &ldquo;$1.50 per diem and a personal pan pizza voucher.&rdquo; The full Steam release matches the joke literally at $1.50 USD &mdash; packing 11 genres, 74 FMVs, and 153 achievements.</p>
+              </div>
+              <div class="hook-card">
+                <div class="hook-tag">Angle 03 // 1990s CGI Pipeline</div>
+                <h3>Export Gameplay &amp; Custom 3D Scenes to POV-Ray 3.7</h3>
+                <p>Honoring Salt Lake City's foundational computer-graphics heritage, players can export both custom 3D creations and live gameplay scenes into real POV-Ray scripts &mdash; then double-click one script to render 360&deg; MP4s or animated GIFs in 10 lighting styles.</p>
+              </div>
+              <div class="hook-card">
+                <div class="hook-tag">Angle 04 // Deep Secrets &amp; Lore</div>
+                <h3>A Rabbit Hole That Extends Beyond the Game Window</h3>
+                <p>Behind the $1.50 arcade escape lies a layered mystery spanning unlockable archival TV spots, clues tucked inside the 1996 website (<a href="../index.html">buckfiftylabs.com</a>), the 46-page Volunteer Manual, and graphic novels &mdash; including secrets that only unlock when game and website are paired together.</p>
+              </div>
+            </div>
           </div>
-          <div class="hook-card">
-            <div class="hook-tag">Angle 02 // Pricing Hook</div>
-            <h3>Literally Priced at a Buck-Fifty ($1.50)</h3>
-            <p>Buck-Fifty Innovation Labs promises volunteers &ldquo;$1.50 per diem and a personal pan pizza voucher.&rdquo; The full Steam release matches the joke literally at $1.50 USD &mdash; packing 11 genres, 74 FMVs, and 153 achievements.</p>
-          </div>
-          <div class="hook-card">
-            <div class="hook-tag">Angle 03 // 1990s CGI Pipeline</div>
-            <h3>Export Gameplay &amp; Custom 3D Scenes to POV-Ray 3.7</h3>
-            <p>Honoring Salt Lake City's foundational computer-graphics heritage, players can export both custom 3D creations and live gameplay scenes into real POV-Ray scripts &mdash; then double-click one script to render 360&deg; MP4s or animated GIFs in 10 lighting styles.</p>
-          </div>
-          <div class="hook-card">
-            <div class="hook-tag">Angle 04 // Deep Secrets &amp; Lore</div>
-            <h3>A Rabbit Hole That Extends Beyond the Game Window</h3>
-            <p>Behind the $1.50 arcade escape lies a layered mystery spanning unlockable archival TV spots, clues tucked inside the 1996 website (<a href="../index.html">buckfiftylabs.com</a>), the 46-page Volunteer Manual, and graphic novels &mdash; including secrets that only unlock when game and website are paired together.</p>
-          </div>
-        </div>
+        </details>
       </section>
 
       <!-- ================================================================== -->
@@ -492,12 +495,12 @@
           <!-- 01: 3D Gameplay (Chase Boss) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_01_chase_daemon_host.png" data-filename="artsy_2000_01_chase_daemon_host.png" data-title="Chase Mode — Daemon Host Boss (MK_NEXUS)" data-caption="Crimson Fibonacci Spike Sphere boss ('Attack Pattern Beta') rendered natively on CPU threads over a neon wireframe horizon — and exportable directly to POV-Ray 3.7." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Chase Mode Daemon Host Boss">
-              <img src="media/screenshots/artsy_2000_01_chase_daemon_host.png" alt="Chase Mode Daemon Host Boss MK_NEXUS" loading="lazy">
+              <img src="media/thumbs/artsy_2000_01_chase_daemon_host.jpg" alt="Chase Mode Daemon Host Boss MK_NEXUS" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Chase Mode &mdash; Daemon Host Boss (MK_NEXUS)</span></div>
-              <p class="shot-caption">Crimson Fibonacci Spike Sphere boss (&ldquo;Attack Pattern Beta&rdquo;) rendered on pure CPU threads &mdash; exportable straight to POV-Ray 3.7.</p>
+              <div class="shot-title-row"><span class="shot-title">Chase Mode &mdash; Daemon Host Boss</span></div>
+              <p class="shot-caption">Fibonacci Spike Sphere boss on pure CPU threads &mdash; exportable to POV-Ray 3.7.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_01_chase_daemon_host.png" download class="shot-dl">&#8595; PNG</a>
@@ -508,12 +511,12 @@
           <!-- 02: FMV (Dr. Brad Vance Lobby) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_02_fmv_vance_lobby.png" data-filename="artsy_2000_02_fmv_vance_lobby.png" data-title="Archival FMV — Dr. Brad Vance & Lobby Brain Mural" data-caption="1993 VHS reception-cam footage of Clinical Director Dr. Brad Vance strolling past Buck-Fifty Innovation Labs' pastel rainbow brain mural." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Archival FMV Dr. Brad Vance in Lobby">
-              <img src="media/screenshots/artsy_2000_02_fmv_vance_lobby.png" alt="Archival FMV Dr. Brad Vance walking past the Buck-Fifty Lobby Brain Mural" loading="lazy">
+              <img src="media/thumbs/artsy_2000_02_fmv_vance_lobby.jpg" alt="Archival FMV Dr. Brad Vance walking past the Buck-Fifty Lobby Brain Mural" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Archival FMV &mdash; Dr. Brad Vance &amp; Lobby Mural</span></div>
-              <p class="shot-caption">1993 VHS reception-cam clip of Clinical Director Dr. Brad Vance passing the rainbow brain mural.</p>
+              <div class="shot-title-row"><span class="shot-title">FMV &mdash; Dr. Brad Vance &amp; Lobby Mural</span></div>
+              <p class="shot-caption">1993 VHS reception-cam clip of Clinical Director Dr. Brad Vance.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_02_fmv_vance_lobby.png" download class="shot-dl">&#8595; PNG</a>
@@ -524,12 +527,12 @@
           <!-- 03: 3D Editor (Editor_1 — Sphereflake & POV-Ray Export) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_03_editor_sphereflake_ascend.png" data-filename="artsy_2000_03_editor_sphereflake_ascend.png" data-title="Ascend Mode 3D Editor — Sphereflake & POV-Ray Export" data-caption="Free-flight pure-CPU 3D raytracer sculptor rendering Eric Haines' reflective Sphereflake fractal over neon wireframe peaks with one-key X export to POV-Ray 3.7." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Ascend Mode 3D Editor Sphereflake and POV-Ray Export">
-              <img src="media/screenshots/artsy_2000_03_editor_sphereflake_ascend.png" alt="Ascend Mode 3D Raytracer Editor displaying reflective Sphereflake fractal with POV-Ray export HUD" loading="lazy">
+              <img src="media/thumbs/artsy_2000_03_editor_sphereflake_ascend.jpg" alt="Ascend Mode 3D Raytracer Editor displaying reflective Sphereflake fractal with POV-Ray export HUD" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Ascend 3D Editor &mdash; Sphereflake &amp; POV-Ray Export</span></div>
-              <p class="shot-caption">Free-flight pure-CPU 3D sculptor rendering Eric Haines' Sphereflake fractal with one-key <code>X: POV-RAY</code> turntable export.</p>
+              <div class="shot-title-row"><span class="shot-title">Ascend 3D Editor &mdash; Sphereflake</span></div>
+              <p class="shot-caption">Free-flight CPU 3D sculptor with one-key <code>X: POV-RAY</code> turntable export.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_03_editor_sphereflake_ascend.png" download class="shot-dl">&#8595; PNG</a>
@@ -540,12 +543,12 @@
           <!-- 04: CRT/Arcade (GPS Mode) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_04_gps_utah_triangulation.png" data-filename="artsy_2000_04_gps_utah_triangulation.png" data-title="GPS Mode — Utah Orbital Satellite Triangulation" data-caption="'Grid-Locked & Pepperoni-Shocked': zooming across public-domain USGS/USDA Utah aerial imagery to triangulate Site Alpha-4 before the pass expires." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: GPS Mode Utah Orbital Satellite Triangulation">
-              <img src="media/screenshots/artsy_2000_04_gps_utah_triangulation.png" alt="GPS Mode Utah Orbital Satellite Triangulation" loading="lazy">
+              <img src="media/thumbs/artsy_2000_04_gps_utah_triangulation.jpg" alt="GPS Mode Utah Orbital Satellite Triangulation" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">GPS Mode &mdash; Utah Satellite Triangulation</span></div>
-              <p class="shot-caption">&ldquo;Grid-Locked &amp; Pepperoni-Shocked&rdquo;: narrowing public-domain USGS Utah aerial sectors to lock onto Site Alpha-4.</p>
+              <div class="shot-title-row"><span class="shot-title">GPS Mode &mdash; Utah Triangulation</span></div>
+              <p class="shot-caption">Narrowing public-domain USGS Utah aerial sectors to lock onto Site Alpha-4.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_04_gps_utah_triangulation.png" download class="shot-dl">&#8595; PNG</a>
@@ -556,12 +559,12 @@
           <!-- 05: FMV/Cutscene (Ascend_1 — Ascend Runway) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_05_fmv_ascend_runway.png" data-filename="artsy_2000_05_fmv_ascend_runway.png" data-title="Archival Cutscene — Ascend Mode Checkerboard Runway" data-caption="Subject 13 striding down a glossy raytraced checkerboard runway flanked by floating 3D geometric primitives, green wireframe ridges, and a synthwave sun." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Ascend Mode Checkerboard Runway Cutscene">
-              <img src="media/screenshots/artsy_2000_05_fmv_ascend_runway.png" alt="Subject 13 walking down the Ascend Mode checkerboard runway flanked by floating raytraced 3D primitives" loading="lazy">
+              <img src="media/thumbs/artsy_2000_05_fmv_ascend_runway.jpg" alt="Subject 13 walking down the Ascend Mode checkerboard runway flanked by floating raytraced 3D primitives" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Cutscene &mdash; Ascend Mode Checkerboard Runway</span></div>
-              <p class="shot-caption">Subject 13 walking into the raytraced Ascend realm past floating primitives, green wireframe ridges, and a synthwave sun.</p>
+              <div class="shot-title-row"><span class="shot-title">Cutscene &mdash; Ascend Runway</span></div>
+              <p class="shot-caption">Subject 13 entering the raytraced Ascend realm past floating 3D primitives.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_05_fmv_ascend_runway.png" download class="shot-dl">&#8595; PNG</a>
@@ -572,12 +575,12 @@
           <!-- 06: 3D Gameplay (The Rise) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_06_the_rise_cpu_raytracer.png" data-filename="artsy_2000_06_the_rise_cpu_raytracer.png" data-title="The Rise — Real-Time CPU Raytracer & Reflections" data-caption="Multi-threaded CPU raytracing with reflective crystal monoliths, mirrored checkerboard ocean, floating horizon sphere, and live ECG vitals." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: The Rise Real-Time CPU Raytracer">
-              <img src="media/screenshots/artsy_2000_06_the_rise_cpu_raytracer.png" alt="The Rise Real-Time CPU Raytracer and Reflections" loading="lazy">
+              <img src="media/thumbs/artsy_2000_06_the_rise_cpu_raytracer.jpg" alt="The Rise Real-Time CPU Raytracer and Reflections" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">The Rise &mdash; Real-Time CPU Raytracer</span></div>
-              <p class="shot-caption">Multi-threaded CPU raytracing with reflective crystal monoliths, mirrored checkerboard ocean, and floating Horizon Sphere.</p>
+              <div class="shot-title-row"><span class="shot-title">The Rise &mdash; CPU Raytracer</span></div>
+              <p class="shot-caption">Reflective monoliths and mirrored ocean computed natively on CPU threads.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_06_the_rise_cpu_raytracer.png" download class="shot-dl">&#8595; PNG</a>
@@ -588,12 +591,12 @@
           <!-- 07: CRT/Arcade (Terminal Interrogation) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_07_conversation_prep_ward.png" data-filename="artsy_2000_07_conversation_prep_ward.png" data-title="Terminal Interrogation — Surgical Prep Ward (Stall 03)" data-caption="High-pressure CRT dialogue bluffing the Prep Orderly while pre-sedative interference scrambles reply options under a ticking suspicion meter." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Terminal Interrogation Surgical Prep Ward">
-              <img src="media/screenshots/artsy_2000_07_conversation_prep_ward.png" alt="Terminal Interrogation in Surgical Prep Ward Stall 03" loading="lazy">
+              <img src="media/thumbs/artsy_2000_07_conversation_prep_ward.jpg" alt="Terminal Interrogation in Surgical Prep Ward Stall 03" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Interrogation &mdash; Surgical Prep Ward (Stall 03)</span></div>
-              <p class="shot-caption">Bluff the Prep Orderly over a curved CRT terminal while sedative static scrambles your reply options.</p>
+              <div class="shot-title-row"><span class="shot-title">Interrogation &mdash; Prep Ward</span></div>
+              <p class="shot-caption">Bluff the Prep Orderly over a curved CRT while sedative static scrambles replies.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_07_conversation_prep_ward.png" download class="shot-dl">&#8595; PNG</a>
@@ -604,12 +607,12 @@
           <!-- 08: FMV (Model B-50 Pickup) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_08_fmv_b50_pickup_compound.png" data-filename="artsy_2000_08_fmv_b50_pickup_compound.png" data-title="Archival TV Break — Model B-50 Outside Site Alpha-4" data-caption="16mm commercial footage of a Model B-50 pickup ripping donuts outside Buck-Fifty Innovation Labs' brutalist rooftop concrete hypercube." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Archival TV Break Model B-50 Pickup">
-              <img src="media/screenshots/artsy_2000_08_fmv_b50_pickup_compound.png" alt="Model B-50 pickup doing donuts outside Buck-Fifty Innovation Labs concrete hypercube" loading="lazy">
+              <img src="media/thumbs/artsy_2000_08_fmv_b50_pickup_compound.jpg" alt="Model B-50 pickup doing donuts outside Buck-Fifty Innovation Labs concrete hypercube" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">TV Break &mdash; Model B-50 Outside Site Alpha-4</span></div>
-              <p class="shot-caption">16mm commercial of the Model B-50 pickup outside Buck-Fifty's brutalist concrete hypercube monument.</p>
+              <div class="shot-title-row"><span class="shot-title">TV Break &mdash; Model B-50</span></div>
+              <p class="shot-caption">16mm commercial outside Buck-Fifty's brutalist concrete hypercube monument.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_08_fmv_b50_pickup_compound.png" download class="shot-dl">&#8595; PNG</a>
@@ -620,12 +623,12 @@
           <!-- 09: 3D Gameplay (Iso-Lation Ward) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_09_isolate_containment_grid.png" data-filename="artsy_2000_09_isolate_containment_grid.png" data-title="Iso-Lation Ward — 14×14 Stepped Isometric Grid" data-caption="Tactical 3D raytraced containment board with five elevation tiers, glowing patrol trails, and R/G/B sentinel drones hunting Subject 13." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Iso-Lation Ward Containment Grid">
-              <img src="media/screenshots/artsy_2000_09_isolate_containment_grid.png" alt="Iso-Lation Ward 14x14 Stepped Isometric Containment Grid" loading="lazy">
+              <img src="media/thumbs/artsy_2000_09_isolate_containment_grid.jpg" alt="Iso-Lation Ward 14x14 Stepped Isometric Containment Grid" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Iso-Lation Ward &mdash; 14&times;14 Stepped Isometric Grid</span></div>
-              <p class="shot-caption">Tactical 3D raytraced containment board with five elevations, glowing patrol trails, and R/G/B sentinel drones.</p>
+              <div class="shot-title-row"><span class="shot-title">Iso-Lation Ward &mdash; 3D Grid</span></div>
+              <p class="shot-caption">14&times;14 stepped raytraced isometric grid with R/G/B sentinel drones.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_09_isolate_containment_grid.png" download class="shot-dl">&#8595; PNG</a>
@@ -636,12 +639,12 @@
           <!-- 10: CRT/Arcade (Brain Surgery) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_10_surgery_just_let_go.png" data-filename="artsy_2000_10_surgery_just_let_go.png" data-title="Brain Surgery ('Just Let Go') — Operating Theater" data-caption="1990s point-and-click operating theater with surgical tool inventory, verb actions, and flashing crimson alert cues." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Brain Surgery Operating Theater">
-              <img src="media/screenshots/artsy_2000_10_surgery_just_let_go.png" alt="Brain Surgery Operating Theater Point-and-Click Escape" loading="lazy">
+              <img src="media/thumbs/artsy_2000_10_surgery_just_let_go.jpg" alt="Brain Surgery Operating Theater Point-and-Click Escape" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Brain Surgery (&ldquo;Just Let Go&rdquo;) &mdash; Operating Theater</span></div>
-              <p class="shot-caption">1990s point-and-click operating theater with surgical tool inventory, verb actions, and crimson alert cues.</p>
+              <div class="shot-title-row"><span class="shot-title">Brain Surgery &mdash; Theater</span></div>
+              <p class="shot-caption">1990s point-and-click operating theater with surgical tool verbs.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_10_surgery_just_let_go.png" download class="shot-dl">&#8595; PNG</a>
@@ -652,12 +655,12 @@
           <!-- 11: FMV (Dr. Sterling) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_11_fmv_dr_sterling_surgeon.png" data-filename="artsy_2000_11_fmv_dr_sterling_surgeon.png" data-title="Archival FMV — Dr. Sterling (Cranial Bay 04)" data-caption="Live-action TV Break transmission introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04's operating bay." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Archival FMV Dr. Sterling in Cranial Bay 04">
-              <img src="media/screenshots/artsy_2000_11_fmv_dr_sterling_surgeon.png" alt="Live-action FMV of Dr. Sterling in Cranial Bay 04" loading="lazy">
+              <img src="media/thumbs/artsy_2000_11_fmv_dr_sterling_surgeon.jpg" alt="Live-action FMV of Dr. Sterling in Cranial Bay 04" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Archival FMV &mdash; Dr. Sterling (Cranial Bay 04)</span></div>
-              <p class="shot-caption">Live-action broadcast introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04.</p>
+              <div class="shot-title-row"><span class="shot-title">FMV &mdash; Dr. Sterling</span></div>
+              <p class="shot-caption">Chief Neurocompliance Officer Dr. Sterling outside Theatre 04.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_11_fmv_dr_sterling_surgeon.png" download class="shot-dl">&#8595; PNG</a>
@@ -668,12 +671,12 @@
           <!-- 12: 3D Gameplay (Edge Computing) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_12_edge_pipe_hypercube.png" data-filename="artsy_2000_12_edge_pipe_hypercube.png" data-title="Edge Computing — 3D Aluminum Pipe Hypercube" data-caption="High-speed banking traversal along metallic conduit pipes wrapping a massive 3D hypercube, complete with manifold key radar HUD." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Edge Computing 3D Pipe Hypercube">
-              <img src="media/screenshots/artsy_2000_12_edge_pipe_hypercube.png" alt="Edge Computing 3D Aluminum Pipe Hypercube" loading="lazy">
+              <img src="media/thumbs/artsy_2000_12_edge_pipe_hypercube.jpg" alt="Edge Computing 3D Aluminum Pipe Hypercube" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Edge Computing &mdash; 3D Aluminum Pipe Hypercube</span></div>
-              <p class="shot-caption">High-speed banking across metallic conduits wrapping a folded 3D hypercube with manifold key radar HUD.</p>
+              <div class="shot-title-row"><span class="shot-title">Edge Computing &mdash; Hypercube</span></div>
+              <p class="shot-caption">Banking traversal across metallic pipes wrapping a folded 3D hypercube.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_12_edge_pipe_hypercube.png" download class="shot-dl">&#8595; PNG</a>
@@ -684,12 +687,12 @@
           <!-- 13: CRT Intermission (Loading) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_13_loading_raytracing_irl.png" data-filename="artsy_2000_13_loading_raytracing_irl.png" data-title="CRT Intermission — 'Raytracing IRL' Animated Bumper" data-caption="Green phosphor retro rubber-hose cartoon playing on the Buck-Fifty CRT monitor between cognitive evaluation protocols." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: CRT Intermission Raytracing IRL Cartoon">
-              <img src="media/screenshots/artsy_2000_13_loading_raytracing_irl.png" alt="CRT Intermission Raytracing IRL Green Phosphor Cartoon" loading="lazy">
+              <img src="media/thumbs/artsy_2000_13_loading_raytracing_irl.jpg" alt="CRT Intermission Raytracing IRL Green Phosphor Cartoon" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">CRT Intermission &mdash; &ldquo;Raytracing IRL&rdquo;</span></div>
-              <p class="shot-caption">Green phosphor retro rubber-hose animation playing on the Buck-Fifty monitor between protocols.</p>
+              <div class="shot-title-row"><span class="shot-title">Intermission &mdash; Raytracing IRL</span></div>
+              <p class="shot-caption">Green phosphor rubber-hose cartoon playing between lab protocols.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_13_loading_raytracing_irl.png" download class="shot-dl">&#8595; PNG</a>
@@ -700,12 +703,12 @@
           <!-- 14: FMV (Skullthor) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_14_fmv_skullthor_cartoon.png" data-filename="artsy_2000_14_fmv_skullthor_cartoon.png" data-title="Archival TV Break — Skullthor Animated Broadcast" data-caption="1990s Saturday-morning animated TV Break hijack showing armored nemesis Skullthor breaching the Sub-Level 4 green-CRT server room." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Archival TV Break Skullthor Cartoon">
-              <img src="media/screenshots/artsy_2000_14_fmv_skullthor_cartoon.png" alt="Animated Skullthor breaching the Sub-Level 4 green-CRT server room" loading="lazy">
+              <img src="media/thumbs/artsy_2000_14_fmv_skullthor_cartoon.jpg" alt="Animated Skullthor breaching the Sub-Level 4 green-CRT server room" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">TV Break &mdash; Skullthor Animated Broadcast</span></div>
-              <p class="shot-caption">1990s Saturday-morning animated hijack showing Skullthor storming Sub-Level 4's server room.</p>
+              <div class="shot-title-row"><span class="shot-title">TV Break &mdash; Skullthor</span></div>
+              <p class="shot-caption">Saturday-morning animated hijack inside Sub-Level 4's server room.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_14_fmv_skullthor_cartoon.png" download class="shot-dl">&#8595; PNG</a>
@@ -716,12 +719,12 @@
           <!-- 15: 3D Editor (Editor_2 — Sculpted Sphere Chain) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_15_editor_sculpt_chain.png" data-filename="artsy_2000_15_editor_sculpt_chain.png" data-title="Ascend Mode 3D Editor — Sculpted Reflective Sphere Chain" data-caption="User-sculpted curving chain of checkered emerald, cyan, and violet reflective spheres built in Ascend Mode and ready for instant POV-Ray 3.7 turntable export." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Ascend Mode 3D Editor Sculpted Reflective Sphere Chain">
-              <img src="media/screenshots/artsy_2000_15_editor_sculpt_chain.png" alt="Ascend Mode 3D Editor showing user-sculpted curving chain of checkered reflective spheres" loading="lazy">
+              <img src="media/thumbs/artsy_2000_15_editor_sculpt_chain.jpg" alt="Ascend Mode 3D Editor showing user-sculpted curving chain of checkered reflective spheres" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Ascend 3D Editor &mdash; Sculpted Sphere Chain</span></div>
-              <p class="shot-caption">User-created curving sculpture of checkered reflective spheres built live in Ascend Mode for instant POV-Ray export.</p>
+              <div class="shot-title-row"><span class="shot-title">Ascend 3D Editor &mdash; Sphere Chain</span></div>
+              <p class="shot-caption">User-sculpted reflective sphere chain ready for instant POV-Ray export.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_15_editor_sculpt_chain.png" download class="shot-dl">&#8595; PNG</a>
@@ -732,12 +735,12 @@
           <!-- 16: CRT/Arcade (The Labyrinth) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_16_labyrinth_emerald_crt.png" data-filename="artsy_2000_16_labyrinth_emerald_crt.png" data-title="The Labyrinth — Emerald Phosphor Maze & ECG HUD" data-caption="Dual-panel phosphor CRT maze and first-person wireframe corridor with live electrocardiogram readout and scanline sprite-catching." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: The Labyrinth Emerald Phosphor Maze">
-              <img src="media/screenshots/artsy_2000_16_labyrinth_emerald_crt.png" alt="The Labyrinth Emerald Phosphor Maze and ECG Monitor" loading="lazy">
+              <img src="media/thumbs/artsy_2000_16_labyrinth_emerald_crt.jpg" alt="The Labyrinth Emerald Phosphor Maze and ECG Monitor" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">The Labyrinth &mdash; Emerald Phosphor Maze</span></div>
-              <p class="shot-caption">Dual-panel phosphor CRT maze and first-person corridor with live ECG readout and scanline sprite-catching.</p>
+              <div class="shot-title-row"><span class="shot-title">The Labyrinth &mdash; Emerald Maze</span></div>
+              <p class="shot-caption">Dual-panel phosphor wireframe maze with live ECG heart monitor.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_16_labyrinth_emerald_crt.png" download class="shot-dl">&#8595; PNG</a>
@@ -748,12 +751,12 @@
           <!-- 17: FMV (Vouchers) -->
           <article class="shot-card" data-category="fmv" data-full-src="media/screenshots/artsy_2000_17_fmv_vance_vouchers.png" data-filename="artsy_2000_17_fmv_vance_vouchers.png" data-title="Archival FMV — 1990s Value Pack & Pizza Vouchers" data-caption="Dr. Brad Vance pitching the 1990s Value Pack of complimentary personal pan pizza vouchers during a mandatory Sub-Level 4 TV Break." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Archival FMV 1990s Value Pack Pizza Vouchers">
-              <img src="media/screenshots/artsy_2000_17_fmv_vance_vouchers.png" alt="Dr. Brad Vance holding the 1990s Value Pack of Pizza Vouchers" loading="lazy">
+              <img src="media/thumbs/artsy_2000_17_fmv_vance_vouchers.jpg" alt="Dr. Brad Vance holding the 1990s Value Pack of Pizza Vouchers" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Archival FMV &mdash; 1990s Value Pack Vouchers</span></div>
-              <p class="shot-caption">Dr. Brad Vance pitching complimentary personal pan pizza vouchers during a mandatory TV Break.</p>
+              <div class="shot-title-row"><span class="shot-title">FMV &mdash; Value Pack Vouchers</span></div>
+              <p class="shot-caption">Dr. Brad Vance pitching personal pan pizza vouchers on TV Break.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_17_fmv_vance_vouchers.png" download class="shot-dl">&#8595; PNG</a>
@@ -764,12 +767,12 @@
           <!-- 18: 3D Gameplay (Chase Horizon) -->
           <article class="shot-card" data-category="3d" data-full-src="media/screenshots/artsy_2000_18_chase_checkerboard_horizon.png" data-filename="artsy_2000_18_chase_checkerboard_horizon.png" data-title="Chase Mode — Reflective Checkerboard Pursuit" data-caption="High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric projectiles and skyline peaks." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Chase Mode Reflective Checkerboard Pursuit">
-              <img src="media/screenshots/artsy_2000_18_chase_checkerboard_horizon.png" alt="Chase Mode Reflective Checkerboard Pursuit" loading="lazy">
+              <img src="media/thumbs/artsy_2000_18_chase_checkerboard_horizon.jpg" alt="Chase Mode Reflective Checkerboard Pursuit" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Chase Mode &mdash; Reflective Checkerboard Pursuit</span></div>
-              <p class="shot-caption">High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric chains.</p>
+              <div class="shot-title-row"><span class="shot-title">Chase Mode &mdash; Checkerboard</span></div>
+              <p class="shot-caption">High-velocity 3D software pursuit across a rippling blue plane.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_18_chase_checkerboard_horizon.png" download class="shot-dl">&#8595; PNG</a>
@@ -780,12 +783,12 @@
           <!-- 19: CRT/Arcade (Pizza Delivery Race) -->
           <article class="shot-card" data-category="crt" data-full-src="media/screenshots/artsy_2000_19_pizza_delivery_race.png" data-filename="artsy_2000_19_pizza_delivery_race.png" data-title="Pizza Delivery Race — 16-Bit Desert Highway Run" data-caption="OutRun-inspired 5-lane desert highway escape featuring roadside brick barriers, oncoming traffic, and a cosmic rotating pizza skybox." data-res="1920×1200 PNG">
             <button type="button" class="shot-thumb-btn" aria-label="Inspect full-size screenshot: Pizza Delivery Race Desert Highway">
-              <img src="media/screenshots/artsy_2000_19_pizza_delivery_race.png" alt="Pizza Delivery Race 5-Lane Desert Highway" loading="lazy">
+              <img src="media/thumbs/artsy_2000_19_pizza_delivery_race.jpg" alt="Pizza Delivery Race 5-Lane Desert Highway" loading="lazy">
               <span class="shot-zoom-hint">Inspect &#8599;</span>
             </button>
             <div class="shot-meta">
-              <div class="shot-title-row"><span class="shot-title">Pizza Delivery Race &mdash; Desert Highway Run</span></div>
-              <p class="shot-caption">OutRun-inspired 5-lane desert highway escape with brick barriers, traffic dodges, and cosmic pizza skybox.</p>
+              <div class="shot-title-row"><span class="shot-title">Pizza Race &mdash; Desert Highway</span></div>
+              <p class="shot-caption">OutRun-inspired 5-lane highway run under a cosmic pizza skybox.</p>
               <div class="shot-footer">
                 <span>1920&times;1200 &middot; PNG</span>
                 <a href="media/screenshots/artsy_2000_19_pizza_delivery_race.png" download class="shot-dl">&#8595; PNG</a>
@@ -793,6 +796,10 @@
             </div>
           </article>
 
+        </div>
+
+        <div id="shotsExpandRow" class="shots-expand-row">
+          <button type="button" id="shotsExpandBtn" class="btn btn-secondary" aria-expanded="false">Show all 19 screenshots (+10 more)</button>
         </div>
       </section>
 
@@ -852,7 +859,7 @@
         <div class="branding-grid">
           <div class="asset-card wide">
             <div class="asset-stage pipeline-hero">
-              <img src="media/branding/artsy_2000_povray_pipeline_win95_1920x1080.png" alt="Retro Windows 95 desktop mockup showing the Artsy_2000 POV-Ray 3.7 export pipeline from windowed gameplay to scene.pov, double-clicking render.bat, headless POV-Ray raytracing, and the resulting 360-degree animated GIF" loading="lazy">
+              <img src="media/thumbs/artsy_2000_povray_pipeline_win95_1920x1080.jpg" alt="Retro Windows 95 desktop mockup showing the Artsy_2000 POV-Ray 3.7 export pipeline from windowed gameplay to scene.pov, double-clicking render.bat, headless POV-Ray raytracing, and the resulting 360-degree animated GIF" loading="lazy">
             </div>
             <div class="asset-meta">
               <div>
@@ -886,32 +893,6 @@
                 <div class="asset-specs">1200&times;896 &middot; JPG &middot; 636 KB</div>
               </div>
               <a href="media/branding/artsy_2000_povray_turntable_studio.jpg" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
-
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_povray_chase_diorama.jpg" alt="POV-Ray 3.7 Render — Chase Mode Retrosynth Diorama" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">POV-Ray 3.7 Render &mdash; Chase Diorama Still</div>
-                <div class="asset-specs">1280&times;720 &middot; JPG &middot; 221 KB</div>
-              </div>
-              <a href="media/branding/artsy_2000_povray_chase_diorama.jpg" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
-
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_povray_facility_compound.jpg" alt="POV-Ray 3.7 Render — Buck-Fifty Brutalist Compound" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">POV-Ray 3.7 Render &mdash; Buck-Fifty Desert Compound</div>
-                <div class="asset-specs">1280&times;720 &middot; JPG &middot; 136 KB</div>
-              </div>
-              <a href="media/branding/artsy_2000_povray_facility_compound.jpg" download class="btn btn-ghost">&#8595; Download</a>
             </div>
           </div>
         </div>
@@ -952,114 +933,147 @@
               <a href="media/branding/buck_fifty_cube_icon.png" download class="btn btn-ghost">&#8595; Download</a>
             </div>
           </div>
-
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/buck_fifty_labs_crt_splash.png" alt="Buck-Fifty Innovation Labs CRT Workstation Splash" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Buck-Fifty Labs CRT Splash</div>
-                <div class="asset-specs">1024&times;559 &middot; PNG &middot; 698 KB</div>
-              </div>
-              <a href="media/branding/buck_fifty_labs_crt_splash.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
-
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/buck_fifty_labs_manual_emblem.jpg" alt="Buck-Fifty Innovation Labs Print Manual Emblem" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Buck-Fifty 1996 Print Emblem</div>
-                <div class="asset-specs">1376&times;768 &middot; JPG &middot; 677 KB</div>
-              </div>
-              <a href="media/branding/buck_fifty_labs_manual_emblem.jpg" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
         </div>
 
-        <div class="subheading-row">Key Art Banners &amp; Feature Collages</div>
-        <div class="branding-grid">
-          <div class="asset-card wide">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_keyart_banner_1920x622.png" alt="Artsy_2000 Widescreen Key Art Banner 1920x622" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Widescreen Hero Banner (Editorial Header)</div>
-                <div class="asset-specs">1920&times;622 &middot; PNG &middot; 1.4 MB</div>
+        <details class="press-drawer">
+          <summary>
+            <span class="drawer-summary-left">Additional Key Art Banners, Studio Splashes, Feature Collages &amp; POV-Ray Stills (10 more files)</span>
+            <span class="drawer-hint">Included in ZIP &middot; Click to preview</span>
+          </summary>
+          <div class="press-drawer-body">
+            <div class="branding-grid">
+              <div class="asset-card wide">
+                <div class="asset-stage full-bleed">
+                  <img src="media/thumbs/artsy_2000_keyart_banner_1920x622.jpg" alt="Artsy_2000 Widescreen Key Art Banner 1920x622" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Widescreen Hero Banner (Editorial Header)</div>
+                    <div class="asset-specs">1920&times;622 &middot; PNG &middot; 1.4 MB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_keyart_banner_1920x622.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/artsy_2000_keyart_banner_1920x622.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
 
-          <div class="asset-card wide">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/buck_fifty_studio_banner_1500x220.png" alt="Buck-Fifty Innovation Labs Studio Header 1500x220" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Buck-Fifty Innovation Labs Studio Header</div>
-                <div class="asset-specs">1500&times;220 &middot; PNG &middot; 266 KB</div>
+              <div class="asset-card wide">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/buck_fifty_studio_banner_1500x220.png" alt="Buck-Fifty Innovation Labs Studio Header 1500x220" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Buck-Fifty Innovation Labs Studio Header</div>
+                    <div class="asset-specs">1500&times;220 &middot; PNG &middot; 266 KB</div>
+                  </div>
+                  <a href="media/branding/buck_fifty_studio_banner_1500x220.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/buck_fifty_studio_banner_1500x220.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
 
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_keyart_cover_800x450.png" alt="Artsy_2000 16:9 Key Art Cover 800x450" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">16:9 Key Art / Thumbnail Cover</div>
-                <div class="asset-specs">800&times;450 &middot; PNG &middot; 574 KB</div>
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_keyart_cover_800x450.png" alt="Artsy_2000 16:9 Key Art Cover 800x450" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">16:9 Key Art / Thumbnail Cover</div>
+                    <div class="asset-specs">800&times;450 &middot; PNG &middot; 574 KB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_keyart_cover_800x450.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/artsy_2000_keyart_cover_800x450.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
 
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_showcase_protocols.png" alt="Pure CPU Protocols 3-Camera Feature Sheet" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Feature Sheet &mdash; Multi-Mode Protocols</div>
-                <div class="asset-specs">780&times;470 &middot; PNG &middot; 357 KB</div>
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/buck_fifty_labs_crt_splash.png" alt="Buck-Fifty Innovation Labs CRT Workstation Splash" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Buck-Fifty Labs CRT Splash</div>
+                    <div class="asset-specs">1024&times;559 &middot; PNG &middot; 698 KB</div>
+                  </div>
+                  <a href="media/branding/buck_fifty_labs_crt_splash.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/artsy_2000_showcase_protocols.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
 
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_showcase_facility.png" alt="Suite G and Dr. Brad Vance Feature Sheet" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Feature Sheet &mdash; Suite G &amp; Dr. Brad Vance</div>
-                <div class="asset-specs">780&times;366 &middot; PNG &middot; 435 KB</div>
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/buck_fifty_labs_manual_emblem.jpg" alt="Buck-Fifty Innovation Labs Print Manual Emblem" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Buck-Fifty 1996 Print Emblem</div>
+                    <div class="asset-specs">1376&times;768 &middot; JPG &middot; 677 KB</div>
+                  </div>
+                  <a href="media/branding/buck_fifty_labs_manual_emblem.jpg" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/artsy_2000_showcase_facility.png" download class="btn btn-ghost">&#8595; Download</a>
-            </div>
-          </div>
 
-          <div class="asset-card">
-            <div class="asset-stage full-bleed">
-              <img src="media/branding/artsy_2000_showcase_cpu_farm.gif" alt="Animated Sub-Level 4 Pure CPU Raytracing Showcase GIF" loading="lazy">
-            </div>
-            <div class="asset-meta">
-              <div>
-                <div class="asset-name">Animated GIF &mdash; Pure CPU Raytracing Showcase</div>
-                <div class="asset-specs">780&times;308 &middot; Animated GIF &middot; 2.0 MB</div>
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_povray_chase_diorama.jpg" alt="POV-Ray 3.7 Render — Chase Mode Retrosynth Diorama" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">POV-Ray 3.7 Render &mdash; Chase Diorama Still</div>
+                    <div class="asset-specs">1280&times;720 &middot; JPG &middot; 221 KB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_povray_chase_diorama.jpg" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
               </div>
-              <a href="media/branding/artsy_2000_showcase_cpu_farm.gif" download class="btn btn-ghost">&#8595; Download</a>
+
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_povray_facility_compound.jpg" alt="POV-Ray 3.7 Render — Buck-Fifty Brutalist Compound" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">POV-Ray 3.7 Render &mdash; Buck-Fifty Desert Compound</div>
+                    <div class="asset-specs">1280&times;720 &middot; JPG &middot; 136 KB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_povray_facility_compound.jpg" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
+              </div>
+
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_showcase_protocols.png" alt="Pure CPU Protocols 3-Camera Feature Sheet" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Feature Sheet &mdash; Multi-Mode Protocols</div>
+                    <div class="asset-specs">780&times;470 &middot; PNG &middot; 357 KB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_showcase_protocols.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
+              </div>
+
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_showcase_facility.png" alt="Suite G and Dr. Brad Vance Feature Sheet" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Feature Sheet &mdash; Suite G &amp; Dr. Brad Vance</div>
+                    <div class="asset-specs">780&times;366 &middot; PNG &middot; 435 KB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_showcase_facility.png" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
+              </div>
+
+              <div class="asset-card">
+                <div class="asset-stage full-bleed">
+                  <img src="media/branding/artsy_2000_showcase_cpu_farm.gif" alt="Animated Sub-Level 4 Pure CPU Raytracing Showcase GIF" loading="lazy">
+                </div>
+                <div class="asset-meta">
+                  <div>
+                    <div class="asset-name">Animated GIF &mdash; Pure CPU Raytracing Showcase</div>
+                    <div class="asset-specs">780&times;308 &middot; Animated GIF &middot; 2.0 MB</div>
+                  </div>
+                  <a href="media/branding/artsy_2000_showcase_cpu_farm.gif" download class="btn btn-ghost">&#8595; Download</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </details>
       </section>
 
       <!-- ================================================================== -->
@@ -1074,82 +1088,90 @@
           </div>
         </div>
 
-        <div class="modes-grid">
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 01</span><span class="mode-genre">Mode-7 / 3D Action</span></div>
-            <h3>Chase Mode (&ldquo;Spike the Ball&rdquo;)</h3>
-            <p>High-speed software-rendered ground pursuit across mirrored wireframe landscapes, chain enemies, and the Fibonacci Spike Sphere boss fight &mdash; exportable live to POV-Ray 3.7.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 02</span><span class="mode-genre">CRT Arcade / 2P PvP</span></div>
-            <h3>Them Apples (Revenge)</h3>
-            <p>Monochrome green phosphor dual-snake showdown against rogue Sub-Level 4 AI Daemon 0x0666, also unlocked as Local 2-Player PvP.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 03</span><span class="mode-genre">Isometric Tactical</span></div>
-            <h3>Iso-Lation Ward</h3>
-            <p>14&times;14 stepped raytraced isometric grid with 5 elevations, R/G/B sentinel drones, tactical focus-time gadgets, and a 3-lane Panic Highway escape.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 04</span><span class="mode-genre">90s Point-and-Click</span></div>
-            <h3>Brain Surgery (&ldquo;Just Let Go&rdquo;)</h3>
-            <p>Classic 8-verb operating theater adventure with 64 surgical tools, narcotic arrow drift, EMP shocks, and a hidden typing breakout sequence.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 05</span><span class="mode-genre">CPU Raytracer + Physics</span></div>
-            <h3>The Rise (&ldquo;Fancy a Lift?&rdquo;)</h3>
-            <p>Interactive CPU raytracer with Phong reflections, rigid-body geometric ammo charging, vertical monolith climbing, and live POV-Ray 3.7 export.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 06</span><span class="mode-genre">Wireframe Maze / CRT</span></div>
-            <h3>The Labyrinth (&ldquo;Straight Forward&rdquo;)</h3>
-            <p>First-person emerald wireframe maze paired with an active ECG heart-rate monitor, scanline sprite catching, and visceral Guts decompression.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 07</span><span class="mode-genre">3D Traversal</span></div>
-            <h3>Edge Computing</h3>
-            <p>High-speed orbital navigation along an aluminum pipe network spanning all six faces of a folded 3D hypercube, complete with detached orbital camera and POV-Ray export.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 08</span><span class="mode-genre">Aerial Triangulation</span></div>
-            <h3>Grid-Locked &amp; Pepperoni-Shocked (GPS)</h3>
-            <p>Multi-resolution orbital satellite triangulation over public-domain USGS/USDA Utah imagery to pinpoint Site Alpha-4 before the satellite pass expires.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 09</span><span class="mode-genre">CAD Schematic + 3D</span></div>
-            <h3>Blueprint Mode (&ldquo;Lay Out or Lay Down&rdquo;)</h3>
-            <p>Architectural cyan schematic maze with graphite scanlines, rubberstamp pen catching, a 3D raytraced lobby tour, and instant POV-Ray export.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 10</span><span class="mode-genre">Top-Down Stealth</span></div>
-            <h3>Parking Lot Stealth (&ldquo;Parxing Jordan&rdquo;)</h3>
-            <p>23-second stealth dash past patrolling scientists to the getaway car &mdash; warping into a medieval Dark Ages RPG hallucination when oxygen runs low.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">PHASE 11</span><span class="mode-genre">Pseudo-3D Racer</span></div>
-            <h3>Pizza Delivery Race (&ldquo;Healthful Delivery&rdquo;)</h3>
-            <p>OutRun-inspired 5-lane desert highway run featuring traffic dodges, roadside diners, brick-wall barriers, and a cosmic pepperoni skybox.</p>
-          </div>
-          <div class="mode-card">
-            <div class="mode-top"><span class="mode-num">5 INTERROGATIONS</span><span class="mode-genre">Timed CRT Dialogue</span></div>
-            <h3>Facility Staff Audits</h3>
-            <p>Out-bluff five distinct staff members &mdash; Prep Orderly, Dr. Sterling, Triage Officer, Pipe Tech, and the Bella Rosa Pizza Guy &mdash; before suspicion maxes out.</p>
-          </div>
-        </div>
-
-        <div class="bonus-modes-banner">
+        <div class="bonus-modes-banner" style="margin-top: 0;">
           <strong>Unlockable Bonus Studio, Secrets &amp; Challenge Campaigns:</strong> Completing the campaign unlocks secret <strong>Ascend Mode</strong> (an interactive 3D raytracer sculptor with Eric Haines' Standard Procedural Database generator and one-click POV-Ray 3.7 export into multi-themed MP4/GIF turntables &mdash; also unlocked across live 3D gameplay modes), <strong>Relive Trauma</strong> mode select, hidden archival TV spots, plus <strong>7 Campaign Difficulties</strong>: <em>Joe Six-Pack</em>, <em>Perma-Death</em>, <em>Speed Run</em> (15-minute limit), and 4 full-campaign screen-distortion modes (<em>Dog Video Wave</em>, <em>Green CRT</em>, <em>Rotating Cube</em>, and <em>Hexagonal Tiles</em>).
         </div>
+
+        <details class="press-drawer">
+          <summary>
+            <span class="drawer-summary-left">Full Campaign Breakdown: All 11 Playable Genres &amp; 5 CRT Interrogations</span>
+            <span class="drawer-hint">12 modes &middot; Click to expand</span>
+          </summary>
+          <div class="press-drawer-body">
+            <div class="modes-grid">
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 01</span><span class="mode-genre">Mode-7 / 3D Action</span></div>
+                <h3>Chase Mode (&ldquo;Spike the Ball&rdquo;)</h3>
+                <p>High-speed software-rendered ground pursuit across mirrored wireframe landscapes, chain enemies, and the Fibonacci Spike Sphere boss fight &mdash; exportable live to POV-Ray 3.7.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 02</span><span class="mode-genre">CRT Arcade / 2P PvP</span></div>
+                <h3>Them Apples (Revenge)</h3>
+                <p>Monochrome green phosphor dual-snake showdown against rogue Sub-Level 4 AI Daemon 0x0666, also unlocked as Local 2-Player PvP.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 03</span><span class="mode-genre">Isometric Tactical</span></div>
+                <h3>Iso-Lation Ward</h3>
+                <p>14&times;14 stepped raytraced isometric grid with 5 elevations, R/G/B sentinel drones, tactical focus-time gadgets, and a 3-lane Panic Highway escape.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 04</span><span class="mode-genre">90s Point-and-Click</span></div>
+                <h3>Brain Surgery (&ldquo;Just Let Go&rdquo;)</h3>
+                <p>Classic 8-verb operating theater adventure with 64 surgical tools, narcotic arrow drift, EMP shocks, and a hidden typing breakout sequence.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 05</span><span class="mode-genre">CPU Raytracer + Physics</span></div>
+                <h3>The Rise (&ldquo;Fancy a Lift?&rdquo;)</h3>
+                <p>Interactive CPU raytracer with Phong reflections, rigid-body geometric ammo charging, vertical monolith climbing, and live POV-Ray 3.7 export.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 06</span><span class="mode-genre">Wireframe Maze / CRT</span></div>
+                <h3>The Labyrinth (&ldquo;Straight Forward&rdquo;)</h3>
+                <p>First-person emerald wireframe maze paired with an active ECG heart-rate monitor, scanline sprite catching, and visceral Guts decompression.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 07</span><span class="mode-genre">3D Traversal</span></div>
+                <h3>Edge Computing</h3>
+                <p>High-speed orbital navigation along an aluminum pipe network spanning all six faces of a folded 3D hypercube, complete with detached orbital camera and POV-Ray export.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 08</span><span class="mode-genre">Aerial Triangulation</span></div>
+                <h3>Grid-Locked &amp; Pepperoni-Shocked (GPS)</h3>
+                <p>Multi-resolution orbital satellite triangulation over public-domain USGS/USDA Utah imagery to pinpoint Site Alpha-4 before the satellite pass expires.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 09</span><span class="mode-genre">CAD Schematic + 3D</span></div>
+                <h3>Blueprint Mode (&ldquo;Lay Out or Lay Down&rdquo;)</h3>
+                <p>Architectural cyan schematic maze with graphite scanlines, rubberstamp pen catching, a 3D raytraced lobby tour, and instant POV-Ray export.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 10</span><span class="mode-genre">Top-Down Stealth</span></div>
+                <h3>Parking Lot Stealth (&ldquo;Parxing Jordan&rdquo;)</h3>
+                <p>23-second stealth dash past patrolling scientists to the getaway car &mdash; warping into a medieval Dark Ages RPG hallucination when oxygen runs low.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">PHASE 11</span><span class="mode-genre">Pseudo-3D Racer</span></div>
+                <h3>Pizza Delivery Race (&ldquo;Healthful Delivery&rdquo;)</h3>
+                <p>OutRun-inspired 5-lane desert highway run featuring traffic dodges, roadside diners, brick-wall barriers, and a cosmic pepperoni skybox.</p>
+              </div>
+              <div class="mode-card">
+                <div class="mode-top"><span class="mode-num">5 INTERROGATIONS</span><span class="mode-genre">Timed CRT Dialogue</span></div>
+                <h3>Facility Staff Audits</h3>
+                <p>Out-bluff five distinct staff members &mdash; Prep Orderly, Dr. Sterling, Triage Officer, Pipe Tech, and the Bella Rosa Pizza Guy &mdash; before suspicion maxes out.</p>
+              </div>
+            </div>
+          </div>
+        </details>
       </section>
 
       <!-- ================================================================== -->
-      <!-- 08. TECHNICAL ARCHITECTURE & SYSTEM REQUIREMENTS                   -->
+      <!-- 08. TECHNICAL ARCHITECTURE, SOUNDTRACK & SYSTEM REQUIREMENTS       -->
       <!-- ================================================================== -->
       <section id="tech" class="press-section">
         <div class="section-header">
           <div>
-            <div class="section-eyebrow">08 // PURE CPU ARCHITECTURE &amp; POV-RAY STUDIO</div>
-            <h2 class="section-title">Technical Highlights &amp; System Requirements</h2>
+            <div class="section-eyebrow">08 // PURE CPU ARCHITECTURE, AUDIO &amp; SPECS</div>
+            <h2 class="section-title">Technical Highlights, Soundtrack &amp; Requirements</h2>
           </div>
         </div>
 
@@ -1176,25 +1198,13 @@
           </div>
         </div>
 
-        <div class="advisory-box">
-          <strong>Photosensitivity Advisory:</strong> <em>Artsy_2000</em> intentionally features bright flashing patterns, retro CRT flicker, scanlines, and rapid screen-distortion filters. Players sensitive to flashing visuals should exercise caution.
-        </div>
-      </section>
-
-      <!-- ================================================================== -->
-      <!-- 09. ORIGINAL SOUNDTRACK                                            -->
-      <!-- ================================================================== -->
-      <section id="soundtrack" class="press-section">
-        <div class="section-header">
-          <div>
-            <div class="section-eyebrow">09 // AUDIO &amp; MUSIC</div>
-            <h2 class="section-title">Original Soundtrack by Holon</h2>
-            <p class="section-sub">Six original full-length synthwave compositions by artist <strong>Holon</strong>, streaming continuously via XAudio2 with automatic FMV ducking.</p>
-          </div>
-          <a href="https://holon-subatomic-audio.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Holon on Bandcamp &#8599;</a>
+        <div class="subheading-row has-controls" id="soundtrack">
+          <span>Original Soundtrack by Holon (6 Synthwave Tracks)</span>
+          <span class="subheading-line" aria-hidden="true"></span>
+          <a href="https://holon-subatomic-audio.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 4px 10px;">Holon on Bandcamp &#8599;</a>
         </div>
 
-        <div class="track-grid">
+        <div class="track-grid" style="margin-top: 8px;">
           <div class="track-item"><span class="track-num">TRACK 01</span><span class="track-title">Everything Has Its Cost</span></div>
           <div class="track-item"><span class="track-num">TRACK 02</span><span class="track-title">From These Ruins</span></div>
           <div class="track-item"><span class="track-num">TRACK 03</span><span class="track-title">Point Of Origin</span></div>
@@ -1202,15 +1212,19 @@
           <div class="track-item"><span class="track-num">TRACK 05</span><span class="track-title">Initial State</span></div>
           <div class="track-item"><span class="track-num">BONUS / ASCEND</span><span class="track-title">Afterlight</span></div>
         </div>
+
+        <div class="advisory-box">
+          <strong>Photosensitivity Advisory:</strong> <em>Artsy_2000</em> intentionally features bright flashing patterns, retro CRT flicker, scanlines, and rapid screen-distortion filters. Players sensitive to flashing visuals should exercise caution.
+        </div>
       </section>
 
       <!-- ================================================================== -->
-      <!-- 10. STREAMING, VIDEO & MONETIZATION POLICY                         -->
+      <!-- 09. STREAMING, VIDEO & MONETIZATION POLICY                         -->
       <!-- ================================================================== -->
       <section id="monetization" class="press-section">
         <div class="section-header">
           <div>
-            <div class="section-eyebrow">10 // CONTENT CREATOR PERMISSIONS</div>
+            <div class="section-eyebrow">09 // CONTENT CREATOR PERMISSIONS</div>
             <h2 class="section-title">Streaming &amp; Monetization Policy</h2>
           </div>
         </div>
@@ -1251,12 +1265,12 @@
       </section>
 
       <!-- ================================================================== -->
-      <!-- 11. CREDITS & PRESS CONTACT                                        -->
+      <!-- 10. CREDITS & PRESS CONTACT                                        -->
       <!-- ================================================================== -->
       <section id="contact" class="press-section">
         <div class="section-header">
           <div>
-            <div class="section-eyebrow">11 // TEAM &amp; INQUIRIES</div>
+            <div class="section-eyebrow">10 // TEAM &amp; INQUIRIES</div>
             <h2 class="section-title">Credits &amp; Press Contact</h2>
           </div>
         </div>

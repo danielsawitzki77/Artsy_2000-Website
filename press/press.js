@@ -83,33 +83,97 @@
   }
 
   // ------------------------------------------------------------------------
-  // Screenshot category filtering & Lightbox viewer
+  // Tabbed Copy Switcher (Short Blurb / Full Description / One-Line Pitch)
+  // ------------------------------------------------------------------------
+  function initCopyTabs() {
+    const buttons = document.querySelectorAll(".copy-tab-btn[data-copy-panel]");
+    const panels = document.querySelectorAll(".copy-panel");
+    const activeCopyBtn = document.getElementById("activeCopyBtn");
+    if (!buttons.length || !panels.length) return;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const panelId = btn.getAttribute("data-copy-panel");
+        const label = btn.getAttribute("data-copy-label") || "Copy";
+        buttons.forEach((b) => {
+          const isMatch = b === btn;
+          b.classList.toggle("active", isMatch);
+          b.setAttribute("aria-selected", isMatch ? "true" : "false");
+        });
+        panels.forEach((p) => {
+          p.classList.toggle("active", p.id === panelId);
+        });
+        if (activeCopyBtn) {
+          activeCopyBtn.setAttribute("data-copy-target", panelId);
+          activeCopyBtn.setAttribute("data-copy-label", label);
+        }
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // Screenshot category filtering, Expand-All toggle & Lightbox viewer
   // ------------------------------------------------------------------------
   let activeShotIndex = 0;
+  let shotsExpanded = false;
+  let activeFilter = "all";
+
+  function applyScreenshotVisibility() {
+    const cards = Array.from(document.querySelectorAll(".shot-card"));
+    const expandRow = document.getElementById("shotsExpandRow");
+    const expandBtn = document.getElementById("shotsExpandBtn");
+
+    let extraHiddenCount = 0;
+    cards.forEach((card, idx) => {
+      const cat = card.getAttribute("data-category");
+      const matchesFilter = activeFilter === "all" || cat === activeFilter;
+      card.classList.toggle("hidden", !matchesFilter);
+
+      const shouldCollapse = activeFilter === "all" && !shotsExpanded && idx >= 9;
+      card.classList.toggle("collapsed-extra", shouldCollapse);
+      if (shouldCollapse) extraHiddenCount++;
+    });
+
+    if (expandRow) {
+      expandRow.classList.toggle("hidden", activeFilter !== "all");
+    }
+    if (expandBtn) {
+      expandBtn.textContent = shotsExpanded
+        ? "Show fewer screenshots (top 9)"
+        : `Show all ${cards.length} screenshots (+${extraHiddenCount} more)`;
+      expandBtn.setAttribute("aria-expanded", shotsExpanded ? "true" : "false");
+    }
+  }
 
   function getVisibleShotCards() {
-    return Array.from(document.querySelectorAll(".shot-card:not(.hidden)"));
+    return Array.from(document.querySelectorAll(".shot-card:not(.hidden):not(.collapsed-extra)"));
   }
 
   function initScreenshotFilters() {
     const buttons = document.querySelectorAll(".filter-btn[data-filter]");
+    const expandBtn = document.getElementById("shotsExpandBtn");
     const cards = document.querySelectorAll(".shot-card");
     if (!buttons.length || !cards.length) return;
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter");
+        activeFilter = btn.getAttribute("data-filter") || "all";
         buttons.forEach((b) => {
           b.classList.toggle("active", b === btn);
           b.setAttribute("aria-pressed", b === btn ? "true" : "false");
         });
-        cards.forEach((card) => {
-          const cat = card.getAttribute("data-category");
-          const show = filter === "all" || cat === filter;
-          card.classList.toggle("hidden", !show);
-        });
+        applyScreenshotVisibility();
       });
     });
+
+    if (expandBtn) {
+      expandBtn.addEventListener("click", () => {
+        shotsExpanded = !shotsExpanded;
+        applyScreenshotVisibility();
+      });
+    }
+
+    applyScreenshotVisibility();
   }
 
   function renderLightbox(index) {
@@ -270,6 +334,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initCopyButtons();
+    initCopyTabs();
     initScreenshotFilters();
     initLightbox();
     initLogoSwatches();
