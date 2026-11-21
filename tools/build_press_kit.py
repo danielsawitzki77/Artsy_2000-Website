@@ -88,6 +88,55 @@ SCREENSHOT_SPECS = [
         "crt",
         "OutRun-inspired 5-lane desert highway escape featuring roadside brick barriers, oncoming traffic, and a cosmic rotating pizza skybox.",
     ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Conversation.png",
+        "artsy_2000_10_conversation_prep_ward.png",
+        "Terminal Interrogation — Surgical Prep Ward (Stall 03)",
+        "crt",
+        "High-pressure CRT dialogue bluffing the Prep Orderly while pre-sedative interference scrambles reply options under a ticking suspicion meter.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Loading.png",
+        "artsy_2000_11_loading_raytracing_irl.png",
+        "CRT Intermission — 'Raytracing IRL' Animated Bumper",
+        "crt",
+        "Green phosphor retro rubber-hose cartoon playing on the Buck-Fifty CRT monitor between cognitive evaluation protocols.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Lobby.png",
+        "artsy_2000_12_fmv_vance_lobby.png",
+        "Archival FMV — Dr. Brad Vance & Lobby Brain Mural",
+        "fmv",
+        "1993 VHS reception-cam footage of Clinical Director Dr. Brad Vance strolling past Buck-Fifty Innovation Labs' pastel rainbow brain mural.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Vouchers.png",
+        "artsy_2000_13_fmv_vance_vouchers.png",
+        "Archival FMV — 1990s Value Pack & Pizza Vouchers",
+        "fmv",
+        "Dr. Brad Vance pitching the 1990s Value Pack of complimentary personal pan pizza vouchers during a mandatory Sub-Level 4 TV Break.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Surgeon.png",
+        "artsy_2000_14_fmv_dr_sterling_surgeon.png",
+        "Archival FMV — Dr. Sterling (Cranial Bay 04)",
+        "fmv",
+        "Live-action TV Break transmission introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04's operating bay.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "B-50.png",
+        "artsy_2000_15_fmv_b50_pickup_compound.png",
+        "Archival TV Break — Model B-50 Outside Site Alpha-4",
+        "fmv",
+        "16mm commercial footage of a Model B-50 pickup ripping donuts outside Buck-Fifty Innovation Labs' brutalist rooftop concrete hypercube.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Skullthor.png",
+        "artsy_2000_16_fmv_skullthor_cartoon.png",
+        "Archival TV Break — Skullthor Animated Broadcast",
+        "fmv",
+        "1990s Saturday-morning animated TV Break hijack showing armored nemesis Skullthor breaching the Sub-Level 4 green-CRT server room.",
+    ),
 ]
 
 
