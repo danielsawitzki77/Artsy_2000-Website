@@ -3,8 +3,9 @@
 | Field | Details |
 | :--- | :--- |
 | **Title** | Artsy_2000 |
-| **Developer / Publisher** | Buck-Fifty Innovation Labs (Daniel Sawitzki) |
-| **Location** | Salt Lake City, Utah, USA |
+| **Developer** | Daniel M Sawitzki |
+| **Publisher / Label** | Buck-Fifty Innovation Labs |
+| **Location** | Santa Rosa, CA, USA |
 | **Release Date** | January 2027 |
 | **Price** | $1.50 USD |
 | **Platform** | Windows 10 / 11 (64-bit) via Steam |

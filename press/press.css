@@ -1392,6 +1392,22 @@ button {
   background: var(--border);
 }
 
+.subheading-row.has-controls {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.subheading-row.has-controls .subheading-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  min-width: 24px;
+}
+
+.subheading-row.has-controls::after {
+  display: none;
+}
+
 /* ==========================================================================
    MODES CATALOG GRID
    ========================================================================== */

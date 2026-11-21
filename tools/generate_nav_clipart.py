@@ -527,6 +527,66 @@ def draw_skullthor_icon():
     return img
 
 
+def draw_audio_icon():
+    """Funny 90s chunky stereo Boombox blasting neon musical notes & glowing EQ bars."""
+    img = new_canvas()
+    d = ImageDraw.Draw(img)
+
+    # Tilted collapsible chrome radio antenna on left
+    d.line([(28, 60), (14, 14)], fill=OL, width=10)
+    d.line([(28, 60), (14, 14)], fill=(215, 225, 240, 255), width=4)
+    d.ellipse([8, 8, 22, 22], fill=(255, 50, 130, 255), outline=OL, width=4)
+
+    # Chunky carry handle arching across top of boombox
+    d.rounded_rectangle([36, 30, 114, 68], radius=10, fill=None, outline=OL, width=14)
+    d.rounded_rectangle([36, 30, 114, 68], radius=10, fill=None, outline=(195, 205, 220, 255), width=6)
+
+    # Main 90s boombox body (metallic teal-slate + bright cyan accent trim)
+    d.rounded_rectangle([12, 54, 142, 144], radius=12, fill=(58, 72, 98, 255), outline=OL, width=6)
+    # Upper control deck silver strip
+    d.rectangle([16, 58, 138, 78], fill=(195, 208, 224, 255), outline=OL, width=4)
+
+    # Mini rainbow LED equalizer bars on top strip
+    eq_colors = [
+        (0, 255, 95, 255),
+        (255, 230, 0, 255),
+        (255, 0, 160, 255),
+        (0, 230, 255, 255),
+        (255, 110, 0, 255),
+    ]
+    for i, col in enumerate(eq_colors):
+        bx = 44 + i * 14
+        bh = [10, 14, 12, 14, 9][i]
+        d.rectangle([bx, 76 - bh, bx + 9, 76], fill=col, outline=OL, width=2)
+
+    # Left & Right oversized thumping speaker cones
+    for sx in (38, 116):
+        sy = 110
+        d.ellipse([sx - 22, sy - 22, sx + 22, sy + 22], fill=(22, 26, 36, 255), outline=OL, width=5)
+        d.ellipse([sx - 16, sy - 16, sx + 16, sy + 16], fill=(45, 54, 74, 255), outline=(0, 230, 255, 255), width=3)
+        d.ellipse([sx - 7, sy - 7, sx + 7, sy + 7], fill=(255, 220, 0, 255), outline=OL, width=3)
+
+    # Center cassette tape deck door (hot 90s magenta frame + spool window)
+    d.rectangle([62, 86, 92, 132], fill=(235, 30, 140, 255), outline=OL, width=4)
+    d.rectangle([66, 93, 88, 111], fill=(20, 12, 32, 255), outline=OL, width=3)
+    # Cassette twin white tape reels
+    d.ellipse([69, 97, 77, 105], fill=(255, 255, 255, 255))
+    d.ellipse([78, 97, 86, 105], fill=(255, 255, 255, 255))
+    # Play / FF / Rew piano keys under cassette door
+    d.rectangle([66, 117, 88, 126], fill=(255, 235, 0, 255), outline=OL, width=2)
+
+    # Big bouncy neon-yellow beamed eighth note bursting out top-right!
+    # Outline shadow pass first
+    d.line([(122, 46), (122, 14), (150, 8), (150, 38)], fill=OL, width=13, joint="curve")
+    d.ellipse([104, 34, 129, 55], fill=OL)
+    d.ellipse([132, 28, 157, 49], fill=OL)
+    # Bright neon yellow fill pass
+    d.line([(122, 44), (122, 15), (150, 9), (150, 36)], fill=(255, 235, 0, 255), width=6, joint="curve")
+    d.ellipse([108, 38, 126, 52], fill=(255, 235, 0, 255))
+    d.ellipse([136, 32, 154, 46], fill=(255, 235, 0, 255))
+    return img
+
+
 ICON_BUILDERS = [
     ("nav_home.png", "HOME & DISPATCH", draw_home_icon),
     ("nav_vance.png", "MEET DR. VANCE", draw_vance_icon),
@@ -538,6 +598,7 @@ ICON_BUILDERS = [
     ("nav_povray.png", "POV-RAY Studio", draw_povray_icon),
     ("nav_skullthor.png", "SKULLTHOR!", draw_skullthor_icon),
     ("nav_perks.png", "PERKS & VOUCHERS", draw_perks_icon),
+    ("nav_audio.png", "AUDIO STIMULATION", draw_audio_icon),
     ("nav_volunteer.png", "BECOME A SUBJECT", draw_volunteer_icon),
     ("nav_terminal.png", "B50 TERMINAL", draw_terminal_icon),
     ("nav_guestbook.png", "SIGN GUESTBOOK", draw_guestbook_icon),

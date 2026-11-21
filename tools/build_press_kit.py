@@ -276,9 +276,9 @@ ARTSY_2000 — OFFICIAL PRESS FACT SHEET
 ================================================================================
 
 GAME TITLE:        Artsy_2000
-DEVELOPER:         Buck-Fifty Innovation Labs / Daniel Sawitzki
-PUBLISHER:         Buck-Fifty Innovation Labs (Buck-Fifty Studios)
-LOCATION:          Salt Lake City, Utah, USA
+DEVELOPER:         Daniel M Sawitzki
+PUBLISHER / LABEL: Buck-Fifty Innovation Labs
+LOCATION:          Santa Rosa, CA, USA
 RELEASE DATE:      January 2027
 PRICE:             $1.50 USD
 PLATFORM:          Windows 10 / 11 (64-bit) — Steam
@@ -400,7 +400,7 @@ SYSTEM REQUIREMENTS (WINDOWS)
 --------------------------------------------------------------------------------
 STREAMING & MONETIZATION POLICY
 --------------------------------------------------------------------------------
-Buck-Fifty Innovation Labs / Daniel Sawitzki explicitly grants press, reviewers,
+Daniel M Sawitzki / Buck-Fifty Innovation Labs explicitly grants press, reviewers,
 YouTubers, Twitch streamers, and content creators permission to record, stream,
 publish, and monetize (via ad revenue, sponsorships, tips, and memberships)
 gameplay footage, reviews, critiques, and videos featuring Artsy_2000 and the
@@ -422,7 +422,7 @@ COMPANION MEDIA & LINKS
 * Soundtrack (Holon):      https://holon-subatomic-audio.bandcamp.com/
 * Press & Review Keys:     info@buckfiftylabs.com
 
-Copyright (c) 2026-2027 Daniel Sawitzki / Buck-Fifty Innovation Labs.
+Copyright (c) 2026-2027 Daniel M Sawitzki / Buck-Fifty Innovation Labs.
 """
 
 
@@ -431,8 +431,9 @@ FACT_SHEET_MD = """# Artsy_2000 — Official Press Fact Sheet
 | Field | Details |
 | :--- | :--- |
 | **Title** | Artsy_2000 |
-| **Developer / Publisher** | Buck-Fifty Innovation Labs (Daniel Sawitzki) |
-| **Location** | Salt Lake City, Utah, USA |
+| **Developer** | Daniel M Sawitzki |
+| **Publisher / Label** | Buck-Fifty Innovation Labs |
+| **Location** | Santa Rosa, CA, USA |
 | **Release Date** | January 2027 |
 | **Price** | $1.50 USD |
 | **Platform** | Windows 10 / 11 (64-bit) via Steam |
@@ -483,7 +484,7 @@ README_PRESS_TXT = """ARTSY_2000 — PRESS KIT ASSET USAGE GUIDE
 
 All screenshots, logos, key art, POV-Ray renders, pipeline mockups, and text
 contained in this archive are cleared for editorial, review, news, streaming,
-YouTube thumbnail, and event/festival coverage of Artsy_2000 (Buck-Fifty
+YouTube thumbnail, and event/festival coverage of Artsy_2000 (Daniel M Sawitzki / Buck-Fifty
 Innovation Labs).
 
 - Steam Store:    https://store.steampowered.com/app/5641470/
