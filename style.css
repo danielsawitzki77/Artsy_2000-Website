@@ -10,8 +10,8 @@
 body {
   margin: 0;
   padding: 10px;
-  background-color: #050510;
-  background-image: url('assets/stars_bg.png');
+  background-color: #07192d;
+  background-image: url('assets/corp_lab_bg.png');
   background-repeat: repeat;
   color: #ffffff;
   font-family: 'Times New Roman', Times, serif;
@@ -53,21 +53,41 @@ a:hover {
   background-color: #000080;
 }
 
-/* Blinking text */
+/* Color-blinking text (always visible, switches colors instead of hiding) */
 .blink {
-  animation: blinkAnim 1s step-start infinite;
+  --blink-a: #ffff00;
+  --blink-b: #00ffff;
+  animation: blinkColorAnim 1s step-start infinite;
 }
-@keyframes blinkAnim {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+@keyframes blinkColorAnim {
+  0%, 49% { color: var(--blink-a); }
+  50%, 100% { color: var(--blink-b); }
 }
 
 .blink-fast {
-  animation: blinkFastAnim 0.4s step-start infinite;
+  --blink-a: #ffff00;
+  --blink-b: #00ffff;
+  animation: blinkColorFastAnim 0.45s step-start infinite;
 }
-@keyframes blinkFastAnim {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+@keyframes blinkColorFastAnim {
+  0%, 49% { color: var(--blink-a); }
+  50%, 100% { color: var(--blink-b); }
+}
+
+/* High-contrast color-blink palettes for bright and alert backgrounds */
+.blink-on-light {
+  --blink-a: #cc0000;
+  --blink-b: #0000aa;
+}
+
+.blink-on-green {
+  --blink-a: #000000;
+  --blink-b: #cc0000;
+}
+
+.blink-alert {
+  --blink-a: #ff3333;
+  --blink-b: #ffff00;
 }
 
 /* Rainbow Text */
@@ -629,6 +649,56 @@ a:hover {
   white-space: nowrap;
 }
 
+/* Left Sidebar Old-School 1990s Amazon.com Icon Button */
+.sidebar-amazon-icon,
+.sidebar-amazon-icon:visited {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  padding: 0;
+  background: linear-gradient(180deg, #fffdf2 0%, #f6e1ae 62%, #edbe63 100%);
+  color: #111111 !important;
+  text-decoration: none;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #5a4218;
+  border-bottom: 2px solid #5a4218;
+  outline: 1px solid #000000;
+  box-shadow: 2px 2px 0 #000000;
+  cursor: pointer;
+}
+
+.sidebar-amazon-icon:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ffefc2 58%, #ffb833 100%);
+  box-shadow: 2px 2px 0 #000000, 0 0 8px rgba(255, 170, 0, 0.85);
+}
+
+.sidebar-amazon-icon:active {
+  border-top: 2px solid #5a4218;
+  border-left: 2px solid #5a4218;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000000;
+}
+
+.sidebar-amazon-chrome {
+  background: #003399;
+  color: #ffff99;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 8.5px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 2px 4px;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.sidebar-amazon-svg-wrap {
+  padding: 3px 4px 2px 4px;
+}
+
 /* ==========================================================================
    SITE ALPHA-4 ORBITAL RECONNAISSANCE & SATELLITE CAMOUFLAGE MODULE
    ========================================================================== */
@@ -818,12 +888,12 @@ a:hover {
 }
 
 @keyframes reconPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
+  0%, 49% { stroke: #ffff00; }
+  50%, 100% { stroke: #00ff66; }
 }
 
 .recon-pulse {
-  animation: reconPulse 1.4s ease-in-out infinite;
+  animation: reconPulse 1s step-start infinite;
 }
 
 .recon-map-iframe {

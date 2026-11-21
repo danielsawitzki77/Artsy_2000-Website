@@ -62,6 +62,181 @@ def create_starfield(assets_dir):
     print("Created stars_bg.png")
 
 
+def create_corporate_science_bg(assets_dir):
+    """
+    Create a seamless 256x256 1996 corporate-science blueprint & circuit tile
+    (assets/corp_lab_bg.png): SGI Indigo/blueprint teal-navy grid, embossed PCB
+    traces wrapping seamlessly across tile boundaries, wireframe isometric cube,
+    1990s atomic orbital, hexagonal molecular/ECG telemetry motif, and subtle
+    embossed Buck-Fifty corporate watermark.
+    """
+    S = 256
+    img = Image.new("RGB", (S, S), (7, 25, 45))
+    px = img.load()
+
+    # 1. Seamless subtle corporate-blueprint brushed/dithered base surface
+    for y in range(S):
+        wy = math.sin(2.0 * math.pi * y / S)
+        scan = -2 if (y % 4 == 0) else (1 if (y % 4 == 2) else 0)
+        for x in range(S):
+            wx = math.sin(2.0 * math.pi * x / S)
+            diag = 2 if ((x + y) % 8 == 0) else 0
+            wave = int(round((wx * 0.5 + wy * 0.5) * 3.0))
+            r = max(4, min(255, 7 + wave // 2 + (scan // 2)))
+            g = max(14, min(255, 25 + wave + scan + diag))
+            b = max(28, min(255, 46 + wave * 2 + scan + diag))
+            px[x, y] = (r, g, b)
+
+    d = ImageDraw.Draw(img)
+
+    def wrap_line(p0, p1, fill, width=1):
+        for ox in (-S, 0, S):
+            for oy in (-S, 0, S):
+                d.line([(p0[0] + ox, p0[1] + oy), (p1[0] + ox, p1[1] + oy)], fill=fill, width=width)
+
+    def wrap_ellipse(box, outline=None, fill=None, width=1):
+        x0, y0, x1, y1 = box
+        for ox in (-S, 0, S):
+            for oy in (-S, 0, S):
+                d.ellipse([x0 + ox, y0 + oy, x1 + ox, y1 + oy], outline=outline, fill=fill, width=width)
+
+    # 2. Classic 90s blueprint / CAD engineering grid (32px minor, 128px major)
+    col_minor = (12, 39, 68)
+    col_major_shadow = (4, 15, 28)
+    col_major = (18, 56, 92)
+    col_tick = (31, 88, 132)
+
+    for i in range(0, S, 32):
+        if i % 128 == 0:
+            d.line([(i + 1, 0), (i + 1, S - 1)], fill=col_major_shadow, width=1)
+            d.line([(0, i + 1), (S - 1, i + 1)], fill=col_major_shadow, width=1)
+            d.line([(i, 0), (i, S - 1)], fill=col_major, width=1)
+            d.line([(0, i), (S - 1, i)], fill=col_major, width=1)
+        else:
+            d.line([(i, 0), (i, S - 1)], fill=col_minor, width=1)
+            d.line([(0, i), (S - 1, i)], fill=col_minor, width=1)
+
+    # Registration crosshairs at 128px major intersections (wrapping seamlessly)
+    for gx in (0, 128):
+        for gy in (0, 128):
+            wrap_line((gx - 6, gy), (gx + 6, gy), col_tick, 1)
+            wrap_line((gx, gy - 6), (gx, gy + 6), col_tick, 1)
+
+    # 3. Seamless 90s PCB circuit traces crossing tile borders cleanly
+    col_trace_sh = (4, 14, 26)
+    col_trace = (17, 62, 96)
+    col_pad_ring = (29, 92, 134)
+    col_pad_core = (6, 22, 40)
+
+    traces = [
+        # Horizontal wrapping trace across y=116 -> jogs -> exits y=116
+        [(0, 116), (34, 116), (48, 130), (108, 130), (122, 116), (176, 116), (190, 102), (242, 102), (256, 116)],
+        # Vertical wrapping trace across x=140 -> jogs -> exits x=140
+        [(140, 0), (140, 42), (126, 56), (126, 112), (140, 126), (140, 198), (154, 212), (154, 242), (140, 256)],
+    ]
+    for path in traces:
+        for a, b in zip(path, path[1:]):
+            wrap_line((a[0] + 1, a[1] + 1), (b[0] + 1, b[1] + 1), col_trace_sh, 2)
+            wrap_line(a, b, col_trace, 2)
+
+    via_nodes = [(34, 116), (108, 130), (190, 102), (126, 56), (140, 198)]
+    for vx, vy in via_nodes:
+        wrap_ellipse((vx - 4, vy - 4, vx + 4, vy + 4), fill=col_pad_core, outline=col_pad_ring, width=1)
+
+    # 4. Quadrant 1 (Top-Left, 64, 58): Wireframe 3D Isometric Cube (SGI / Buck-Fifty CAD nod)
+    cx, cy = 62, 58
+    r_hex = 24
+    outer_pts = []
+    for k in range(6):
+        ang = math.radians(k * 60 - 90)
+        outer_pts.append((cx + r_hex * math.cos(ang), cy + r_hex * math.sin(ang)))
+
+    col_wire_back = (14, 49, 80)
+    col_wire_front = (26, 82, 122)
+    col_wire_hi = (36, 108, 152)
+
+    # Back hidden diagonals (center to odd vertices 1, 3, 5)
+    for k in (1, 3, 5):
+        d.line([(cx, cy), outer_pts[k]], fill=col_wire_back, width=1)
+    # Outer silhouette & front Y edges (center to 0, 2, 4)
+    for k in range(6):
+        p_a = outer_pts[k]
+        p_b = outer_pts[(k + 1) % 6]
+        d.line([(p_a[0] + 1, p_a[1] + 1), (p_b[0] + 1, p_b[1] + 1)], fill=col_trace_sh, width=1)
+        d.line([p_a, p_b], fill=col_wire_front, width=1)
+    for k in (0, 2, 4):
+        d.line([(cx, cy), outer_pts[k]], fill=col_wire_hi, width=1)
+    # Inner nested wireframe cube for hypercube feel
+    for k in range(6):
+        p_a = (cx + (outer_pts[k][0] - cx) * 0.45, cy + (outer_pts[k][1] - cy) * 0.45)
+        p_b = (cx + (outer_pts[(k + 1) % 6][0] - cx) * 0.45, cy + (outer_pts[(k + 1) % 6][1] - cy) * 0.45)
+        d.line([p_a, p_b], fill=col_wire_back, width=1)
+    for vx, vy in outer_pts + [(cx, cy)]:
+        d.rectangle([vx - 1, vy - 1, vx + 1, vy + 1], fill=col_wire_hi)
+
+    # 5. Quadrant 2 (Top-Right, 198, 58): 1990s Atomic Orbital / Science Motif
+    ax, ay = 198, 56
+    rx, ry = 27, 10
+    for deg in (0, 60, 120):
+        rad = math.radians(deg)
+        ca, sa = math.cos(rad), math.sin(rad)
+        ring_pts = []
+        for s in range(49):
+            t = 2.0 * math.pi * s / 48.0
+            ex = rx * math.cos(t)
+            ey = ry * math.sin(t)
+            px_r = ax + ex * ca - ey * sa
+            py_r = ay + ex * sa + ey * ca
+            ring_pts.append((px_r, py_r))
+        d.line(ring_pts, fill=col_wire_front, width=1)
+    # Nucleus & electron dots
+    d.ellipse([ax - 4, ay - 4, ax + 4, ay + 4], fill=(22, 72, 108), outline=col_wire_hi)
+    for ex, ey in [(ax + 24, ay - 5), (ax - 16, ay + 19), (ax - 12, ay - 20)]:
+        d.ellipse([ex - 2, ey - 2, ex + 2, ey + 2], fill=col_wire_hi)
+
+    # 6. Quadrant 3 (Bottom-Left, 64, 190): Molecular Hex Ring + ECG / Sine Telemetry
+    mx, my = 46, 188
+    mr = 15
+    hex_pts = [(mx + mr * math.cos(math.radians(k * 60)), my + mr * math.sin(math.radians(k * 60))) for k in range(6)]
+    for k in range(6):
+        d.line([hex_pts[k], hex_pts[(k + 1) % 6]], fill=col_wire_front, width=1)
+    # Double-bond inner ticks
+    for k in (0, 2, 4):
+        p0 = hex_pts[k]
+        p1 = hex_pts[(k + 1) % 6]
+        ip0 = (mx + (p0[0] - mx) * 0.72, my + (p0[1] - my) * 0.72)
+        ip1 = (mx + (p1[0] - mx) * 0.72, my + (p1[1] - my) * 0.72)
+        d.line([ip0, ip1], fill=col_wire_back, width=1)
+    # Attached side-chain bond
+    d.line([hex_pts[0], (hex_pts[0][0] + 12, hex_pts[0][1])], fill=col_wire_front, width=1)
+    d.ellipse([hex_pts[0][0] + 10, hex_pts[0][1] - 2, hex_pts[0][0] + 14, hex_pts[0][1] + 2], fill=col_wire_hi)
+
+    # Mini ECG / oscilloscope readout box
+    d.rectangle([72, 174, 120, 202], outline=col_major, fill=(6, 21, 38))
+    ecg_pts = [
+        (74, 189), (82, 189), (86, 185), (89, 189), (92, 193),
+        (96, 177), (100, 198), (103, 189), (108, 186), (112, 189), (118, 189)
+    ]
+    d.line(ecg_pts, fill=(24, 96, 118), width=1)
+
+    # 7. Quadrant 4 (Bottom-Right, 196, 188): Embossed 1996 Corporate Lab Watermark
+    f_wm_big = load_font(["courbd.ttf", "arialbd.ttf"], 11)
+    f_wm_sm = load_font(["cour.ttf", "courbd.ttf"], 9)
+    d.rectangle([156, 166, 240, 212], outline=col_major)
+    d.line([(156, 181), (240, 181)], fill=col_minor)
+    # Embossed shadow + muted corporate teal text
+    d.text((163, 169), "BUCK-FIFTY", font=f_wm_big, fill=col_trace_sh)
+    d.text((162, 168), "BUCK-FIFTY", font=f_wm_big, fill=(24, 78, 114))
+    d.text((163, 186), "LABS // 1996", font=f_wm_sm, fill=col_trace_sh)
+    d.text((162, 185), "LABS // 1996", font=f_wm_sm, fill=(20, 66, 98))
+    d.text((163, 198), "64-BIT R&D", font=f_wm_sm, fill=col_trace_sh)
+    d.text((162, 197), "64-BIT R&D", font=f_wm_sm, fill=(20, 66, 98))
+
+    out_path = os.path.join(assets_dir, "corp_lab_bg.png")
+    img.save(out_path, optimize=True)
+    print(f"Created corp_lab_bg.png ({os.path.getsize(out_path)} bytes)")
+
+
 def create_warning_strobe(assets_dir):
     """
     Create a crisp, bold animated 90s hazard triangle + security beacon strobe GIF (240x152).
@@ -811,6 +986,7 @@ def create_retro_elements():
     os.makedirs(assets_dir, exist_ok=True)
 
     create_starfield(assets_dir)
+    create_corporate_science_bg(assets_dir)
     create_warning_strobe(assets_dir)
     create_visitor_counter(assets_dir)
     create_under_construction(assets_dir)
