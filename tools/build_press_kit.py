@@ -105,11 +105,11 @@ SCREENSHOT_SPECS = [
         "Live-action TV Break transmission introducing Chief Neurocompliance Officer Dr. Sterling outside Theatre 04's operating bay.",
     ),
     (
-        SCREENSHOT_SOURCE_ROOT / "Edge_1.png",
-        "artsy_2000_12_edge_pipe_hypercube.png",
-        "Edge Computing — 3D Aluminum Pipe Hypercube",
+        SCREENSHOT_SOURCE_ROOT / "Chase3D_7.png",
+        "artsy_2000_12_chase_crt_shatter.png",
+        "Chase Mode — CRT Distortion & Spike Sphere Shatter",
         "3d",
-        "High-speed banking traversal along metallic conduit pipes wrapping a massive 3D hypercube, complete with manifold key radar HUD.",
+        "Full Buck-Fifty CRT bezel presentation of Chase Mode mid-chaos: chromatic scanline distortion rippling across a detonating pink Fibonacci Spike Sphere and debris storm over a reflective checkerboard floor.",
     ),
     (
         SCREENSHOT_SOURCE_ROOT / "Loading.png",
@@ -126,11 +126,11 @@ SCREENSHOT_SPECS = [
         "1990s Saturday-morning animated TV Break hijack showing armored nemesis Skullthor breaching the Sub-Level 4 green-CRT server room.",
     ),
     (
-        SCREENSHOT_SOURCE_ROOT / "Editor_2.png",
-        "artsy_2000_15_editor_sculpt_chain.png",
-        "Ascend Mode 3D Editor — Sculpted Reflective Sphere Chain",
+        SCREENSHOT_SOURCE_ROOT / "Edge_1.png",
+        "artsy_2000_15_edge_pipe_hypercube.png",
+        "Edge Computing — 3D Aluminum Pipe Hypercube",
         "3d",
-        "User-sculpted curving chain of checkered emerald, cyan, and violet reflective spheres built in Ascend Mode and ready for instant POV-Ray 3.7 turntable export.",
+        "High-speed banking traversal along metallic conduit pipes wrapping a massive 3D hypercube, complete with manifold key radar HUD.",
     ),
     (
         SCREENSHOT_SOURCE_ROOT / "Labyrinth_1.png",
@@ -147,11 +147,11 @@ SCREENSHOT_SPECS = [
         "Dr. Brad Vance pitching the 1990s Value Pack of complimentary personal pan pizza vouchers during a mandatory Sub-Level 4 TV Break.",
     ),
     (
-        SCREENSHOT_SOURCE_ROOT / "Chase3D_4.png",
-        "artsy_2000_18_chase_checkerboard_horizon.png",
-        "Chase Mode — Reflective Checkerboard Pursuit",
+        SCREENSHOT_SOURCE_ROOT / "Editor_2.png",
+        "artsy_2000_18_editor_sculpt_chain.png",
+        "Ascend Mode 3D Editor — Sculpted Reflective Sphere Chain",
         "3d",
-        "High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric projectiles and skyline peaks.",
+        "User-sculpted curving chain of checkered emerald, cyan, and violet reflective spheres built in Ascend Mode and ready for instant POV-Ray 3.7 turntable export.",
     ),
     (
         SCREENSHOT_SOURCE_ROOT / "PizzaRace_1.png",
@@ -159,6 +159,13 @@ SCREENSHOT_SPECS = [
         "Pizza Delivery Race — 16-Bit Desert Highway Run",
         "crt",
         "OutRun-inspired 5-lane desert highway escape featuring roadside brick barriers, oncoming traffic, and a cosmic rotating pizza skybox.",
+    ),
+    (
+        SCREENSHOT_SOURCE_ROOT / "Chase3D_4.png",
+        "artsy_2000_20_chase_checkerboard_horizon.png",
+        "Chase Mode — Reflective Checkerboard Pursuit",
+        "3d",
+        "High-velocity software-rendered 3D pursuit across a rippling blue checkerboard plane with reflective geometric projectiles and skyline peaks.",
     ),
 ]
 
@@ -504,24 +511,25 @@ def fmt_size(num_bytes: int) -> str:
 
 
 def validate_screenshot_sources():
-    """Verify every primary (non-_1920x1080) PNG in SCREENSHOT_SOURCE_ROOT is included."""
-    all_primary = sorted(
-        p.name
-        for p in SCREENSHOT_SOURCE_ROOT.iterdir()
-        if p.is_file()
-        and p.suffix.lower() == ".png"
-        and not p.stem.lower().endswith("_1920x1080")
-    )
-    spec_names = [src.name for src, *_ in SCREENSHOT_SPECS]
-    for name in spec_names:
-        if "_1920x1080" in name.lower():
-            raise ValueError(f"Disallowed _1920x1080 variant in SCREENSHOT_SPECS: {name}")
-    missing = sorted(set(all_primary) - set(spec_names))
-    extra = sorted(set(spec_names) - set(all_primary))
-    if missing or extra:
-        raise RuntimeError(
-            f"Screenshot sync mismatch! Missing from spec: {missing}, Extra: {extra}"
-        )
+    """Verify every curated screenshot exists, is native 1920x1200 (never _1920x1080), and has unique names."""
+    seen_src = set()
+    seen_dst = set()
+    for src, dst_name, *_ in SCREENSHOT_SPECS:
+        if "_1920x1080" in src.name.lower():
+            raise ValueError(f"Disallowed _1920x1080 variant in SCREENSHOT_SPECS: {src.name}")
+        if not src.exists():
+            raise FileNotFoundError(f"Missing curated screenshot source: {src}")
+        with Image.open(src) as im:
+            if im.size != (1920, 1200):
+                raise ValueError(
+                    f"Unexpected resolution for {src.name}: {im.size} (expected 1920x1200)"
+                )
+        if src.name in seen_src:
+            raise ValueError(f"Duplicate source screenshot in SCREENSHOT_SPECS: {src.name}")
+        if dst_name in seen_dst:
+            raise ValueError(f"Duplicate destination filename in SCREENSHOT_SPECS: {dst_name}")
+        seen_src.add(src.name)
+        seen_dst.add(dst_name)
 
 
 def build():
