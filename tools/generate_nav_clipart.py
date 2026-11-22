@@ -587,6 +587,99 @@ def draw_audio_icon():
     return img
 
 
+def draw_merch_shop_icon():
+    """Chunky 90s clipart Merch Shop icon: Graphic B50 T-Shirt + Hot-Pink Shopping Bag + Gold $ Tag."""
+    sz = 256
+    img = Image.new("RGBA", (sz, sz), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+
+    # Subtle bright cyan-magenta radial halo glow behind items so icon pops on dark & light bgs
+    d.ellipse([16, 20, 240, 242], fill=(0, 215, 255, 42))
+
+    # --- 1. Back-Right: Vibrant 1990s Shopping Bag (magenta front, gold side gusset, arched handles) ---
+    # Back handle loop
+    d.arc([148, 18, 202, 82], start=180, end=360, fill=OL, width=14)
+    d.arc([148, 18, 202, 82], start=180, end=360, fill=(255, 220, 40, 255), width=6)
+
+    # Bag main body (hot 90s magenta-pink)
+    bag_front = [(126, 62), (218, 56), (226, 198), (122, 204)]
+    bag_side = [(218, 56), (240, 68), (244, 190), (226, 198)]
+    d.polygon(bag_side, fill=(175, 10, 95, 255), outline=OL, width=8)
+    d.polygon(bag_front, fill=(242, 24, 132, 255), outline=OL, width=8)
+    # Bright neon yellow horizontal stripe across bag
+    d.polygon([(125, 104), (220, 98), (222, 124), (124, 130)], fill=(255, 230, 30, 255), outline=OL, width=5)
+    # Highlight gleam on bag edge
+    d.line([(208, 66), (214, 188)], fill=(255, 145, 205, 255), width=6)
+
+    # Front handle loop + metal rivets
+    d.arc([140, 28, 196, 94], start=180, end=360, fill=OL, width=15)
+    d.arc([140, 28, 196, 94], start=180, end=360, fill=(255, 240, 80, 255), width=7)
+    d.ellipse([138, 72, 152, 86], fill=(255, 240, 80, 255), outline=OL, width=4)
+    d.ellipse([186, 69, 200, 83], fill=(255, 240, 80, 255), outline=OL, width=4)
+
+    # --- 2. Front-Left Hero: Crisp 90s Graphic T-Shirt with Buck-Fifty Isometric Cube Print ---
+    shirt_pts = [
+        (68, 42),   # Left neck edge
+        (114, 42),  # Right neck edge
+        (146, 54),  # Right shoulder
+        (178, 96),  # Right sleeve outer top
+        (152, 128), # Right sleeve cuff bottom
+        (134, 114), # Right armpit
+        (138, 224), # Right bottom hem
+        (44, 224),  # Left bottom hem
+        (48, 114),  # Left armpit
+        (30, 128),  # Left sleeve cuff bottom
+        (6, 96),    # Left sleeve outer top
+        (38, 54),   # Left shoulder
+    ]
+    # Shirt base fill (bright ice-white / electric cyan tint so it pops off dark purple & gray)
+    d.polygon(shirt_pts, fill=(238, 252, 255, 255), outline=OL, width=9)
+    # Cool cyan comic-style right/bottom shadow inside shirt
+    d.polygon([(120, 108), (134, 114), (138, 220), (114, 220)], fill=(150, 228, 248, 255))
+    d.polygon([(46, 204), (136, 204), (136, 222), (46, 222)], fill=(150, 228, 248, 255))
+    # Sleeve cuffs accent trim (retro ringer-tee cyan bands)
+    d.line([(12, 97), (32, 122)], fill=(0, 195, 245, 255), width=11)
+    d.line([(170, 97), (150, 122)], fill=(0, 195, 245, 255), width=11)
+    # Crew neck collar scoop (dark interior + cyan ringer rim)
+    d.chord([64, 26, 118, 66], start=0, end=180, fill=(24, 34, 68, 255), outline=OL, width=8)
+    d.arc([61, 24, 121, 70], start=8, end=172, fill=(0, 200, 255, 255), width=7)
+    # Re-stroke outer shirt silhouette cleanly on top of shading
+    d.polygon(shirt_pts, fill=None, outline=OL, width=9)
+
+    # Buck-Fifty Isometric Cube graphic printed on shirt chest!
+    cx, cy, cr = 91, 134, 34
+    p_top = (cx, cy - cr)
+    p_tr = (cx + int(cr * 0.88), cy - cr // 2)
+    p_br = (cx + int(cr * 0.88), cy + cr // 2)
+    p_bot = (cx, cy + cr)
+    p_bl = (cx - int(cr * 0.88), cy + cr // 2)
+    p_tl = (cx - int(cr * 0.88), cy - cr // 2)
+    p_mid = (cx, cy)
+    # Top face (bright cyan)
+    d.polygon([p_top, p_tr, p_mid, p_tl], fill=(0, 238, 255, 255), outline=OL, width=5)
+    # Left face (hot magenta)
+    d.polygon([p_tl, p_mid, p_bot, p_bl], fill=(255, 0, 155, 255), outline=OL, width=5)
+    # Right face (electric royal blue)
+    d.polygon([p_mid, p_tr, p_br, p_bot], fill=(35, 95, 255, 255), outline=OL, width=5)
+    # Inner bright cube core shine
+    d.polygon([(cx, cy - 17), (cx + 15, cy - 8), (cx, cy + 1), (cx - 15, cy - 8)], fill=(210, 252, 255, 255))
+
+    # --- 3. Front-Bottom-Right: Bold Golden-Yellow $ Price Tag + Starburst Pop ---
+    tag_pts = [(134, 174), (164, 146), (236, 186), (206, 236), (138, 198)]
+    d.polygon(tag_pts, fill=(255, 222, 15, 255), outline=OL, width=8)
+    # Red corner header band & string hole on price tag
+    d.polygon([(136, 174), (164, 148), (178, 156), (150, 198), (138, 196)], fill=(235, 25, 45, 255), outline=OL, width=5)
+    d.ellipse([148, 168, 164, 184], fill=(255, 255, 255, 255), outline=OL, width=4)
+    # Bold black "$" symbol centered on price tag
+    f_tag = load_font(["impact.ttf", "arialbd.ttf", "tahomabd.ttf"], 48)
+    d.text((178, 166), "$", font=f_tag, fill=(10, 10, 30, 255))
+
+    # Little sparkle starburst at top-left shoulder for classic 90s "NEW/SHINY!" pop
+    draw_starburst(d, 30, 36, outer_r=22, inner_r=8, points=6,
+                   fill=(255, 240, 40, 255), outline=OL, width=5)
+    return img
+
+
 ICON_BUILDERS = [
     ("nav_home.png", "HOME & DISPATCH", draw_home_icon),
     ("nav_vance.png", "MEET DR. VANCE", draw_vance_icon),
@@ -617,6 +710,13 @@ def create_nav_clipart_icons(assets_dir=None):
         out_path = os.path.join(assets_dir, filename)
         out_img.save(out_path, "PNG")
         print(f"Created {filename} ({OUT_SIZE}x{OUT_SIZE})")
+
+    # Larger crisp icon for the prominent Merch Shop sidebar card & inline Merch CTA buttons
+    merch_hi = draw_merch_shop_icon()
+    merch_out = merch_hi.resize((96, 96), Image.Resampling.LANCZOS)
+    merch_path = os.path.join(assets_dir, "merch_shop_icon.png")
+    merch_out.save(merch_path, "PNG")
+    print("Created merch_shop_icon.png (96x96)")
 
 
 if __name__ == "__main__":

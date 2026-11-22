@@ -699,6 +699,170 @@ a:hover {
   padding: 3px 4px 2px 4px;
 }
 
+/* Left Sidebar Prominent 1996 Official Merch Shop Card */
+.sidebar-merch-btn,
+.sidebar-merch-btn:visited {
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  padding: 0;
+  background: linear-gradient(180deg, #1b0038 0%, #100028 55%, #00273c 100%);
+  color: #ffffff !important;
+  text-decoration: none;
+  border-top: 3px solid #66ffff;
+  border-left: 3px solid #66ffff;
+  border-right: 3px solid #7a0066;
+  border-bottom: 3px solid #7a0066;
+  outline: 1px solid #000000;
+  box-shadow: 2px 2px 0 #000000, 0 0 9px rgba(0, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+.sidebar-merch-btn:hover {
+  background: linear-gradient(180deg, #2a0054 0%, #1b0042 55%, #003855 100%);
+  border-top-color: #ffff00;
+  border-left-color: #ffff00;
+  border-right-color: #ff00aa;
+  border-bottom-color: #ff00aa;
+  box-shadow: 2px 2px 0 #000000, 0 0 14px rgba(255, 0, 200, 0.8), 0 0 8px rgba(0, 255, 255, 0.75);
+}
+
+.sidebar-merch-btn:active {
+  border-top: 3px solid #7a0066;
+  border-left: 3px solid #7a0066;
+  border-right: 3px solid #66ffff;
+  border-bottom: 3px solid #66ffff;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000000;
+}
+
+.sidebar-merch-chrome {
+  background: linear-gradient(90deg, #c2006e 0%, #6d0099 52%, #007799 100%);
+  color: #ffff00;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.55px;
+  padding: 2.5px 4px;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  line-height: 1.15;
+}
+
+.sidebar-merch-body {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 6px 5px 6px;
+}
+
+.sidebar-merch-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.65));
+}
+
+.sidebar-merch-text {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.sidebar-merch-title {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #ffff00;
+  letter-spacing: 0.4px;
+  text-shadow: 2px 2px #d4007a, -1px -1px #000000;
+  white-space: nowrap;
+}
+
+.sidebar-merch-sub {
+  font-family: 'Courier New', monospace;
+  font-size: 8.5px;
+  font-weight: bold;
+  color: #00ffff;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.sidebar-merch-brand {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  font-weight: bold;
+  color: #ff99ee;
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+.sidebar-merch-cta {
+  background: linear-gradient(180deg, #55ffff 0%, #00dddd 55%, #00b8cc 100%);
+  color: #000055;
+  font-family: 'Courier New', monospace;
+  font-size: 9.5px;
+  font-weight: bold;
+  text-align: center;
+  padding: 3.5px 4px;
+  border-top: 2px solid #ffffff;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.sidebar-merch-btn:hover .sidebar-merch-cta {
+  background: linear-gradient(180deg, #ffff77 0%, #ffdd00 100%);
+  color: #660033;
+}
+
+/* Inline Prominent Merch Shop CTA Button (Home & Perks Tabs) */
+.merch-cta-btn,
+.merch-cta-btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #44ffff 0%, #00cccc 58%, #0099aa 100%);
+  color: #000044 !important;
+  font-family: 'Courier New', monospace;
+  font-size: 14.5px;
+  font-weight: bold;
+  padding: 7px 15px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #004455;
+  border-bottom: 3px solid #004455;
+  outline: 1px solid #000000;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 #000000;
+  cursor: pointer;
+}
+
+.merch-cta-btn:hover {
+  background: linear-gradient(180deg, #ffff88 0%, #ffdd00 100%);
+  color: #660033 !important;
+  box-shadow: 3px 3px 0 #000000, 0 0 12px rgba(0, 255, 255, 0.85);
+}
+
+.merch-cta-btn:active {
+  border-top: 3px solid #004455;
+  border-left: 3px solid #004455;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.merch-inline-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: block;
+}
+
 /* ==========================================================================
    SITE ALPHA-4 ORBITAL RECONNAISSANCE & SATELLITE CAMOUFLAGE MODULE
    ========================================================================== */
