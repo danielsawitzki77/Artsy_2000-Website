@@ -587,6 +587,44 @@ def draw_audio_icon():
     return img
 
 
+def draw_testimonials_icon():
+    """Classic 90s 3.5-inch Floppy Disk + Bright Yellow 5-Star Speech Bubble for Customer Testimonials."""
+    img = new_canvas()
+    d = ImageDraw.Draw(img)
+
+    # Back-Left: Classic 90s royal-blue 3.5" floppy disk (tilted/offset behind bubble)
+    disk_pts = [(12, 34), (96, 34), (112, 50), (112, 146), (12, 146)]
+    d.polygon(disk_pts, fill=(32, 88, 215, 255), outline=OL, width=6)
+    # Silver metal sliding shutter on top of floppy
+    d.rectangle([34, 34, 86, 74], fill=(215, 224, 236, 255), outline=OL, width=5)
+    d.rectangle([62, 42, 76, 66], fill=(32, 88, 215, 255), outline=OL, width=3)
+    # Crisp white paper label on lower floppy with red stripe
+    d.rectangle([24, 90, 98, 142], fill=(255, 255, 255, 255), outline=OL, width=5)
+    d.rectangle([24, 90, 98, 106], fill=(230, 35, 50, 255), outline=OL, width=4)
+    d.line([(34, 118), (86, 118)], fill=(40, 80, 180, 255), width=4)
+    d.line([(34, 130), (74, 130)], fill=(40, 80, 180, 255), width=4)
+
+    # Front-Right Hero: Bright 90s sunny-yellow comic speech bubble with tail
+    d.ellipse([48, 12, 152, 108], fill=(255, 236, 55, 255), outline=OL, width=6)
+    # Speech bubble tail pointing down-left
+    tail = [(64, 92), (52, 128), (94, 102)]
+    d.polygon(tail, fill=(255, 236, 55, 255), outline=OL, width=6)
+    # Seamless merge between bubble body and tail
+    d.ellipse([54, 18, 146, 102], fill=(255, 236, 55, 255))
+    d.polygon([(66, 88), (58, 119), (90, 98)], fill=(255, 236, 55, 255))
+
+    # Vivid magenta-outlined bright gold/orange 5-point customer rating star inside bubble!
+    draw_starburst(d, 100, 59, outer_r=36, inner_r=15, points=5,
+                   fill=(255, 110, 0, 255), outline=OL, width=6)
+    draw_starburst(d, 100, 59, outer_r=22, inner_r=9, points=5,
+                   fill=(255, 250, 130, 255), outline=(255, 250, 130, 255), width=2)
+
+    # Tiny cyan sparkle on top-left of floppy for retro shine
+    draw_starburst(d, 22, 24, outer_r=14, inner_r=5, points=4,
+                   fill=(0, 240, 255, 255), outline=OL, width=4)
+    return img
+
+
 def draw_merch_shop_icon():
     """Chunky 90s clipart Merch Shop icon: Graphic B50 T-Shirt + Hot-Pink Shopping Bag + Gold $ Tag."""
     sz = 256
@@ -686,6 +724,7 @@ ICON_BUILDERS = [
     ("nav_founder.png", "THE FOUNDER", draw_founder_icon),
     ("nav_dossiers.png", "TERMINAL DOSSIERS", draw_dossiers_icon),
     ("nav_tour.png", "FACILITY TOUR", draw_tour_icon),
+    ("nav_testimonials.png", "CUSTOMER TESTIMONIALS", draw_testimonials_icon),
     ("nav_protocols.png", "TESTING PROTOCOLS", draw_protocols_icon),
     ("nav_funfacts.png", "FACTS & FUN", draw_funfacts_icon),
     ("nav_povray.png", "POV-RAY Studio", draw_povray_icon),

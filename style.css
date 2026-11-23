@@ -914,7 +914,7 @@ a:hover {
   color: #660033;
 }
 
-/* Inline Prominent Merch Shop CTA Button (Home & Perks Tabs) */
+/* Inline Prominent Merch Shop CTA Button (Home & Volunteer Tabs) */
 .merch-cta-btn,
 .merch-cta-btn:visited {
   display: inline-flex;
@@ -1339,5 +1339,244 @@ a:hover {
   border: 2px outset #ffffff;
   letter-spacing: 0.4px;
 }
+
+/* ==========================================================================
+   HOME STEAM CALLOUT DUAL CTA ROW (STEAM STORE + CUSTOMER TESTIMONIALS)
+   ========================================================================== */
+.steam-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 10px 0 8px 0;
+}
+
+.steam-cta-btn,
+.steam-cta-btn:visited {
+  flex: 1 1 240px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(180deg, #253a52 0%, #1b2838 60%, #121b26 100%);
+  color: #66c0f4 !important;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-top: 3px solid #66c0f4;
+  border-left: 3px solid #66c0f4;
+  border-right: 3px solid #0a0f16;
+  border-bottom: 3px solid #0a0f16;
+  outline: 1px solid #000000;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 #000000;
+  cursor: pointer;
+}
+
+.steam-cta-btn:hover {
+  background: linear-gradient(180deg, #2e4b6b 0%, #223952 100%);
+  color: #ffffff !important;
+  border-top-color: #b8e6ff;
+  border-left-color: #b8e6ff;
+  box-shadow: 3px 3px 0 #000000, 0 0 10px rgba(102, 192, 244, 0.8);
+}
+
+.steam-cta-btn:active {
+  border-top: 3px solid #0a0f16;
+  border-left: 3px solid #0a0f16;
+  border-right: 3px solid #66c0f4;
+  border-bottom: 3px solid #66c0f4;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.testimonials-cta-btn,
+.testimonials-cta-btn:visited {
+  flex: 1 1 240px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(180deg, #7a0099 0%, #4b0066 58%, #2a003d 100%);
+  color: #ffff00 !important;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-top: 3px solid #ff88ff;
+  border-left: 3px solid #ff88ff;
+  border-right: 3px solid #1a0024;
+  border-bottom: 3px solid #1a0024;
+  outline: 1px solid #000000;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 #000000;
+  cursor: pointer;
+}
+
+.testimonials-cta-btn:hover {
+  background: linear-gradient(180deg, #a800cc 0%, #6d0091 100%);
+  color: #ffffff !important;
+  border-top-color: #ffff00;
+  border-left-color: #ffff00;
+  box-shadow: 3px 3px 0 #000000, 0 0 12px rgba(255, 0, 220, 0.85);
+}
+
+.testimonials-cta-btn:active {
+  border-top: 3px solid #1a0024;
+  border-left: 3px solid #1a0024;
+  border-right: 3px solid #ff88ff;
+  border-bottom: 3px solid #ff88ff;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+/* ==========================================================================
+   CUSTOMER TESTIMONIALS SECTION — 1996 VERIFIED CITIZEN SATISFACTION ARCHIVE
+   ========================================================================== */
+.testimonials-hero {
+  background: linear-gradient(135deg, #00143d 0%, #240046 52%, #002b36 100%);
+  border: 3px ridge #ffff00;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 5px 5px 0 #000000;
+  color: #ffffff;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: #f8f7ec;
+  border: 2px outset #ffffff;
+  outline: 2px solid #000080;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 14px;
+  color: #111111;
+}
+
+.testimonial-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: linear-gradient(90deg, #000080 0%, #004499 100%);
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom: 2px solid #000000;
+}
+
+.testimonial-stars {
+  color: #ffdd00;
+  text-shadow: 1px 1px #000000;
+  letter-spacing: 1px;
+}
+
+.testimonial-card-body {
+  padding: 10px 12px;
+}
+
+.testimonial-quote {
+  margin: 0 0 8px 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: #111111;
+  background: #ffffff;
+  border-left: 4px solid #cc0055;
+  border-top: 1px dotted #999999;
+  border-right: 1px dotted #999999;
+  border-bottom: 1px dotted #999999;
+  padding: 8px 10px;
+}
+
+.testimonial-specs {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #003366;
+  background: #e6eef8;
+  border: 1px inset #ffffff;
+  padding: 4px 8px;
+}
+
+.testimonial-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: #001022;
+  color: #e6f7ff;
+  border: 2px inset #00ffff;
+  margin-bottom: 14px;
+}
+
+.testimonial-audit-table th,
+.testimonial-audit-table td {
+  border: 1px solid #006688;
+  padding: 6px 8px;
+}
+
+.testimonial-audit-table th {
+  background: #002b55;
+  color: #ffff00;
+  text-align: left;
+}
+
+.testimonial-meter-track {
+  width: 100%;
+  height: 14px;
+  background: #000000;
+  border: 1px inset #666666;
+  overflow: hidden;
+}
+
+.testimonial-meter-fill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #00ff66 0px,
+    #00ff66 8px,
+    #009944 8px,
+    #009944 10px
+  );
+}
+
+.press-clipping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.press-clipping {
+  background: #ffffdd;
+  border: 2px dashed #996600;
+  padding: 9px 10px;
+  box-shadow: 3px 3px 0 #554400;
+  color: #221100;
+  font-size: 13px;
+}
+
+.nav-link-testimonials {
+  font-size: 9.5px;
+  letter-spacing: -0.35px;
+  gap: 5px;
+  padding: 4px 5px;
+}
+
+@media (max-width: 720px) {
+  .steam-cta-btn,
+  .testimonials-cta-btn {
+    white-space: normal;
+  }
+}
+
 
 
