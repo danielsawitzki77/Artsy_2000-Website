@@ -156,6 +156,104 @@ a:hover {
   object-fit: cover;
 }
 
+/* Thin Full-Width Free Ad-Supported Edition Promo Banner (under Header) */
+.free-ad-banner-cell {
+  background: linear-gradient(90deg, #1b0036 0%, #091d42 35%, #072b3b 68%, #1b0036 100%);
+  border-top: 2px ridge #00ffff;
+  border-bottom: 3px ridge #ff00ff;
+  border-left: 3px inset #808080;
+  border-right: 3px inset #808080;
+  padding: 5px 10px;
+}
+
+.free-ad-banner-link,
+.free-ad-banner-link:visited {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.free-ad-banner-link:hover {
+  background: transparent !important;
+}
+
+.free-ad-badge {
+  flex-shrink: 0;
+  background: #ffff00;
+  color: #990000;
+  border: 2px outset #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 7px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.free-ad-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.free-ad-headline {
+  font-family: 'Comic Sans MS', 'Arial Black', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffff00;
+  text-shadow: 1px 1px #ff0080;
+  letter-spacing: 0.4px;
+}
+
+.free-ad-sub {
+  font-family: 'Courier New', monospace;
+  font-size: 10.5px;
+  font-weight: normal;
+  color: #80f4ff;
+  margin-top: 1px;
+}
+
+.free-ad-cta {
+  flex-shrink: 0;
+  background: #00802b;
+  color: #ffff00;
+  border-top: 2px solid #80ffaa;
+  border-left: 2px solid #80ffaa;
+  border-right: 2px solid #003311;
+  border-bottom: 2px solid #003311;
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+  font-weight: bold;
+  padding: 5px 10px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.free-ad-banner-link:hover .free-ad-cta {
+  background: #00aa38;
+  color: #ffffff;
+}
+
+.free-ad-banner-link:hover .free-ad-headline {
+  color: #00ffff;
+}
+
+@media (max-width: 780px) {
+  .free-ad-banner-link {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
 /* Left Sidebar Navigation */
 .nav-sidebar {
   width: 220px;
