@@ -6,7 +6,7 @@ GAME TITLE:        Artsy_2000
 DEVELOPER:         Daniel M Sawitzki
 PUBLISHER / LABEL: Buck-Fifty Innovation Labs
 LOCATION:          Santa Rosa, CA, USA
-RELEASE DATE:      January 2027
+RELEASE DATE:      February 2027
 PRICE:             $1.50 USD
 PLATFORM:          Windows 10 / 11 (64-bit) — Steam
 STEAM STORE:       https://store.steampowered.com/app/5641470/

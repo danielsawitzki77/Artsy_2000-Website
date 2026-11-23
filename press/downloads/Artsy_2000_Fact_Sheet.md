@@ -6,7 +6,7 @@
 | **Developer** | Daniel M Sawitzki |
 | **Publisher / Label** | Buck-Fifty Innovation Labs |
 | **Location** | Santa Rosa, CA, USA |
-| **Release Date** | January 2027 |
+| **Release Date** | February 2027 |
 | **Price** | $1.50 USD |
 | **Platform** | Windows 10 / 11 (64-bit) via Steam |
 | **Steam Store** | https://store.steampowered.com/app/5641470/ |
