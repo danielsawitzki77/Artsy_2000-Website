@@ -1,0 +1,23 @@
+# Exclude internal scripts and unused draft assets from the published GitHub Pages site
+exclude:
+  - tools
+  - assets/ad_buck_fifty_b50.jpg
+  - assets/ad_fissi_efficient.jpg
+  - assets/ad_spyk_os.jpg
+  - assets/ad_toss_cable_bills.jpg
+  - assets/buck_fifty_supersized_logo.jpg
+  - assets/nav_perks.png
+  - assets/parking_bubble_brain.png
+  - assets/parking_bubble_dollar.png
+  - assets/parking_bubble_pizza.png
+  - assets/ref_bf_original.png
+  - assets/ref_synth_font.jpg
+  - assets/scene_01_logo.jpg
+  - assets/stars_bg.png
+  - .gitignore
+  - .vault_key.json
+  - README.md
+
+# Keep press/downloads/Artsy_2000_Fact_Sheet.md served as raw Markdown rather than converted to HTML
+optional_front_matter:
+  enabled: false
