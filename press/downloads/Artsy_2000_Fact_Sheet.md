@@ -36,6 +36,16 @@ A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep well of 
 - **Original Soundtrack by Holon:** *Everything Has Its Cost*, *From These Ruins*, *Point Of Origin*, *Coherence Drift*, *Initial State*, and *Afterlight*.
 - **Literally $1.50:** Priced to match Buck-Fifty's legendary per diem.
 
+## Limited Physical Collector's Big-Box Edition (10 Numbered Copies Worldwide)
+Alongside the $1.50 Steam release, an ultra-limited run of **10 numbered 1996-style rigid PC Big-Box Collector's Editions** (*Phase-I "Prime Subject" First-Harvest Collector's Edition*, `#01/10`–`#10/10`) has been hand-assembled. Selected press outlets, reviewers, and unboxing/retro-PC creators are welcome to inquire about receiving one of the remaining physical boxes for coverage (`info@buckfiftylabs.com`). Physical shipments are primarily limited to the Continental US (select international outlets considered case-by-case); digital Steam review keys remain immediately available worldwide to all press.
+
+Each **12.4" × 8.8" × 3"** rigid collector's box contains:
+- **1.44 MB 3.5" Floppy Disk** (working retro 1996 Setup Wizard v1.0) + printed **Steam Key Authorization Slip**
+- **Printed 46-Page Volunteer Survival Manual** paperback + **Printed Full-Color Graphic Novel** (*The $1.50 Breakout!*, Issue #1)
+- **18" × 24" 1996 Battlestation Wall Poster** + **Artsy_2000 & Buck-Fifty Vinyl Sticker Duo**
+- **"Spikey" Virtual Daemon Action Figure** (spiky orb w/ zero points of articulation) + **"Subject #13" Rubber Brain Eraser** (with `#13` base seal)
+- **Hand-Signed, Numbered 7" × 5" Certificate of Cognitive Authenticity** (`#01/10`–`#10/10`)
+
 ## Videos & Links
 - **Official Broadcast Trailer:** https://youtu.be/hl4ftXtNqVU
 - **Raytracing & POV-Ray Archive Reel:** https://www.youtube.com/watch?v=lHGAPG5uiAc

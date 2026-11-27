@@ -17,6 +17,7 @@ from PIL import Image
 WEB_ROOT = Path(__file__).resolve().parent.parent
 GAME_ROOT = WEB_ROOT.parent / "Artsy_2000"
 SCREENSHOT_SOURCE_ROOT = Path(r"G:\My Drive\Artsy_2000\Screenshots")
+BIGBOX_SOURCE_ROOT = Path(r"G:\My Drive\Artsy_2000\BigBox")
 PRESS_ROOT = WEB_ROOT / "press"
 MEDIA_SCREENSHOTS_DIR = PRESS_ROOT / "media" / "screenshots"
 MEDIA_BRANDING_DIR = PRESS_ROOT / "media" / "branding"
@@ -276,6 +277,34 @@ BRANDING_SPECS = [
         "povray",
         False,
     ),
+    (
+        BIGBOX_SOURCE_ROOT / "3D_Renders" / "Artsy_2000_BigBox_3D_Studio.png",
+        "artsy_2000_bigbox_3d_studio.jpg",
+        "Collector's Big-Box 3D Render (Dark Studio Backdrop)",
+        "collector",
+        False,
+    ),
+    (
+        BIGBOX_SOURCE_ROOT / "3D_Renders" / "Artsy_2000_BigBox_3D_Transparent.png",
+        "artsy_2000_bigbox_3d_transparent.png",
+        "Collector's Big-Box 3D Cutout (Transparent PNG for Thumbnails)",
+        "collector",
+        True,
+    ),
+    (
+        BIGBOX_SOURCE_ROOT / "3D_Renders" / "Artsy_2000_1996_Promo_Poster.jpg",
+        "artsy_2000_bigbox_1996_promo_poster.jpg",
+        "Collector's Edition 18x24 1996 Battlestation Promo Poster",
+        "collector",
+        False,
+    ),
+    (
+        BIGBOX_SOURCE_ROOT / "Collectors_Certificate" / "Proof_Certificate_01_of_10_300DPI.png",
+        "artsy_2000_collectors_certificate_01_of_10.jpg",
+        "Collector's Edition Certificate of Authenticity (#01 / 10 Sample)",
+        "collector",
+        False,
+    ),
 ]
 
 
@@ -394,6 +423,33 @@ KEY FEATURES
   streaming seamlessly via XAudio2 with automatic FMV audio ducking.
 
 --------------------------------------------------------------------------------
+LIMITED PHYSICAL COLLECTOR'S BIG-BOX EDITION (10 NUMBERED COPIES WORLDWIDE)
+--------------------------------------------------------------------------------
+Alongside the $1.50 Steam release, Daniel M Sawitzki hand-assembled an
+ultra-limited run of TEN (10) numbered 1996-style rigid PC Big-Box Collector's
+Editions ("Phase-I 'Prime Subject' First-Harvest Collector's Edition", #01/10
+through #10/10). Selected press outlets, reviewers, and retro-PC / unboxing
+YouTubers may inquire about receiving a physical box for coverage or unboxing
+features (subject to remaining allocation; Steam keys available to all press).
+
+Each 12.4" x 8.8" x 3" rigid Collector's Big-Box includes:
+* 1.44 MB 3.5" High-Density Floppy Disk (working retro 1996 Setup Wizard v1.0)
+  + Printed Steam Product Key Authorization Slip
+* Printed 46-Page "Artsy 2000: Volunteer Survival Manual" Paperback
+* Printed Full-Color "Artsy 2000: The $1.50 Breakout!" Graphic Novel (#1)
+* Full-Size 18" x 24" 1996 Battlestation Wall Poster
+* Official Artsy_2000 & Buck-Fifty Chrome Vinyl Sticker Duo
+* Limited "Spikey" Virtual Daemon Action Figure (zero points of articulation;
+  legally an action figure, definitely not a massage ball)
+* "Subject #13" Cranial Rubber Brain Eraser (with authentic #13 base sticker)
+* Hand-Signed, Numbered 7" x 5" Certificate of Cognitive Authenticity (#01-#10)
+
+Physical press box inquiries: info@buckfiftylabs.com (include outlet/channel,
+link, coverage format, and shipping country). Physical shipments are primarily
+limited to the Continental US (select international outlets considered
+case-by-case); digital Steam review keys are available worldwide.
+
+--------------------------------------------------------------------------------
 SYSTEM REQUIREMENTS (WINDOWS)
 --------------------------------------------------------------------------------
 * OS:         Windows 10 or Windows 11 (64-bit)
@@ -471,6 +527,16 @@ A $1.50 multi-genre 1990s retro-futuristic arcade escape — and a deep well of 
 - **153 Steam Achievements & 7 Campaign Modes:** Normal (*Joe Six-Pack*), *Perma-Death*, *Speed Run*, and 4 visual distortion campaigns (*Dog Video Wave*, *Green CRT*, *Rotating Cube*, *Hexagonal Tiles*).
 - **Original Soundtrack by Holon:** *Everything Has Its Cost*, *From These Ruins*, *Point Of Origin*, *Coherence Drift*, *Initial State*, and *Afterlight*.
 - **Literally $1.50:** Priced to match Buck-Fifty's legendary per diem.
+
+## Limited Physical Collector's Big-Box Edition (10 Numbered Copies Worldwide)
+Alongside the $1.50 Steam release, an ultra-limited run of **10 numbered 1996-style rigid PC Big-Box Collector's Editions** (*Phase-I "Prime Subject" First-Harvest Collector's Edition*, `#01/10`–`#10/10`) has been hand-assembled. Selected press outlets, reviewers, and unboxing/retro-PC creators are welcome to inquire about receiving one of the remaining physical boxes for coverage (`info@buckfiftylabs.com`). Physical shipments are primarily limited to the Continental US (select international outlets considered case-by-case); digital Steam review keys remain immediately available worldwide to all press.
+
+Each **12.4" × 8.8" × 3"** rigid collector's box contains:
+- **1.44 MB 3.5" Floppy Disk** (working retro 1996 Setup Wizard v1.0) + printed **Steam Key Authorization Slip**
+- **Printed 46-Page Volunteer Survival Manual** paperback + **Printed Full-Color Graphic Novel** (*The $1.50 Breakout!*, Issue #1)
+- **18" × 24" 1996 Battlestation Wall Poster** + **Artsy_2000 & Buck-Fifty Vinyl Sticker Duo**
+- **"Spikey" Virtual Daemon Action Figure** (spiky orb w/ zero points of articulation) + **"Subject #13" Rubber Brain Eraser** (with `#13` base seal)
+- **Hand-Signed, Numbered 7" × 5" Certificate of Cognitive Authenticity** (`#01/10`–`#10/10`)
 
 ## Videos & Links
 - **Official Broadcast Trailer:** https://youtu.be/hl4ftXtNqVU
@@ -576,20 +642,38 @@ def build():
             "sizeLabel": fmt_size(size),
         })
 
-    # 2. Copy curated branding / logos / key art / renders (+ preview thumb for heavy PNGs)
+    # 2. Copy curated branding / logos / key art / renders / collector box art (+ preview thumb for heavy assets)
     for src, dst_name, title, kind, transparent in BRANDING_SPECS:
         if not src.exists():
             raise FileNotFoundError(f"Missing branding source: {src}")
         dst = MEDIA_BRANDING_DIR / dst_name
-        shutil.copy2(src, dst)
+
+        # Smart format conversion & optimization for large 300-DPI Collector's Edition source PNGs
+        # so Artsy_2000_Press_Kit.zip stays well under GitHub's 100 MB file limit while staying print/editorial crisp!
+        if dst_name == "artsy_2000_bigbox_3d_transparent.png":
+            with Image.open(src) as im_rgba:
+                tw = 1500
+                th = max(1, round(im_rgba.height * (tw / im_rgba.width)))
+                im_rgba.convert("RGBA").resize((tw, th), Image.Resampling.LANCZOS).save(
+                    dst, format="PNG", optimize=True, compress_level=9
+                )
+        elif dst.suffix.lower() == ".jpg" and src.suffix.lower() != ".jpg":
+            with Image.open(src) as im_rgb:
+                im_rgb.convert("RGB").save(dst, format="JPEG", quality=93, subsampling=0, optimize=True, progressive=True)
+        else:
+            shutil.copy2(src, dst)
+
         with Image.open(dst) as im:
             w, h = im.size
-            # Generate crisp web preview JPEG for the 1920x1080 Win95 pipeline mockup & large non-alpha PNG banners
+            # Generate crisp web preview JPEG for heavy banners, Win95 pipeline mockup, and tall collector's renders
             if dst_name in (
                 "artsy_2000_povray_pipeline_win95_1920x1080.png",
                 "artsy_2000_keyart_banner_1920x622.png",
+                "artsy_2000_bigbox_3d_studio.jpg",
+                "artsy_2000_bigbox_1996_promo_poster.jpg",
+                "artsy_2000_collectors_certificate_01_of_10.jpg",
             ):
-                tw = 1200
+                tw = 1200 if w >= h else 960
                 th = max(1, round(h * (tw / w)))
                 prev = im.convert("RGB").resize((tw, th), Image.Resampling.LANCZOS)
                 prev.save(
@@ -662,9 +746,10 @@ def build():
 
     print(json.dumps(manifest["downloads"], indent=2))
     print(f"Screenshots: {len(manifest['screenshots'])}, Branding: {len(manifest['branding'])}")
+    assert zip_full.stat().st_size < 98 * 1024 * 1024, f"Full press kit ZIP too close to GitHub 100MB limit: {zip_full.stat().st_size:,} B"
     for item in manifest["branding"]:
-        if item["kind"] == "povray":
-            print(f"  POVRAY: {item['filename']} -> {item['width']}x{item['height']} ({item['sizeLabel']})")
+        if item["kind"] in ("povray", "collector"):
+            print(f"  {item['kind'].upper()}: {item['filename']} -> {item['width']}x{item['height']} ({item['sizeLabel']})")
 
 
 if __name__ == "__main__":
